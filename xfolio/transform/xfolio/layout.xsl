@@ -160,10 +160,12 @@ bug in IE
         <a href="{$parent}{$radical}.html">
           <img>
             <xsl:copy-of select="@*"/>
+            <!-- ?
             <xsl:attribute name="width">
               <xsl:value-of select="substring-after(@src, 'size=')"/>
               <xsl:text>px</xsl:text>
             </xsl:attribute>
+            -->
           </img>
         </a>
       </xsl:when>
