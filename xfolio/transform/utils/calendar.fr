@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendar>
+	<!-- day -->
+	<A>Dimanche</A>
+	<A>Lundi</A>
+	<A>Mardi</A>
+	<A>Mercredi</A>
+	<A>Jeudi</A>
+	<A>Vendredi</A>
+	<A>Samedi</A>
+	<!-- day short -->
+	<a>Dim</a>
+	<a>Lun</a>
+	<a>Mar</a>
+	<a>Mer</a>
+	<a>Jeu</a>
+	<a>Ven</a>
+	<a>Sam</a>
+	<!-- month -->
+	<B>Janvier</B>
+	<B>Février</B>
+	<B>Mars</B>
+	<B>Avril</B>
+	<B>Mai</B>
+	<B>Juin</B>
+	<B>Juillet</B>
+	<B>Août</B>
+	<B>Septembre</B>
+	<B>Octobre</B>
+	<B>Novembre</B>
+	<B>Décembre</B>
+	<!-- month short -->
+	<b>Jan</b>
+	<b>Fév</b>
+	<b>Mar</b>
+	<b>Avr</b>
+	<b>Mai</b>
+	<b>Jui</b>
+	<b>Jui</b>
+	<b>Aoû</b>
+	<b>Sep</b>
+	<b>Oct</b>
+	<b>Nov</b>
+	<b>Déc</b>
+</calendar>

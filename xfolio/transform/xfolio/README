@@ -1,0 +1,9 @@
+Theese are specific transformations of xfolio.
+Input schema is usually cocoon,
+sometimes less standard,
+or provide specific commodities of this app
+like naming transformations of filenames.
+We try to output standard schemas.
+
+TODO :
+An RDF nested output (check the doc) of directory to generate a clickable toc.

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../transform/navigation/rdf2html.xsl"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://purl.org/rss/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <rdf:Description>
+    <dc:date xsi:type="Iptc.Date-Time">2003:10:14 00:07:49</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Original">2003:09:27 00:06:55</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Digitized">2003:09:27 00:06:55</dc:date>
+    <dc:format xsi:type="Color.Space">sRGB</dc:format>
+    <dc:format>2048x1536 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Width">2048 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Height">1536 pixels</dc:format>
+    <dc:title xsi:type="Iptc.Object.Name">title</dc:title>
+    <dc:subject xsi:type="Iptc.Keywords">keyword</dc:subject>
+    <dc:creator xsi:type="Iptc.By-line">author (Author's position)</dc:creator>
+    <dc:coverage xsi:type="Iptc">City (State/Province, Country Name)</dc:coverage>
+    <dc:title xsi:type="Iptc.Headline">Headline</dc:title>
+    <dc:source xsi:type="Iptc.Source">Source</dc:source>
+    <dc:rights xsi:type="Iptc.Copyright.Notice">© Notice</dc:rights>
+    <dc:description xsi:type="Iptc.Caption-Abstract">caption&#xD;2 line&#xD;3 line</dc:description>
+    <dc:contributor xsi:type="Iptc.Writer-Editor">Description Writer</dc:contributor>
+    <dc:relation xsi:type="image/jpg">http://localhost:80/tests/Images/buisson.jpg</dc:relation>
+    <dc:relation xsi:type="text/html">http://localhost:80/tests/Images/buisson.html</dc:relation>
+    <dc:title xsi:type="filename">buisson</dc:title>
+    <dc:identifier xsi:type="filename">buisson.jpg</dc:identifier>
+  </rdf:Description>
+  <rdf:Description>
+    <dc:date xsi:type="Iptc.Date-Time">2003:10:14 00:01:55</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Original">0000:00:00 00:00:00</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Digitized">0000:00:00 00:00:00</dc:date>
+    <dc:format xsi:type="Color.Space">sRGB</dc:format>
+    <dc:format>2048x1536 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Width">2048 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Height">1536 pixels</dc:format>
+    <dc:title xsi:type="Iptc.Object.Name">Quelques fleurs</dc:title>
+    <dc:creator xsi:type="Iptc.By-line">Glorieux, Frédéric (Amateur)</dc:creator>
+    <dc:rights xsi:type="Iptc.Copyright.Notice">© xfolio.org</dc:rights>
+    <dc:description xsi:type="Iptc.Caption-Abstract">Quelques fleurs vieillies, qui ne voulaient pas mourir, les voilà immortalisées.&#xD;&#xD;[en] Some old flowers.&#xD;Can't understand why but some flowers want to stay alive, even they are old. Here they are, for digital eternity.</dc:description>
+    <dc:contributor xsi:type="Iptc.Writer-Editor">Glorieux Frédéric.</dc:contributor>
+    <dc:format xsi:type="Exif.Data.Precision">8 bits</dc:format>
+    <dc:relation xsi:type="image/jpg">http://localhost:80/tests/Images/chardon.jpg</dc:relation>
+    <dc:relation xsi:type="text/html">http://localhost:80/tests/Images/chardon.html</dc:relation>
+    <dc:title xsi:type="filename">chardon</dc:title>
+    <dc:identifier xsi:type="filename">chardon.jpg</dc:identifier>
+  </rdf:Description>
+  <rdf:Description>
+    <dc:date xsi:type="Iptc.Date-Time">2003:10:07 16:16:29</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Original">2003:10:07 15:51:09</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Digitized">2003:10:07 15:51:09</dc:date>
+    <dc:format xsi:type="Color.Space">sRGB</dc:format>
+    <dc:format>2048x1536 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Width">2048 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Height">1536 pixels</dc:format>
+    <dc:contributor xsi:type="Iptc.Writer-Editor">Glorieux, Frédéric</dc:contributor>
+    <dc:format xsi:type="Exif.Data.Precision">8 bits</dc:format>
+    <dc:relation xsi:type="image/jpg">http://localhost:80/tests/Images/fenetre.jpg</dc:relation>
+    <dc:relation xsi:type="text/html">http://localhost:80/tests/Images/fenetre.html</dc:relation>
+    <dc:title xsi:type="filename">fenetre</dc:title>
+    <dc:identifier xsi:type="filename">fenetre.jpg</dc:identifier>
+  </rdf:Description>
+  <rdf:Description>
+    <dc:date xsi:type="Iptc.Date-Time">2003:10:07 16:12:47</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Original">2003:10:07 15:54:36</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Digitized">2003:10:07 15:54:36</dc:date>
+    <dc:format xsi:type="Color.Space">sRGB</dc:format>
+    <dc:format>2048x1536 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Width">2048 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Height">1536 pixels</dc:format>
+    <dc:relation xsi:type="image/jpg">http://localhost:80/tests/Images/lampe.jpg</dc:relation>
+    <dc:relation xsi:type="text/html">http://localhost:80/tests/Images/lampe.html</dc:relation>
+    <dc:title xsi:type="filename">lampe</dc:title>
+    <dc:identifier xsi:type="filename">lampe.jpg</dc:identifier>
+  </rdf:Description>
+  <rdf:Description>
+    <dc:date xsi:type="Iptc.Date-Time">2003:10:07 15:25:16</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Original">2003:09:27 00:03:35</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Digitized">2003:09:27 00:03:35</dc:date>
+    <dc:format xsi:type="Color.Space">sRGB</dc:format>
+    <dc:format>2048x1536 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Width">2048 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Height">1536 pixels</dc:format>
+    <dc:description xsi:type="Iptc.Caption-Abstract">This is my phone</dc:description>
+    <dc:contributor xsi:type="Iptc.Writer-Editor">Glorieux, Frédéric</dc:contributor>
+    <dc:relation xsi:type="image/jpg">http://localhost:80/tests/Images/telephone.jpg</dc:relation>
+    <dc:relation xsi:type="text/html">http://localhost:80/tests/Images/telephone.html</dc:relation>
+    <dc:title xsi:type="filename">telephone</dc:title>
+    <dc:identifier xsi:type="filename">telephone.jpg</dc:identifier>
+  </rdf:Description>
+  <rdf:Description>
+    <dc:date xsi:type="Iptc.Date-Time">2003:10:13 23:27:46</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Original">2003:09:27 00:05:32</dc:date>
+    <dc:date xsi:type="Iptc.Date-Time.Digitized">2003:09:27 00:05:32</dc:date>
+    <dc:format xsi:type="Color.Space">sRGB</dc:format>
+    <dc:format>2048x1536 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Width">2048 pixels</dc:format>
+    <dc:format xsi:type="Exif.Image.Height">1536 pixels</dc:format>
+    <dc:description xsi:type="Iptc.Caption-Abstract">??????  et autre textéééé</dc:description>
+    <dc:creator xsi:type="Iptc.By-line">Frédéric Glorieux</dc:creator>
+    <dc:title xsi:type="Iptc.Object.Name">Le trône de l'enfant roi</dc:title>
+    <dc:relation xsi:type="image/jpg">http://localhost:80/tests/Images/trone.jpg</dc:relation>
+    <dc:relation xsi:type="text/html">http://localhost:80/tests/Images/trone.html</dc:relation>
+    <dc:title xsi:type="filename">trone</dc:title>
+    <dc:identifier xsi:type="filename">trone.jpg</dc:identifier>
+  </rdf:Description>
+</rdf:RDF>

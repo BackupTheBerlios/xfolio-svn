@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendar>
+	<B>January</B>
+	<B>February</B>
+	<B>March</B>
+	<B>April</B>
+	<B>May</B>
+	<B>June</B>
+	<B>July</B>
+	<B>August</B>
+	<B>September</B>
+	<B>October</B>
+	<B>November</B>
+	<B>December</B>
+	<b>Jan</b>
+	<b>Feb</b>
+	<b>Mar</b>
+	<b>Apr</b>
+	<b>May</b>
+	<b>Jun</b>
+	<b>Jul</b>
+	<b>Aug</b>
+	<b>Sep</b>
+	<b>Oct</b>
+	<b>Nov</b>
+	<b>Dec</b>
+	<A>Sunday</A>
+	<A>Monday</A>
+	<A>Tuesday</A>
+	<A>Wednesday</A>
+	<A>Thursday</A>
+	<A>Friday</A>
+	<A>Saturday</A>
+	<a>Sun</a>
+	<a>Mon</a>
+	<a>Tue</a>
+	<a>Wed</a>
+	<a>Thu</a>
+	<a>Fri</a>
+	<a>Sat</a>
+</calendar>

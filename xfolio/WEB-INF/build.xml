@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!--
+  Copyright 2003-2004 strabon.org
+  frederic.glorieux@ajlsm.com
+
+2004-04-27
+An ant driver for different tasks
+For now, do nothing.
+
+Should compile some classes
+-->
+<!DOCTYPE project SYSTEM "../schema/ant/ant.dtd">
+<project basedir="." default="compile-classes" name="xfolio">
+	<target name="init">
+		<!-- Set classpath -->
+		<path id="classpath">
+			<fileset dir="lib">
+				<include name="*.jar"/>
+			</fileset>
+		</path>
+	</target>
+	<!--
+	this build suppose some java classes to compile in WEB-INF/classes
+	-->
+	<target name="compile-classes">
+		<javac srcdir="classes" debug="on" optimize="on" failonerror="true">
+			<classpath refid="classpath"/>
+			<!--
+            <include name="**/*.java"/>
+            -->
+		</javac>
+		<!--
+    <javac srcdir="${mocks}"
+           destdir="${build.mocks}"
+           debug="${compiler.debug}"
+           optimize="${compiler.optimize}"
+           deprecation="${compiler.deprecation}"
+           target="${target.vm}"
+           nowarn="${compiler.nowarn}"
+           compiler="${compiler}"
+           classpathref="classpath"/>
+-->
+	</target>
+	<target name="dtd">
+		<antstructure output="entities/ant.dtd"/>
+	</target>
+</project>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+see
+http://java.sun.com/j2se/1.4.1/docs/api/java/text/SimpleDateFormat.html
+
+Lots of TODO
+-->
+<calendars>
+	<calendar xml:lang="fr">
+		<!-- day -->
+		<E>Dimanche</E>
+		<E>Lundi</E>
+		<E>Mardi</E>
+		<E>Mercredi</E>
+		<E>Jeudi</E>
+		<E>Vendredi</E>
+		<E>Samedi</E>
+		<!-- day short -->
+		<e>Dim</e>
+		<e>Lun</e>
+		<e>Mar</e>
+		<e>Mer</e>
+		<e>Jeu</e>
+		<e>Ven</e>
+		<e>Sam</e>
+		<!-- month -->
+		<B>Janvier</B>
+		<B>Février</B>
+		<B>Mars</B>
+		<B>Avril</B>
+		<B>Mai</B>
+		<B>Juin</B>
+		<B>Juillet</B>
+		<B>Août</B>
+		<B>Septembre</B>
+		<B>Octobre</B>
+		<B>Novembre</B>
+		<B>Décembre</B>
+		<!-- month short -->
+		<b>Jan</b>
+		<b>Fév</b>
+		<b>Mar</b>
+		<b>Avr</b>
+		<b>Mai</b>
+		<b>Jui</b>
+		<b>Jui</b>
+		<b>Aoû</b>
+		<b>Sep</b>
+		<b>Oct</b>
+		<b>Nov</b>
+		<b>Déc</b>
+	</calendar>
+	<calendar xml:lang="en">
+		<B>January</B>
+		<B>February</B>
+		<B>March</B>
+		<B>April</B>
+		<B>May</B>
+		<B>June</B>
+		<B>July</B>
+		<B>August</B>
+		<B>September</B>
+		<B>October</B>
+		<B>November</B>
+		<B>December</B>
+		<b>Jan</b>
+		<b>Feb</b>
+		<b>Mar</b>
+		<b>Apr</b>
+		<b>May</b>
+		<b>Jun</b>
+		<b>Jul</b>
+		<b>Aug</b>
+		<b>Sep</b>
+		<b>Oct</b>
+		<b>Nov</b>
+		<b>Dec</b>
+		<E>Sunday</E>
+		<E>Monday</E>
+		<E>Tuesday</E>
+		<E>Wednesday</E>
+		<E>Thursday</E>
+		<E>Friday</E>
+		<E>Saturday</E>
+		<e>Sun</e>
+		<e>Mon</e>
+		<e>Tue</e>
+		<e>Wed</e>
+		<e>Thu</e>
+		<e>Fri</e>
+		<e>Sat</e>
+	</calendar>
+</calendars>

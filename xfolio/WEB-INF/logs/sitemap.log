@@ -1,0 +1,47 @@
+INFO    (2004-10-06) 21:37.21:733   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/antic-villages/index_en.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:805:56
+INFO    (2004-10-06) 21:37.21:733   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/antic-villages/index_en.html'
+INFO    (2004-10-06) 21:37.21:753   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/antic-villages/index_ar.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:809:56
+INFO    (2004-10-06) 21:37.21:753   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/antic-villages/index_ar.html'
+INFO    (2004-10-06) 21:37.21:773   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/antic-villages/index_it.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:813:56
+INFO    (2004-10-06) 21:37.21:773   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/antic-villages/index_it.html'
+INFO    (2004-10-06) 21:37.21:783   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/antic-villages/dir.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:817:56
+INFO    (2004-10-06) 21:37.21:783   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/antic-villages/dir.html'
+INFO    (2004-10-06) 21:37.22:023   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.22:023   [sitemap] (/antic-villages/index_fr.html) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml'
+INFO    (2004-10-06) 21:37.46:208   [sitemap] (/) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/index.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:790:55
+INFO    (2004-10-06) 21:37.46:208   [sitemap] (/) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/index.html'
+INFO    (2004-10-06) 21:37.46:228   [sitemap] (/) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/index_fr.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:801:56
+INFO    (2004-10-06) 21:37.46:228   [sitemap] (/) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/index_fr.html'
+INFO    (2004-10-06) 21:37.46:258   [sitemap] (/) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.46:258   [sitemap] (/) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml'
+INFO    (2004-10-06) 21:37.50:494   [sitemap] (/skin/strabon1.css) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/strabon1.css' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.50:494   [sitemap] (/skin/strabon1.css) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/strabon1.css'
+INFO    (2004-10-06) 21:37.50:494   [sitemap] (/skin/strabon_S.gif) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/strabon_S.gif' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.50:494   [sitemap] (/skin/strabon_S.gif) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/strabon_S.gif'
+INFO    (2004-10-06) 21:37.50:504   [sitemap] (/skin/eumedis_fr_S.gif) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/eumedis_fr_S.gif' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.50:514   [sitemap] (/skin/eumedis_fr_S.gif) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/eumedis_fr_S.gif'
+INFO    (2004-10-06) 21:37.50:554   [sitemap] (/skin/logomsh.gif) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/logomsh.gif' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.50:554   [sitemap] (/skin/logomsh.gif) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/logomsh.gif'
+INFO    (2004-10-06) 21:37.57:865   [sitemap] (/images/rsr.html) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:37.57:865   [sitemap] (/images/rsr.html) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml'
+INFO    (2004-10-06) 21:38.12:005   [sitemap] (/images/dir.html) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 21:38.12:005   [sitemap] (/images/dir.html) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml'
+INFO    (2004-10-06) 22:13.39:634   [sitemap] (/) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/index.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:790:55
+INFO    (2004-10-06) 22:13.39:634   [sitemap] (/) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/index.html'
+INFO    (2004-10-06) 22:13.39:665   [sitemap] (/) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/index_fr.html' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:801:56
+INFO    (2004-10-06) 22:13.39:665   [sitemap] (/) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/index_fr.html'
+INFO    (2004-10-06) 22:13.39:675   [sitemap] (/) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 22:13.39:675   [sitemap] (/) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/default.xhtml'
+INFO    (2004-10-06) 22:13.40:706   [sitemap] (/skin/strabon1.css) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/strabon1.css' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 22:13.40:706   [sitemap] (/skin/strabon1.css) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/strabon1.css'
+INFO    (2004-10-06) 22:13.40:726   [sitemap] (/skin/strabon_S.gif) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/strabon_S.gif' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 22:13.40:726   [sitemap] (/skin/strabon_S.gif) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/strabon_S.gif'
+INFO    (2004-10-06) 22:13.40:736   [sitemap] (/skin/eumedis_fr_S.gif) PoolThread-4/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/eumedis_fr_S.gif' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 22:13.40:736   [sitemap] (/skin/eumedis_fr_S.gif) PoolThread-4/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/eumedis_fr_S.gif'
+INFO    (2004-10-06) 22:13.40:766   [sitemap] (/skin/logomsh.gif) PoolThread-3/RedirectToURINode: Redirecting to 'cocoon:/skin/strabon.org/logomsh.gif' at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:370:66
+INFO    (2004-10-06) 22:13.40:766   [sitemap] (/skin/logomsh.gif) PoolThread-3/ForwardRedirector: Redirecting to 'cocoon:/skin/strabon.org/logomsh.gif'
+INFO    (2004-10-06) 22:13.41:137   [sitemap] (/favicon.ico) PoolThread-4/HandleErrorsNode: Processing handle-errors at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:835:26
+INFO    (2004-10-06) 22:13.50:310   [sitemap] (/favicon.ico) PoolThread-4/HandleErrorsNode: Processing handle-errors at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:835:26
+INFO    (2004-10-06) 22:13.55:738   [sitemap] (/favicon.ico) PoolThread-4/HandleErrorsNode: Processing handle-errors at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:835:26
+INFO    (2004-10-06) 22:17.33:701   [sitemap] (/favicon.ico) PoolThread-4/HandleErrorsNode: Processing handle-errors at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:835:26
+INFO    (2004-10-06) 22:20.10:076   [sitemap] (/favicon.ico) PoolThread-4/HandleErrorsNode: Processing handle-errors at file:/C:/xfolio/xfolio@svn.berlios.de/xfolio/xfolio.xmap:835:26

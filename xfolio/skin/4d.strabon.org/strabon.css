@@ -1,0 +1,254 @@
+/*
+unseen by browser <6, prefer link in the html
+@import url("html.css");
+*/
+/* override html.css */
+
+
+/*
+
+specific colors of layout
+
+
+colors
+
+#4263B0 ?
+#293974 blue color for orange back
+#FF9900 orange for links
+#FFCC00 orange light for active link
+#2B5891 ?
+*/
+
+
+body { 
+	margin:0; padding:0; 
+	background: #293974 url('back-dark.png');
+	color:#FFFFFF;
+}
+body a:link, body a:visited {
+	color:#FFFFFF;
+}
+
+/* put this first for easier override */
+a {
+	font-weight: bold; color: #FF9900; text-decoration: none
+}
+a:hover {
+	color: #CC0000;  text-decoration: underline;
+}
+
+
+
+#banner {
+	width:100%;
+	background: url('banner-back.png') repeat-x;
+	border-bottom:ridge 2px #FFCC99;
+}
+
+#header {
+
+}
+
+#navbar {
+	font-size:10pt;
+	padding:0;
+	padding-left:1em;
+	margin:0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(style=1, opacity=100, finishOpacity=0, startX=0, finishX=0, startY=20, finishY=0);
+	background: #FFCC00 url('back-tonic.png');
+	color:#293974 ;
+	font-weight:bold;
+	border-bottom:outset 2px;
+	border-top:outset 2px;
+}
+#navbar * {
+	filter: progid:DXImageTransform.Microsoft.dropShadow( Color=#999999,offX=1,offY=1,positive=true);
+}
+
+
+/* if you want a nice select in the navbar */
+#navbar select {
+	border:none;
+	padding:0;
+	margin:0;
+	/* should work */
+	background: inherit; 
+	font-family:inherit;
+	font-weight:inherit;
+	/* patch to non conformant inheritage */
+	background: #FFCC00 url('back-tonic.png');
+	color:#293974;
+	font-weight:bold;
+	font-family:Verdana, sans-srif;
+}
+#navbar a,
+#header a {
+	color:#293974
+}
+
+/* background as navbar */
+
+#side, 
+td.img {
+    font-family: frutiger, Arial, sans-serif;
+    background: #EEEEE0 url('back-light.png');
+    color:#000000;
+}
+
+#side a,
+#side a:visited, 
+#side a:link { 
+	color:#293974;
+	font-weight:bold;
+}
+
+
+/* a semantic menu, in side bar  */
+#menu {
+    margin:0px; 
+    border:outset 1px; 
+    background:#FFFFFF;
+    padding-left:0.3ex;
+    padding-right:0.3ex;
+    padding-top:1px;
+    padding-bottom:1px;
+    font-size:80%;
+}
+/* background like footer */
+#menu td {
+    border:inset 1px #000000;
+    background: #293974 url('back-dark.png');
+    color:#FFFFFF;
+}
+#menu a, 
+#menu a:link, 
+#menu a:visited {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+
+#menu a:hover, 
+#menu a:hover * {
+	color:#FFCC00;
+	text-decoration:underline;
+}
+
+
+
+#menu tr.this td {
+	background: #FFCC00 url('back-tonic.png');
+	color:#293974;
+}
+
+#menu tr.this td a, 
+#menu tr.this td a:link, 
+#menu tr.this td a:hover, 
+#menu tr.this td a:visited {
+	color:#293974;
+	text-decoration:none;
+}
+
+
+/* a vertical left bar, unplugged */
+#binding {
+	display:none;
+	width:20px;
+	margin:0;
+	padding:0;
+	text-align:center;
+	height:100%;
+	position:absolute;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding-top:1em;
+	background:#FFCC00 url('back-tonic-vertical.png');
+/*
+	filter: progid:DXImageTransform.Microsoft.Alpha(style=1, opacity=100, finishOpacity=0, startX=30, finishX=0, startY=0, finishY=0);
+	border-right: dashed 0.2ex #FFCC00;
+	overflow:hidden;
+*/
+}
+
+#binding * {
+	color:#FFFFFF; 
+	filter: progid:DXImageTransform.Microsoft.dropShadow( Color=#999999,offX=1,offY=1,positive=true);
+}
+
+
+#navigator {
+	padding-top:2em;
+	padding-bottom:2em;
+	padding-left:1em;
+	padding-right:1em;
+	height:100%;
+	font-size:90%;
+	background-attachment:fixed;
+	color:#293974;
+	margin:0;
+}
+
+#footer {
+	color:#FFFFFF;
+	font-weight:bold;
+	font-size:80%;
+	padding-left:1em;
+	padding-right:1em;
+	width:100%;
+	background: #293974 url('back-dark.png');
+}
+
+#footer td {
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+
+#main, #side {
+
+}
+
+#main,
+#main table {
+	background:#FFFFFF; 
+	color:#000000;
+}
+#main a {
+	color:#293974;
+}
+
+.abstract {
+	background: #EEEEE0 url('back-light.png');
+}
+#toc a, 
+#toc a:visited {
+	font-family: Arial, sans-serif;
+	color: #F4904D;
+}
+
+dl.toc a, 
+dl.toc a:visited  {
+	color:#4263B0
+}
+
+h1 {
+	color: #FF9900;
+	border-bottom: 2px ridge;
+	font-family: Arial, sans-serif;
+}
+
+.abstract {
+      display:block; text-indent:0; text-align:justify; 
+      background-color:#F1EDE1;
+      padding-left:1em; padding-right:1ex;
+      padding-top:0.5ex; padding-bottom:0.5ex;
+    }
+
+	table {margin:0; padding:0; border:none;}
+
+@media print {
+	#banner a {width:100%}
+  }
+
+/********* end sheet ************/
+ 

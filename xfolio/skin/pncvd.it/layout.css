@@ -1,0 +1,127 @@
+/* new layout */
+
+
+
+body {
+	margin:0;
+}
+
+
+#side {
+	position:fixed;
+	overflow:auto;
+	margin-left:0;
+	top:100;
+	left:0;
+	width: 26%;
+	height:80%;
+}
+
+
+#main1 {
+	padding-left:25%;
+	padding-right:1em;
+}
+
+#main {
+	padding:1em;
+	padding-left:3em;
+	overflow:auto;
+}
+
+
+#header {
+	top:0;
+	left:200;
+
+}
+
+
+#footer {
+	position:fixed;
+	bottom:0px;
+	z-index:2;
+	font-size:10pt;
+}
+
+.slash {
+	padding-left:0.5ex;
+	padding-right:0.5ex;
+}
+
+
+/* old layout
+
+  Goal of layout is to put a clickable Table of content in a @id="side" layer at left
+  and content in a @id="main" layer at rignt
+  Theese blocks are to left and right,
+  top result of the header size.
+  They have fixed width and height but relatively to screen (%),
+  scrollbars appear if needed.
+  A foot layer is in bottom
+	A script adjust vertical sizes.
+	No absolute size if you want to keep dynamic resizing
+	Use % instead
+  
+  DON'T TOUCH IT WORKS
+  
+  La logique de pr?ntation est de mettre une Table des Mati?s clicable
+  dans un calque @id="side" (c??, les contenus sont dans @id="main" (principal)
+  la position verticale r?lte de la largeur du bandeau d'en-t?.
+  Ils ont largeur et hauteur fix? par pourcentage relativement ?a taille de l'?an.
+  Des barres de d?lement apparaissent si le contenu d?sse ces tailles.
+  Le bloc de pied est positionn?n absolu par rapport au bord bas de l'?an, mais
+	Les tailles de caract?s sont modifi? dynamiquement. Les tailles absolues sont 
+	de toute fa? d?nseill? (accessibilit? utilisez plut??es %.
+
+	NE PAS TOUCHER, CA MARCHE
+
+ <http://www.quirksmode.org/css/100percheight.html>
+*/
+
+/* hide from IE5 Mac */
+/*
+@media all { 
+	html, body {
+		margin:0;
+		padding: 0;
+		overflow:hidden;
+	}
+
+	#page {
+		height: 100%;
+		width:100%;
+		overflow:hidden;
+	}
+
+
+	#side, #main {
+		clear:none;
+		height: 80%;
+		overflow:auto;
+		position: fixed;
+	}
+
+	#side {
+		float:left;
+		left:0;
+		width:25%;
+	}
+
+	#main {
+		padding-left:2em;
+		padding-right:2em;
+		padding-top:2em;
+		padding-bottom:3em;
+		float:right; 
+		width:74.9%;
+		right:0;
+	}
+
+	#footer {
+		clear:both;
+		position: fixed;
+		bottom:0;
+	}
+}
+*/

@@ -1,0 +1,2987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<glossary>
+  <info>
+    <title>Langues, languages...</title>
+    <creator>frederic.glorieux@ajlsm.com</creator>
+    <date>2001</date>
+    <date>2003-10-01</date>
+    <description xml:lang="fr">
+      <para>
+        <title>schéma</title>
+Présenté comme un glossaire de concepts multilingues.
+
+Voir la doc provisoire en 
+<link uri="http://www.ajlsm.com/projets/sdapa/schema/">DAPA schéma</link>
+      </para>
+      <xml uri="#fra"/>
+      <glossary>
+        <term>@id</term>
+        <definition>le code iso 3 caractères</definition>
+        <term>@code</term>
+        <definition>le code iso 2 caractères quand il y en a un</definition>
+        <term>@lang</term>
+        <definition>la langue du contenu de l'élément</definition>
+      </glossary>
+      <para>
+        <title>fait</title>
+        <enumeration>
+          <item>
+  Les 400 et quelques codes iso de langues en au moins deux langues
+français - anglais
+  </item>
+        </enumeration>
+      </para>
+      <para>
+        <title>à faire</title>
+        <enumeration>
+          <item>
+Le nom de chaque langue dans sa langue
+  </item>
+          <item>
+Plus de noms dans des langues courantes
+    </item>
+          <item>
+Rattacher chaque langue à sa famille (un code de langue)
+Ces classes permettraient de proposer des présentations des langues regroupées par famille
+(européennes, asiatiques...)
+</item>
+          <item>
+Une transformation XSL plus adéquate
+</item>
+        </enumeration>
+      </para>
+      <para>
+        <title>à réfléchir</title>
+        <enumeration>
+          <item>
+Que faire des anciens code loc marqué en iso3a="XXX" ?
+    </item>
+        </enumeration>
+      </para>
+    </description>
+  </info>
+  <!--
+    <concept code="ji" id="" class="?">
+        <term xml:lang="fr">Yidich, indicatif désuet, utiliser «yi»</term>
+        <term xml:lang="ji">?</term>
+    </concept>
+    <concept code="iw" id="" class="?">
+        <term xml:lang="fr">Hébreu, indicatif désuet, utiliser «he»</term>
+        <term xml:lang="iw">?</term>
+    </concept>
+    <concept code="in" id="" class="?">
+        <term xml:lang="fr">Indonésien, indicatif désuet, utiliser «id»</term>
+        <term xml:lang="in">?</term>
+    </concept>
+    <concept code="sh" id="" class="sla">
+        <term xml:lang="fr">Serbo-croate (désuet)</term>
+        <term xml:lang="en">Serbo-croatian</term>
+        <term xml:lang="sh">?</term>
+    </concept>
+-->
+  <!--
+    <concept id="den" class="?">
+        <term xml:lang="fr">esclave</term>
+        <term xml:lang="den">?</term>
+    </concept>
+    -->
+  <concept role="header" code="iso2" id="iso3" class="?">
+    <term/>
+    <term xml:lang="fr">Français</term>
+    <term xml:lang="en">English</term>
+    <term xml:lang="de">Deutsch</term>
+    <term xml:lang="ru">Русский</term>
+    <term xml:lang="zh">華語</term>
+    <term xml:lang="ar">عربية</term>
+    <term xml:lang="ja">日本語</term>
+  </concept>
+  <concept code="aa" id="aar" class="?">
+    <term xml:lang="aar">?</term>
+    <term xml:lang="fr">Afar</term>
+    <term xml:lang="en">Afar</term>
+    <term xml:lang="de">Afar</term>
+    <term xml:lang="ru">Афарский</term>
+    <term xml:lang="zh">阿法爾語</term>
+    <term xml:lang="ar">أفارية</term>
+    <term xml:lang="ja">アファル語</term>
+  </concept>
+  <concept code="ab" id="abk" class="?">
+    <term xml:lang="abk">?</term>
+    <term xml:lang="fr">Abkhaze</term>
+    <term xml:lang="en">Abkhazian</term>
+    <term xml:lang="de">Abchasisch</term>
+    <term xml:lang="ru">Абхазский</term>
+    <term xml:lang="zh">阿布卡茲語</term>
+    <term xml:lang="ar">أبخازية</term>
+    <term xml:lang="ja">アプハジア語</term>
+  </concept>
+  <concept id="ace" class="?">
+    <term xml:lang="ace">?</term>
+    <term xml:lang="fr">Atjihais</term>
+    <term xml:lang="en">Achinese</term>
+  </concept>
+  <concept id="ach" class="?">
+    <term xml:lang="ach">?</term>
+    <term xml:lang="fr">Atcholi (gang)</term>
+    <term xml:lang="en">Acoli</term>
+  </concept>
+  <concept id="ada" class="?">
+    <term xml:lang="ada">?</term>
+    <term xml:lang="fr">Adangmé</term>
+    <term xml:lang="en">Adangme</term>
+  </concept>
+  <concept id="afa" class="?">
+    <term xml:lang="afa">?</term>
+    <term xml:lang="fr">Afro-asiatique (langues)</term>
+    <term xml:lang="en">Afro-Asiatic (Other)</term>
+  </concept>
+  <concept id="afh" class="?">
+    <term xml:lang="afh">?</term>
+    <term xml:lang="fr">Afrihili</term>
+    <term xml:lang="en">Afrihili</term>
+  </concept>
+  <concept code="af" id="afr" class="gem">
+    <term xml:lang="afr">Afrikaans</term>
+    <term xml:lang="fr">Afrikaans</term>
+    <term xml:lang="en">Afrikaans</term>
+    <term xml:lang="de">Afrikaans</term>
+    <term xml:lang="ru">Африкаанс</term>
+    <term xml:lang="zh">南非荷蘭語</term>
+    <term xml:lang="ar">أفريقيانية</term>
+    <term xml:lang="ja">アフリカーンス語</term>
+  </concept>
+  <concept id="ajm" class="?">
+    <term xml:lang="ajm">?</term>
+    <term xml:lang="fr">Aljamia</term>
+  </concept>
+  <concept id="aka" class="?">
+    <term xml:lang="aka">?</term>
+    <term xml:lang="fr">Akan</term>
+    <term xml:lang="en">Akan</term>
+  </concept>
+  <concept id="akk" class="?">
+    <term xml:lang="akk">?</term>
+    <term xml:lang="fr">Akkadien</term>
+    <term xml:lang="en">Akkadian</term>
+  </concept>
+  <concept id="ale" class="?">
+    <term xml:lang="ale">?</term>
+    <term xml:lang="fr">Aléoute</term>
+    <term xml:lang="en">Aleut</term>
+  </concept>
+  <concept id="alg" class="?">
+    <term xml:lang="alg">?</term>
+    <term xml:lang="fr">Algonquin (langues)</term>
+    <term xml:lang="en">Algonquian languages</term>
+  </concept>
+  <concept code="am" id="amh" class="?">
+    <term xml:lang="amh">?</term>
+    <term xml:lang="fr">Amharique</term>
+    <term xml:lang="en">Amharic</term>
+    <term xml:lang="de">Amharisch</term>
+    <term xml:lang="ru">Амхарский</term>
+    <term xml:lang="zh">阿姆哈拉語</term>
+    <term xml:lang="ar">أمهرية</term>
+    <term xml:lang="ja">アムハラ語</term>
+  </concept>
+  <concept id="ang" class="eng">
+    <term xml:lang="ang">?</term>
+    <term xml:lang="fr">Anglais (ancien, 450/1100)</term>
+    <term xml:lang="en">English, Old (ca. 450-1100)</term>
+  </concept>
+  <concept id="apa" class="?">
+    <term xml:lang="apa">?</term>
+    <term xml:lang="fr">Apache (langues)</term>
+    <term xml:lang="en">Apache languages</term>
+  </concept>
+  <concept code="ar" id="ara" class="sem">
+    <term xml:lang="ara">عربية</term>
+    <term xml:lang="fr">Arabe</term>
+    <term xml:lang="en">Arabic</term>
+    <term xml:lang="de">Arabisch</term>
+    <term xml:lang="ru">Арабский</term>
+    <term xml:lang="zh">阿拉伯語</term>
+    <term xml:lang="ar">عربية</term>
+    <term xml:lang="ja">アラビア語</term>
+  </concept>
+  <concept id="arc" class="?">
+    <term xml:lang="arc">?</term>
+    <term xml:lang="fr">Araméen</term>
+    <term xml:lang="en">Aramaic</term>
+  </concept>
+  <concept id="arn" class="?">
+    <term xml:lang="arn">?</term>
+    <term xml:lang="fr">Mapoutche (araucan)</term>
+    <term xml:lang="en">Araucanian</term>
+  </concept>
+  <concept id="arp" class="?">
+    <term xml:lang="arp">?</term>
+    <term xml:lang="fr">Arapaho</term>
+    <term xml:lang="en">Arapaho</term>
+  </concept>
+  <concept id="art" class="?">
+    <term xml:lang="art">?</term>
+    <term xml:lang="fr">Artificiel (langues)</term>
+    <term xml:lang="en">Artificial (Other)</term>
+  </concept>
+  <concept id="arw" class="?">
+    <term xml:lang="arw">?</term>
+    <term xml:lang="fr">Arawak</term>
+    <term xml:lang="en">Arawak</term>
+  </concept>
+  <concept code="as" id="asm" class="?">
+    <term xml:lang="asm">?</term>
+    <term xml:lang="fr">Assamais</term>
+    <term xml:lang="en">Assamese</term>
+    <term xml:lang="de">Assamesisch</term>
+    <term xml:lang="ru">Ассамский</term>
+    <term xml:lang="zh">阿薩姆語</term>
+    <term xml:lang="ar">أسامية</term>
+    <term xml:lang="ja">アッサム語</term>
+  </concept>
+  <concept id="ath" class="?">
+    <term xml:lang="ath">?</term>
+    <term xml:lang="fr">Athasbascanes (langues dénées)</term>
+    <term xml:lang="en">Athapascan languages</term>
+  </concept>
+  <concept id="aus" class="?">
+    <term xml:lang="aus">?</term>
+    <term xml:lang="fr">Australie (langues)</term>
+  </concept>
+  <concept id="ava" class="?">
+    <term xml:lang="ava">?</term>
+    <term xml:lang="fr">Avar</term>
+    <term xml:lang="en">Avaric</term>
+  </concept>
+  <concept code="ae" id="ave" class="?">
+    <term xml:lang="ave">?</term>
+    <term xml:lang="fr">Avestique</term>
+    <term xml:lang="en">Avestan</term>
+  </concept>
+  <concept id="awa" class="?">
+    <term xml:lang="awa">?</term>
+    <term xml:lang="fr">Awadhi (aoudi)</term>
+    <term xml:lang="en">Awadhi</term>
+  </concept>
+  <concept code="ay" id="aym" class="?">
+    <term xml:lang="aym">?</term>
+    <term xml:lang="fr">Aymara</term>
+    <term xml:lang="en">Aymara</term>
+    <term xml:lang="de">Aymara</term>
+    <term xml:lang="ru">Аймарский</term>
+    <term xml:lang="zh">艾馬拉語</term>
+    <term xml:lang="ar">إيمارية</term>
+    <term xml:lang="ja">アイマラ語</term>
+  </concept>
+  <concept code="az" id="aze" class="?">
+    <term xml:lang="az">Азәрбајҹан</term>
+    <term xml:lang="fr">Azéri</term>
+    <term xml:lang="en">Azerbaijani</term>
+    <term xml:lang="de">Aserbaidschanisch</term>
+    <term xml:lang="ru">Азербайджанский</term>
+    <term xml:lang="zh">阿塞拜疆語</term>
+    <term xml:lang="ar">أذربيجانية</term>
+    <term xml:lang="ja">アゼルバイジェン語</term>
+  </concept>
+  <concept id="bad" class="?">
+    <term xml:lang="bad">?</term>
+    <term xml:lang="fr">Banda</term>
+    <term xml:lang="en">Banda</term>
+  </concept>
+  <concept id="bai" class="?">
+    <term xml:lang="bai">?</term>
+    <term xml:lang="fr">Bamiléké (langues)</term>
+    <term xml:lang="en">Bamileke languages</term>
+  </concept>
+  <concept code="ba" id="bak" class="?">
+    <term xml:lang="bak">?</term>
+    <term xml:lang="fr">Bachkir</term>
+    <term xml:lang="en">Bashkir</term>
+    <term xml:lang="de">Baschkirisch</term>
+    <term xml:lang="ru">Башкирский</term>
+    <term xml:lang="zh">巴什基爾語</term>
+    <term xml:lang="ar">بشكيرية</term>
+    <term xml:lang="ja">バシキール語</term>
+  </concept>
+  <concept id="bal" class="?">
+    <term xml:lang="bal">?</term>
+    <term xml:lang="fr">Baloutche</term>
+    <term xml:lang="en">Baluchi</term>
+  </concept>
+  <concept id="bam" class="?">
+    <term xml:lang="bam">?</term>
+    <term xml:lang="fr">Bambara</term>
+    <term xml:lang="en">Bambara</term>
+  </concept>
+  <concept id="ban" class="?">
+    <term xml:lang="ban">?</term>
+    <term xml:lang="fr">Balinais</term>
+    <term xml:lang="en">Balinese</term>
+  </concept>
+  <concept id="bas" class="?">
+    <term xml:lang="bas">?</term>
+    <term xml:lang="fr">Bassa</term>
+    <term xml:lang="en">Basa</term>
+  </concept>
+  <concept id="bat" class="?">
+    <term xml:lang="bat">?</term>
+    <term xml:lang="fr">Balte (langues)</term>
+    <term xml:lang="en">Baltic (Other)</term>
+  </concept>
+  <concept id="bej" class="?">
+    <term xml:lang="bej">?</term>
+    <term xml:lang="fr">Bedja</term>
+    <term xml:lang="en">Beja</term>
+  </concept>
+  <concept code="be" id="bel" class="sla">
+    <term xml:lang="be">Беларускі</term>
+    <term xml:lang="fr">Biélorusse</term>
+    <term xml:lang="en">Byelorussian</term>
+    <term xml:lang="de">Belorussisch</term>
+    <term xml:lang="ru">Белорусский</term>
+    <term xml:lang="zh">白俄羅斯語</term>
+    <term xml:lang="ar">بيالوروسية</term>
+    <term xml:lang="ja">白ロシア語</term>
+  </concept>
+  <concept id="bem" class="?">
+    <term xml:lang="bem">?</term>
+    <term xml:lang="fr">Bemba</term>
+    <term xml:lang="en">Bemba</term>
+  </concept>
+  <concept code="bn" id="ben" class="?">
+    <term xml:lang="ben">?</term>
+    <term xml:lang="fr">Bengali</term>
+    <term xml:lang="en">Bengali</term>
+    <term xml:lang="de">Bengalisch</term>
+    <term xml:lang="ru">Бенгальский</term>
+    <term xml:lang="zh">孟加拉語</term>
+    <term xml:lang="ar">بنغالية</term>
+    <term xml:lang="ja">ベンガル語</term>
+  </concept>
+  <concept id="ber" class="?">
+    <term xml:lang="ber">?</term>
+    <term xml:lang="fr">Berbère (langues)</term>
+    <term xml:lang="en">Berber (Other)</term>
+  </concept>
+  <concept id="bho" class="?">
+    <term xml:lang="bho">?</term>
+    <term xml:lang="fr">Bhodjpouri</term>
+    <term xml:lang="en">Bhojpuri</term>
+  </concept>
+  <concept code="bh" id="bih" class="?">
+    <term xml:lang="bih">?</term>
+    <term xml:lang="fr">Bihari</term>
+    <term xml:lang="en">Bihari</term>
+    <term xml:lang="de">Biharisch</term>
+    <term xml:lang="ru">Бихарский</term>
+    <term xml:lang="zh">比哈爾語</term>
+    <term xml:lang="ar">بهارية</term>
+    <term xml:lang="ja">ビハール語</term>
+  </concept>
+  <concept id="bik" class="?">
+    <term xml:lang="bik">?</term>
+    <term xml:lang="fr">Bikol</term>
+    <term xml:lang="en">Bikol</term>
+  </concept>
+  <concept id="bin" class="?">
+    <term xml:lang="bin">?</term>
+    <term xml:lang="fr">Bini</term>
+    <term xml:lang="en">Bini</term>
+  </concept>
+  <concept code="bi" id="bis" class="?">
+    <term xml:lang="bis">?</term>
+    <term xml:lang="fr">Bêche-de-mer</term>
+    <term xml:lang="en">Bislama</term>
+    <term xml:lang="de">Bislamisch</term>
+    <term xml:lang="ru">Бислама</term>
+    <term xml:lang="zh">比斯拉嘛語</term>
+    <term xml:lang="ar">بسلامية</term>
+    <term xml:lang="ja">ビスラマ語</term>
+  </concept>
+  <concept id="bla" class="?">
+    <term xml:lang="bla">?</term>
+    <term xml:lang="fr">Pied-noir (siksika)</term>
+    <term xml:lang="en">Siksika</term>
+  </concept>
+  <concept id="bnt" class="?">
+    <term xml:lang="bnt">?</term>
+    <term xml:lang="fr">Bantou (langues)</term>
+    <term xml:lang="en">Bantu (Other)</term>
+  </concept>
+  <concept code="bo" id="bod" class="?">
+    <term xml:lang="bod">?</term>
+    <!-- iso3a="tib" -->
+    <term xml:lang="fr">Tibétain</term>
+    <term xml:lang="en">Tibetan</term>
+    <term xml:lang="de">Tibetanisch</term>
+    <term xml:lang="ru">Тибетский</term>
+    <term xml:lang="zh">西藏語</term>
+    <term xml:lang="ar">التيبيتية</term>
+    <term xml:lang="ja">チベット語</term>
+  </concept>
+  <concept code="bs" id="bos" class="?">
+    <term xml:lang="bos">?</term>
+    <!-- iso3a="tib" -->
+    <term xml:lang="fr">Bosniaque</term>
+  </concept>
+  <concept id="bra" class="?">
+    <term xml:lang="bra">?</term>
+    <term xml:lang="fr">Bradj</term>
+    <term xml:lang="en">Braj</term>
+  </concept>
+  <concept code="br" id="bre" class="?">
+    <term xml:lang="br">Brezhoneg</term>
+    <term xml:lang="fr">Breton</term>
+    <term xml:lang="en">Breton</term>
+    <term xml:lang="de">Bretonisch</term>
+    <term xml:lang="ru">Бретонский</term>
+    <term xml:lang="zh">布列塔尼語</term>
+    <term xml:lang="ar">بريتونية</term>
+    <term xml:lang="ja">ブルターニュ語</term>
+  </concept>
+  <concept id="btk" class="?">
+    <term xml:lang="btk">?</term>
+    <term xml:lang="fr">Batak (Indonésie)</term>
+  </concept>
+  <concept id="bua" class="?">
+    <term xml:lang="bua">?</term>
+    <term xml:lang="fr">Bouriate</term>
+    <term xml:lang="en">Buriat</term>
+  </concept>
+  <concept id="bug" class="?">
+    <term xml:lang="bug">?</term>
+    <term xml:lang="fr">Bouguis</term>
+    <term xml:lang="en">Buginese</term>
+  </concept>
+  <concept code="bg" id="bul" class="sla">
+    <term xml:lang="bg">български</term>
+    <term xml:lang="fr">Bulgare</term>
+    <term xml:lang="en">Bulgarian</term>
+    <term xml:lang="de">Bulgarisch</term>
+    <term xml:lang="ru">Болгарский</term>
+    <term xml:lang="zh">保加利亞語</term>
+    <term xml:lang="ar">بلغارية</term>
+    <term xml:lang="ja">ブルガリア語</term>
+  </concept>
+  <concept id="cad" class="?">
+    <term xml:lang="cad">?</term>
+    <term xml:lang="fr">Caddo</term>
+    <term xml:lang="en">Caddo</term>
+  </concept>
+  <concept id="cai" class="?">
+    <term xml:lang="cai">?</term>
+    <term xml:lang="fr">Amérique centrale<!-- (langues amérindiennes)-->
+    </term>
+    <term xml:lang="en">Central American Indian<!--(Other)-->
+    </term>
+  </concept>
+  <concept id="car" class="?">
+    <term xml:lang="car">?</term>
+    <term xml:lang="fr">Caribe</term>
+    <term xml:lang="en">Carib</term>
+  </concept>
+  <concept code="ca" id="cat" class="roa">
+    <term xml:lang="ca">Català</term>
+    <term xml:lang="fr">Catalan</term>
+    <term xml:lang="en">Catalan</term>
+    <term xml:lang="de">Katalanisch</term>
+    <term xml:lang="ru">Каталонский</term>
+    <term xml:lang="zh">加態隆語</term>
+    <term xml:lang="ar">كاتالانية</term>
+    <term xml:lang="ja">カタラン語</term>
+  </concept>
+  <concept id="cau" class="?">
+    <term xml:lang="cau">?</term>
+    <term xml:lang="fr">Caucasien (langues)</term>
+    <term xml:lang="en">Caucasian (Other)</term>
+  </concept>
+  <concept id="ceb" class="?">
+    <term xml:lang="ceb">?</term>
+    <term xml:lang="fr">Cébouano</term>
+    <term xml:lang="en">Cebuano</term>
+  </concept>
+  <concept id="cel" class="ine">
+    <term xml:lang="cel">?</term>
+    <term xml:lang="fr">Celte (langues)</term>
+    <term xml:lang="en">Celtic (Other)</term>
+  </concept>
+  <concept code="cs" id="ces" class="sla">
+    <!-- iso3a="cze" -->
+    <term xml:lang="cs">čeština</term>
+    <term xml:lang="fr">Tchèque</term>
+    <term xml:lang="en">Czech</term>
+    <term xml:lang="de">Tschechisch</term>
+    <term xml:lang="ru">Чешский</term>
+    <term xml:lang="zh">捷克語</term>
+    <term xml:lang="ar">تشيكية</term>
+    <term xml:lang="ja">チェコスロバキア語</term>
+  </concept>
+  <concept code="ch" id="cha" class="?">
+    <term xml:lang="cha">?</term>
+    <term xml:lang="fr">Chamorro</term>
+    <term xml:lang="en">Chamorro</term>
+  </concept>
+  <concept id="chb" class="?">
+    <term xml:lang="chb">?</term>
+    <term xml:lang="fr">Tchibtcha</term>
+    <term xml:lang="en">Chibcha</term>
+  </concept>
+  <concept code="ce" id="che" class="?">
+    <term xml:lang="che">?</term>
+    <term xml:lang="fr">Tchétchène</term>
+    <term xml:lang="en">Chechen</term>
+  </concept>
+  <concept id="chg" class="?">
+    <term xml:lang="chg">?</term>
+    <term xml:lang="fr">Djaghataï</term>
+    <term xml:lang="en">Chagatai</term>
+  </concept>
+  <concept id="chk" class="?">
+    <term xml:lang="chk">?</term>
+    <term xml:lang="fr">Trukais</term>
+  </concept>
+  <concept id="chm" class="?">
+    <term xml:lang="chm">?</term>
+    <term xml:lang="fr">Mari (tchérémisse)</term>
+    <term xml:lang="en">Mari</term>
+  </concept>
+  <concept id="chn" class="?">
+    <term xml:lang="chn">?</term>
+    <term xml:lang="fr">Chinook (jargon tchinouk)</term>
+    <term xml:lang="en">Chinook jargon</term>
+  </concept>
+  <concept id="cho" class="?">
+    <term xml:lang="cho">?</term>
+    <term xml:lang="fr">Choctaw</term>
+    <term xml:lang="en">Choctaw</term>
+  </concept>
+  <concept id="chp" class="?">
+    <term xml:lang="chp">?</term>
+    <term xml:lang="fr">Montagnais de l'Ouest (déné)</term>
+  </concept>
+  <concept id="chr" class="?">
+    <term xml:lang="chr">?</term>
+    <term xml:lang="fr">Chéroki</term>
+    <term xml:lang="en">Cherokee</term>
+  </concept>
+  <concept code="cu" id="chu" class="sla">
+    <term xml:lang="chu">?</term>
+    <term xml:lang="fr">Slavon</term>
+    <term xml:lang="en">Church Slavic</term>
+  </concept>
+  <concept code="cv" id="chv" class="?">
+    <term xml:lang="chv">?</term>
+    <term xml:lang="fr">Tchouvache</term>
+    <term xml:lang="en">Chuvash</term>
+  </concept>
+  <concept id="chy" class="?">
+    <term xml:lang="chy">?</term>
+    <term xml:lang="fr">Cheyenne</term>
+    <term xml:lang="en">Cheyenne</term>
+  </concept>
+  <concept id="cmc" class="?">
+    <term xml:lang="cmc">?</term>
+    <term xml:lang="fr">Chame (tchames, tiames)</term>
+  </concept>
+  <concept id="cop" class="?">
+    <term xml:lang="cop">?</term>
+    <term xml:lang="fr">Copte</term>
+    <term xml:lang="en">Coptic</term>
+  </concept>
+  <concept code="kw" id="cor" class="cel">
+    <term xml:lang="cor">?</term>
+    <term xml:lang="fr">Cornique</term>
+    <term xml:lang="en">Cornish</term>
+    <term xml:lang="ru">Корнуольский</term>
+  </concept>
+  <concept code="co" id="cos" class="roa">
+    <term xml:lang="cos">?</term>
+    <term xml:lang="fr">Corse</term>
+    <term xml:lang="en">Corsican</term>
+    <term xml:lang="de">Korsisch</term>
+    <term xml:lang="ru">Корсиканский</term>
+    <term xml:lang="zh">科西嘉語</term>
+    <term xml:lang="ar">كورسيكية</term>
+    <term xml:lang="ja">コルシカ語</term>
+  </concept>
+  <concept id="cpe" class="eng">
+    <term xml:lang="cpe">?</term>
+    <term xml:lang="fr">Créoles et pidgins anglais</term>
+    <term xml:lang="en">Creoles and Pidgins, English-based (Other)</term>
+  </concept>
+  <concept id="cpf" class="fra">
+    <term xml:lang="cpf">?</term>
+    <term xml:lang="fr">Créoles et pidgins français</term>
+    <term xml:lang="en">Creoles and Pidgins, French-based (Other)</term>
+  </concept>
+  <concept id="cpp" class="pt">
+    <term xml:lang="cpp">?</term>
+    <term xml:lang="fr">Créoles et pidgins portugais</term>
+    <term xml:lang="en">Creoles and Pidgins, Portuguese-based (Other)</term>
+  </concept>
+  <concept id="cre" class="?">
+    <term xml:lang="cre">?</term>
+    <term xml:lang="fr">Cri</term>
+    <term xml:lang="en">Cree</term>
+  </concept>
+  <concept id="crp" class="?">
+    <term xml:lang="crp">?</term>
+    <term xml:lang="fr">Créoles et pidgins</term>
+    <term xml:lang="en">Creoles and Pidgins (Other)</term>
+  </concept>
+  <concept id="cus" class="?">
+    <term xml:lang="cus">?</term>
+    <term xml:lang="fr">Couchitique (langues)</term>
+    <term xml:lang="en">Cushitic (Other)</term>
+  </concept>
+  <concept code="cy" id="cym" class="cel">
+    <term xml:lang="cym">Cembraeg</term>
+    <!-- iso3a="wel" -->
+    <term xml:lang="fr">Gallois</term>
+    <term xml:lang="en">Welsh</term>
+    <term xml:lang="de">Walisisch</term>
+    <term xml:lang="ru">Уэльский</term>
+    <term xml:lang="zh">威爾士語</term>
+    <term xml:lang="ar">غالي'ة</term>
+    <term xml:lang="ja">ウェールズ語</term>
+  </concept>
+  <concept id="dak" class="?">
+    <term xml:lang="dak">?</term>
+    <term xml:lang="fr">Dakota, famille siouse (assiniboine, sioux, dakota)</term>
+    <term xml:lang="en">Dakota</term>
+  </concept>
+  <concept code="da" id="dan" class="gem">
+    <term xml:lang="da">Dansk</term>
+    <term xml:lang="fr">Danois</term>
+    <term xml:lang="en">Danish</term>
+    <term xml:lang="de">Dänisch</term>
+    <term xml:lang="ru">Датский</term>
+    <term xml:lang="zh">丹麥語</term>
+    <term xml:lang="ar">دانمركية</term>
+    <term xml:lang="ja">デンマーク語</term>
+  </concept>
+  <concept id="day" class="?">
+    <term xml:lang="day">?</term>
+    <term xml:lang="fr">Dayak</term>
+  </concept>
+  <concept id="del" class="?">
+    <term xml:lang="del">?</term>
+    <term xml:lang="fr">Delaware (lénappé)</term>
+    <term xml:lang="en">Delaware</term>
+  </concept>
+  <concept code="de" id="deu" class="gem">
+    <!-- iso3a="ger" -->
+    <term xml:lang="de">Deutsch</term>
+    <term xml:lang="fr">Allemand</term>
+    <term xml:lang="en">German</term>
+    <term xml:lang="de">Deutsch</term>
+    <term xml:lang="ru">Немецкий</term>
+    <term xml:lang="zh">德語</term>
+    <term xml:lang="ar">ألمانية</term>
+    <term xml:lang="ja">ドイツ語</term>
+  </concept>
+  <concept id="dgr" class="?">
+    <term xml:lang="dgr">?</term>
+    <term xml:lang="fr">Flanc-de-chien</term>
+  </concept>
+  <concept id="din" class="?">
+    <term xml:lang="din">?</term>
+    <term xml:lang="fr">Dinka</term>
+    <term xml:lang="en">Dinka</term>
+  </concept>
+  <concept id="div" class="?">
+    <term xml:lang="div">?</term>
+    <!-- <term xml:lang="div">ދިވެހިބަސް</term> -->
+    <term xml:lang="fr">Divéhi</term>
+    <term xml:lang="en">Divehi</term>
+  </concept>
+  <concept id="doi" class="?">
+    <term xml:lang="doi">?</term>
+    <term xml:lang="fr">Dogri (kangri)</term>
+    <term xml:lang="en">Dogri</term>
+  </concept>
+  <concept id="dra" class="?">
+    <term xml:lang="dra">?</term>
+    <term xml:lang="fr">Dravidien (langues)</term>
+    <term xml:lang="en">Dravidian (Other)</term>
+  </concept>
+  <concept id="dua" class="?">
+    <term xml:lang="dua">?</term>
+    <term xml:lang="fr">Douala</term>
+    <term xml:lang="en">Duala</term>
+  </concept>
+  <concept id="dum" class="nl">
+    <term xml:lang="dum">?</term>
+    <term xml:lang="fr">Néerlandais moyen (1050/1350)</term>
+    <term xml:lang="en">Dutch, Middle (ca. 1050-1350)</term>
+  </concept>
+  <concept id="dyu" class="?">
+    <term xml:lang="dyu">?</term>
+    <term xml:lang="fr">Dioula</term>
+    <term xml:lang="en">Dyula</term>
+  </concept>
+  <concept code="dz" id="dzo" class="?">
+    <term xml:lang="dzo">?</term>
+    <term xml:lang="fr">Bhutani</term>
+    <term xml:lang="en">Dzongkha</term>
+    <term xml:lang="de">Bhutani</term>
+    <term xml:lang="ru">Бутани</term>
+    <term xml:lang="zh">不丹語</term>
+    <term xml:lang="ar">بوتانية</term>
+    <term xml:lang="ja">ブータン語</term>
+  </concept>
+  <concept id="efi" class="?">
+    <term xml:lang="efi">?</term>
+    <term xml:lang="fr">Éfik (fi)</term>
+    <term xml:lang="en">Efik</term>
+  </concept>
+  <concept id="egy" class="?">
+    <term xml:lang="egy">?</term>
+    <term xml:lang="fr">Égyptien ancien</term>
+    <term xml:lang="en">Egyptian (Ancient)</term>
+  </concept>
+  <concept id="eka" class="?">
+    <term xml:lang="eka">?</term>
+    <term xml:lang="fr">Akadjou (ékadjouk)</term>
+    <term xml:lang="en">Ekajuk</term>
+  </concept>
+  <concept code="el" id="ell" class="ine">
+    <!-- iso3a="gre" -->
+    <term xml:lang="el">ελληνικά</term>
+    <term xml:lang="fr">Grec<!-- moderne (1453/ )-->
+    </term>
+    <term xml:lang="en">Greek<!--, Modern (1453-)-->
+    </term>
+    <term xml:lang="de">Griechisch</term>
+    <term xml:lang="ru">Греческий</term>
+    <term xml:lang="zh">希臘語</term>
+    <term xml:lang="ar">يونانية</term>
+    <term xml:lang="ja">ギリシャ語</term>
+  </concept>
+  <concept id="elx" class="?">
+    <term xml:lang="elx">?</term>
+    <term xml:lang="fr">Élamite</term>
+    <term xml:lang="en">Elamite</term>
+  </concept>
+  <concept code="en" id="eng" class="gem">
+    <term xml:lang="en">English</term>
+    <term xml:lang="fr">Anglais</term>
+    <term xml:lang="en">English</term>
+    <term xml:lang="de">Englisch</term>
+    <term xml:lang="ru">Английский</term>
+    <term xml:lang="zh">英語</term>
+    <term xml:lang="ar">إنجليزية</term>
+    <term xml:lang="ja">英語</term>
+    <term xml:lang="es">Inglés</term>
+    <term xml:lang="nl">Engels</term>
+  </concept>
+  <concept id="enm" class="eng">
+    <term xml:lang="enm">?</term>
+    <term xml:lang="fr">Anglais moyen (1100/1500)</term>
+    <term xml:lang="en">English, Middle (ca. 1100-1500)</term>
+  </concept>
+  <concept code="eo" id="epo" class="art">
+    <term xml:lang="eo">Esperanto</term>
+    <term xml:lang="fr">Espéranto</term>
+    <term xml:lang="en">Esperanto</term>
+    <term xml:lang="de">Esperanto</term>
+    <term xml:lang="ru">Эсперанто</term>
+    <term xml:lang="zh">世界語</term>
+    <term xml:lang="ar">إسبيرنتو</term>
+    <term xml:lang="ja">エスペラント語</term>
+  </concept>
+  <concept code="es" id="esl" class="roa">
+    <!-- iso3a="spa" -->
+    <term xml:lang="es">Español</term>
+    <term xml:lang="fr">Espagnol</term>
+    <term xml:lang="en">Spanish</term>
+    <term xml:lang="de">Spanisch</term>
+    <term xml:lang="ru">Испанский</term>
+    <term xml:lang="zh">西班牙語</term>
+    <term xml:lang="ar">إسبانية</term>
+    <term xml:lang="ja">スペイン語</term>
+  </concept>
+  <concept code="et" id="est" class="fiu">
+    <term xml:lang="et">Eesti</term>
+    <term xml:lang="fr">Estonien</term>
+    <term xml:lang="en">Estonian</term>
+    <term xml:lang="de">Estnisch</term>
+    <term xml:lang="ru">Эстонский</term>
+    <term xml:lang="zh">愛沙尼亞語</term>
+    <term xml:lang="ar">إستونية</term>
+    <term xml:lang="ja">エストニア語</term>
+  </concept>
+  <concept id="eth" class="?">
+    <term xml:lang="eth">?</term>
+    <term xml:lang="fr">Éthiopien</term>
+  </concept>
+  <concept code="eu" id="eus" class="?">
+    <!-- iso3a="baq" -->
+    <term xml:lang="eu">Euskara</term>
+    <term xml:lang="fr">Basque</term>
+    <term xml:lang="en">Basque</term>
+    <term xml:lang="de">Baskisch</term>
+    <term xml:lang="ru">Баскский</term>
+    <term xml:lang="zh">巴斯克語</term>
+    <term xml:lang="ar">باسك</term>
+    <term xml:lang="ja">バスク語</term>
+  </concept>
+  <concept id="ewe" class="?">
+    <term xml:lang="ewe">?</term>
+    <term xml:lang="fr">Éwé (éhoué)</term>
+    <term xml:lang="en">Ewe</term>
+  </concept>
+  <concept id="ewo" class="?">
+    <term xml:lang="ewo">?</term>
+    <term xml:lang="fr">Éwondo</term>
+    <term xml:lang="en">Ewondo</term>
+  </concept>
+  <concept id="fan" class="?">
+    <term xml:lang="fan">?</term>
+    <term xml:lang="fr">Fang</term>
+    <term xml:lang="en">Fang</term>
+  </concept>
+  <concept code="fo" id="fao" class="gem">
+    <term xml:lang="fo">Føroyskt</term>
+    <term xml:lang="fr">Féroïen</term>
+    <term xml:lang="en">Faroese</term>
+    <term xml:lang="de">Faröisch</term>
+    <term xml:lang="ru">Фарерский</term>
+    <term xml:lang="zh">法羅語</term>
+    <term xml:lang="ar">فاروية</term>
+    <term xml:lang="ja">フェロー語</term>
+  </concept>
+  <concept code="fa" id="fas" class="?">
+    <!-- iso3a="per" -->
+    <term xml:lang="fa">فارسى</term>
+    <term xml:lang="fr">Persan (farsi)</term>
+    <term xml:lang="en">Persian</term>
+    <term xml:lang="de">Persisch</term>
+    <term xml:lang="ru">Персидский</term>
+    <term xml:lang="zh">波斯語</term>
+    <term xml:lang="ar">فارسية</term>
+    <term xml:lang="ja">ペルシャ語</term>
+  </concept>
+  <concept id="fat" class="?">
+    <term xml:lang="fat">?</term>
+    <term xml:lang="fr">Fanti</term>
+    <term xml:lang="en">Fanti</term>
+  </concept>
+  <concept code="fj" id="fij" class="?">
+    <term xml:lang="fij">?</term>
+    <term xml:lang="fr">Fidjien</term>
+    <term xml:lang="en">Fijian</term>
+    <term xml:lang="de">Fiji</term>
+    <term xml:lang="ru">Фиджи</term>
+    <term xml:lang="zh">斐濟語</term>
+    <term xml:lang="ar">فيجية</term>
+    <term xml:lang="ja">フィジー語</term>
+  </concept>
+  <concept code="fi" id="fin" class="fiu">
+    <term xml:lang="fi">Suomi</term>
+    <term xml:lang="fr">Finnois</term>
+    <term xml:lang="en">Finnish</term>
+    <term xml:lang="de">Finnisch</term>
+    <term xml:lang="ru">Финский</term>
+    <term xml:lang="zh">芬蘭語</term>
+    <term xml:lang="ar">فنلندية</term>
+    <term xml:lang="ja">フィンランド語</term>
+  </concept>
+  <concept id="fiu" class="?">
+    <term xml:lang="fiu">?</term>
+    <term xml:lang="fr">Finno-ougrien (langues)</term>
+    <term xml:lang="en">Finno-Ugrian (Other)</term>
+  </concept>
+  <concept id="fon" class="?">
+    <term xml:lang="fon">?</term>
+    <term xml:lang="fr">Fon</term>
+    <term xml:lang="en">Fon</term>
+  </concept>
+  <concept code="fr" id="fra" class="roa">
+    <!-- iso3a="fre" -->
+    <term xml:lang="fr">Français</term>
+    <term xml:lang="fr">Français</term>
+    <term xml:lang="en">French</term>
+    <term xml:lang="de">Französisch</term>
+    <term xml:lang="ru">Французский</term>
+    <term xml:lang="zh">法語</term>
+    <term xml:lang="ar">فرنسية</term>
+    <term xml:lang="ja">フランス語</term>
+    <term xml:lang="es">Francés</term>
+  </concept>
+  <concept id="frm" class="fra">
+    <term xml:lang="frm">?</term>
+    <term xml:lang="fr">Français moyen (1400/1600)</term>
+    <term xml:lang="en">French, Middle (ca. 1400-1600)</term>
+  </concept>
+  <concept id="fro" class="fra">
+    <term xml:lang="fro">?</term>
+    <term xml:lang="fr">Français ancien (842/1400)</term>
+    <term xml:lang="en">French, Old (842- ca. 1400)</term>
+  </concept>
+  <concept code="fy" id="fry" class="gem">
+    <term xml:lang="fry">?</term>
+    <term xml:lang="fr">Frison</term>
+    <term xml:lang="en">Frisian</term>
+    <term xml:lang="de">Friesisch</term>
+    <term xml:lang="ru">Фризский</term>
+    <term xml:lang="zh">弗裡斯蘭語</term>
+    <term xml:lang="ar">فريسيانية</term>
+    <term xml:lang="ja">フリジア語</term>
+  </concept>
+  <concept id="ful" class="?">
+    <term xml:lang="ful">?</term>
+    <term xml:lang="fr">Peul</term>
+    <term xml:lang="en">Fulah</term>
+  </concept>
+  <concept id="fur" class="?">
+    <term xml:lang="fur">?</term>
+    <term xml:lang="fr">Frioulan (rhéto-roman)</term>
+  </concept>
+  <concept id="gaa" class="?">
+    <term xml:lang="gaa">?</term>
+    <term xml:lang="fr">Gan</term>
+    <term xml:lang="en">Ga</term>
+  </concept>
+  <concept id="gay" class="?">
+    <term xml:lang="gay">?</term>
+    <term xml:lang="fr">Gayo</term>
+    <term xml:lang="en">Gayo</term>
+  </concept>
+  <concept id="gba" class="?">
+    <term xml:lang="gba">?</term>
+    <term xml:lang="fr">Gbaya</term>
+  </concept>
+  <concept id="gem" class="ine">
+    <term xml:lang="gem">?</term>
+    <term xml:lang="fr">Germanique (langues)</term>
+    <term xml:lang="en">Germanic (Other)</term>
+  </concept>
+  <concept id="gez" class="?">
+    <term xml:lang="gez">?</term>
+    <term xml:lang="fr">Guèze</term>
+    <term xml:lang="en">Geez</term>
+  </concept>
+  <concept id="gil" class="?">
+    <term xml:lang="gil">?</term>
+    <term xml:lang="fr">Gilbertais (kiribatien)</term>
+    <term xml:lang="en">Gilbertese</term>
+  </concept>
+  <concept code="gd" id="gla" class="cel">
+    <term xml:lang="gd">?</term>
+    <term xml:lang="fr">Écossais</term>
+    <term xml:lang="en">Scotish</term>
+    <term xml:lang="de">Schottisches Gälisch</term>
+    <term xml:lang="ru">Гельский шотландский</term>
+    <term xml:lang="zh">蘇格蘭遘語</term>
+    <term xml:lang="ar">إسكتلندية-غالي'ة</term>
+    <term xml:lang="ja">スコットランドゲーリック語</term>
+  </concept>
+  <concept code="ga" id="gle" class="cel">
+    <term xml:lang="gle">?</term>
+    <term xml:lang="fr">Gaëlique</term>
+    <term xml:lang="en">Gaelic</term>
+    <term xml:lang="de">Irisch</term>
+    <term xml:lang="ru">Ирландский</term>
+    <term xml:lang="zh">愛爾蘭語</term>
+    <term xml:lang="ar">إيرلندية</term>
+    <term xml:lang="ja">アイルランド語</term>
+  </concept>
+  <concept code="gl" id="glg" class="roa">
+    <term xml:lang="gl">Galego</term>
+    <term xml:lang="fr">Galicien</term>
+    <term xml:lang="en">Gallegan</term>
+    <term xml:lang="de">Galizisch</term>
+    <term xml:lang="ru">Галицийский</term>
+    <term xml:lang="zh">加利西亞語</term>
+    <term xml:lang="ar">غاليكيانية</term>
+    <term xml:lang="ja">ガリシア語</term>
+  </concept>
+  <concept code="gv" id="glv" class="?">
+    <term xml:lang="glv">?</term>
+    <term xml:lang="fr">Mannois</term>
+    <term xml:lang="ru">Гэльский (о-в Мэн)</term>
+  </concept>
+  <concept id="gmh" class="deu">
+    <term xml:lang="gmh">?</term>
+    <term xml:lang="fr">Allemand, moyen haut (1050/1500)</term>
+    <term xml:lang="en">German, Middle High (ca. 1050-1500)</term>
+  </concept>
+  <concept id="goh" class="deu">
+    <term xml:lang="goh">?</term>
+    <term xml:lang="fr">Allemand, ancien haut (750/1050)</term>
+    <term xml:lang="en">German, Old High (ca. 750-1050)</term>
+  </concept>
+  <concept id="gon" class="?">
+    <term xml:lang="gon">?</term>
+    <term xml:lang="fr">Gondi</term>
+    <term xml:lang="en">Gondi</term>
+  </concept>
+  <concept id="gor" class="?">
+    <term xml:lang="gor">?</term>
+    <term xml:lang="fr">Gorontalo</term>
+  </concept>
+  <concept id="got" class="gem">
+    <term xml:lang="got">?</term>
+    <term xml:lang="fr">Gotique</term>
+    <term xml:lang="en">Gothic</term>
+  </concept>
+  <concept id="grb" class="?">
+    <term xml:lang="grb">?</term>
+    <term xml:lang="fr">Grébo</term>
+    <term xml:lang="en">Grebo</term>
+  </concept>
+  <concept id="grc" class="ine">
+    <term xml:lang="grc">?</term>
+    <term xml:lang="fr">Grec ancien (-1200/1453)</term>
+    <term xml:lang="en">Greek, Ancient (to 1453)</term>
+  </concept>
+  <concept code="gn" id="grn" class="?">
+    <term xml:lang="grn">?</term>
+    <term xml:lang="fr">Guarani</term>
+    <term xml:lang="en">Guarani</term>
+    <term xml:lang="de">Guarani</term>
+    <term xml:lang="ru">Гуаранский</term>
+    <term xml:lang="zh">瓜拉尼語</term>
+    <term xml:lang="ar">جارانية</term>
+    <term xml:lang="ja">グアラニー語</term>
+  </concept>
+  <concept code="gu" id="guj" class="?">
+    <term xml:lang="guj">?</term>
+    <term xml:lang="fr">Goudjerati</term>
+    <term xml:lang="en">Gujarati</term>
+    <term xml:lang="de">Gujaratisch</term>
+    <term xml:lang="ru">Гуджарати</term>
+    <term xml:lang="zh">古吉拉特語</term>
+    <term xml:lang="ar">غوجاراتية</term>
+    <term xml:lang="ja">グジャラト語</term>
+  </concept>
+  <concept id="gwi" class="?">
+    <term xml:lang="gwi">?</term>
+    <term xml:lang="fr">Loucheux</term>
+  </concept>
+  <concept id="hai" class="?">
+    <term xml:lang="hai">?</term>
+    <term xml:lang="fr">Haïda</term>
+    <term xml:lang="en">Haida</term>
+  </concept>
+  <concept code="ha" id="hau" class="?">
+    <term xml:lang="hau">?</term>
+    <term xml:lang="fr">Haoussa</term>
+    <term xml:lang="en">Hausa</term>
+    <term xml:lang="de">Haussa</term>
+    <term xml:lang="ru">Хауса</term>
+    <term xml:lang="zh">豪薩語</term>
+    <term xml:lang="ar">هاوسية</term>
+    <term xml:lang="ja">ハウサ語</term>
+  </concept>
+  <concept id="haw" class="?">
+    <term xml:lang="haw">?</term>
+    <term xml:lang="fr">Hawaïen</term>
+    <term xml:lang="en">Hawaiian</term>
+  </concept>
+  <concept code="he" id="heb" class="sem">
+    <term xml:lang="heb">?</term>
+    <term xml:lang="fr">Hébreu</term>
+    <term xml:lang="en">Hebrew</term>
+    <term xml:lang="de">Hebräisch</term>
+    <term xml:lang="ru">Иврит</term>
+    <term xml:lang="zh">希伯來語</term>
+    <term xml:lang="ar">عبرية</term>
+  </concept>
+  <concept code="hz" id="her" class="?">
+    <term xml:lang="her">?</term>
+    <term xml:lang="fr">Héréro</term>
+    <term xml:lang="en">Herero</term>
+  </concept>
+  <concept id="hil" class="?">
+    <term xml:lang="hil">?</term>
+    <term xml:lang="fr">Hiligainon</term>
+    <term xml:lang="en">Hiligaynon</term>
+  </concept>
+  <concept id="him" class="?">
+    <term xml:lang="him">?</term>
+    <term xml:lang="fr">Himachali</term>
+    <term xml:lang="en">Himachali</term>
+  </concept>
+  <concept code="hi" id="hin" class="?">
+    <term xml:lang="hin">?</term>
+    <term xml:lang="fr">Hindi</term>
+    <term xml:lang="en">Hindi</term>
+    <term xml:lang="de">Hindi</term>
+    <term xml:lang="ru">Хинди</term>
+    <term xml:lang="zh">印地語</term>
+    <term xml:lang="ar">هندية</term>
+    <term xml:lang="ja">ヒンディー語</term>
+  </concept>
+  <concept id="hit" class="?">
+    <term xml:lang="hit">?</term>
+    <term xml:lang="fr">Hittite</term>
+  </concept>
+  <concept id="hmn" class="?">
+    <term xml:lang="hmn">?</term>
+    <term xml:lang="fr">Hmong (méo)</term>
+  </concept>
+  <concept code="ho" id="hmo" class="?">
+    <term xml:lang="hmo">?</term>
+    <term xml:lang="fr">Hiri motou</term>
+    <term xml:lang="en">Hiri Motu</term>
+  </concept>
+  <concept code="hr" id="hrv" class="sla">
+    <!-- iso3a="scr" -->
+    <term xml:lang="hr">Hrvatski</term>
+    <term xml:lang="fr">Croate</term>
+    <term xml:lang="en">Croatian</term>
+    <term xml:lang="de">Kroatisch</term>
+    <term xml:lang="ru">Хорватский</term>
+    <term xml:lang="zh">克羅地亞語</term>
+    <term xml:lang="ar">كرواتية</term>
+    <term xml:lang="ja">クロアチア語</term>
+  </concept>
+  <concept code="hu" id="hun" class="fiu">
+    <term xml:lang="hu">Magyar</term>
+    <term xml:lang="fr">Hongrois</term>
+    <term xml:lang="en">Hungarian</term>
+    <term xml:lang="de">Ungarisch</term>
+    <term xml:lang="ru">Венгерский</term>
+    <term xml:lang="zh">匈牙利語</term>
+    <term xml:lang="ar">هنغارية</term>
+    <term xml:lang="ja">ハンガリー語</term>
+  </concept>
+  <concept id="hup" class="?">
+    <term xml:lang="hup">?</term>
+    <term xml:lang="fr">Houpa</term>
+    <term xml:lang="en">Hupa</term>
+  </concept>
+  <concept code="hy" id="hye" class="ine">
+    <!-- iso3a="arm" -->
+    <term xml:lang="hy">Հայերեն</term>
+    <term xml:lang="fr">Arménien</term>
+    <term xml:lang="en">Armenian</term>
+    <term xml:lang="de">Armenisch</term>
+    <term xml:lang="ru">Армянский</term>
+    <term xml:lang="zh">亞美尼亞語</term>
+    <term xml:lang="ar">أرمنية</term>
+    <term xml:lang="ja">アルメニア語</term>
+  </concept>
+  <concept id="iba" class="?">
+    <term xml:lang="iba">?</term>
+    <term xml:lang="fr">Iban (néban)</term>
+    <term xml:lang="en">Iban</term>
+  </concept>
+  <concept id="ibo" class="?">
+    <term xml:lang="ibo">?</term>
+    <term xml:lang="fr">Igbo (ibo)</term>
+    <term xml:lang="en">Igbo</term>
+  </concept>
+  <concept id="ijo" class="?">
+    <term xml:lang="ijo">?</term>
+    <term xml:lang="fr">Djo (id'o)</term>
+    <term xml:lang="en">Ijo</term>
+  </concept>
+  <concept code="iu" id="iku" class="?">
+    <term xml:lang="iku">?</term>
+    <term xml:lang="fr">Inuktitut (esquimau)</term>
+    <term xml:lang="en">Inuktitut</term>
+    <term xml:lang="zh">inuktitut</term>
+  </concept>
+  <concept code="ie" id="ile" class="art">
+    <term xml:lang="ile">Interlingua</term>
+    <term xml:lang="fr">Interlingua</term>
+    <term xml:lang="en">Interlingua</term>
+    <term xml:lang="de">Interlingue</term>
+    <term xml:lang="ru">Интерлинг</term>
+    <term xml:lang="zh">國際語</term>
+    <term xml:lang="ar">أنترلينغ</term>
+    <term xml:lang="ja">インターリング</term>
+  </concept>
+  <concept id="ilo" class="?">
+    <term xml:lang="ilo">?</term>
+    <term xml:lang="fr">Iloko</term>
+    <term xml:lang="en">Iloko</term>
+  </concept>
+  <concept code="ia" id="ina" class="art">
+    <term xml:lang="ia">Interlingua</term>
+    <term xml:lang="fr">Interlingua</term>
+    <term xml:lang="en">Interlingua<!-- (International Auxiliary language Association)-->
+    </term>
+    <term xml:lang="de">Interlingua</term>
+    <term xml:lang="ru">Интерлингва</term>
+    <term xml:lang="zh">中間語語</term>
+    <term xml:lang="ar">أنترلينغوا</term>
+    <term xml:lang="ja">インターリンガ(国際語)</term>
+  </concept>
+  <concept id="inc" class="?">
+    <term xml:lang="inc">?</term>
+    <term xml:lang="fr">Inde (langues)</term>
+    <term xml:lang="en">Indic (Other)</term>
+  </concept>
+  <concept code="id" id="ind" class="?">
+    <term xml:lang="id">Bahasa</term>
+    <term xml:lang="fr">Indonésien</term>
+    <term xml:lang="en">Indonesian</term>
+    <term xml:lang="de">Indonesisch</term>
+    <term xml:lang="ru">Индонезийский</term>
+    <term xml:lang="zh">印度尼西亞語</term>
+    <term xml:lang="ar">أندونيسية</term>
+  </concept>
+  <concept id="ine" class="?">
+    <term xml:lang="ine">?</term>
+    <term xml:lang="fr">Indo-europeén (langues)</term>
+    <term xml:lang="en">Indo-European (Other)</term>
+    <term xml:lang="en">Interlingue</term>
+  </concept>
+  <concept code="ik" id="ipk" class="?">
+    <term xml:lang="ipk">?</term>
+    <term xml:lang="fr">Inupiak</term>
+    <term xml:lang="en">Inupiak</term>
+    <term xml:lang="de">Inupiak</term>
+    <term xml:lang="ru">Инупьяк</term>
+    <term xml:lang="zh">因努皮亞克語</term>
+    <term xml:lang="ar">إينوبياكية</term>
+    <term xml:lang="ja">イヌピア語</term>
+  </concept>
+  <concept id="ira" class="?">
+    <term xml:lang="ira">?</term>
+    <term xml:lang="fr">Iranien (langues)</term>
+    <term xml:lang="en">Iranian (Other)</term>
+  </concept>
+  <concept id="iro" class="?">
+    <term xml:lang="iro">?</term>
+    <term xml:lang="fr">Iroquois (langues)</term>
+    <term xml:lang="en">Iroquoian languages</term>
+  </concept>
+  <concept code="is" id="isl" class="gem">
+    <term xml:lang="is">íslenska</term>
+    <term xml:lang="fr">Islandais</term>
+    <term xml:lang="en">Islandish</term>
+    <term xml:lang="de">Isländisch</term>
+    <term xml:lang="ru">Исландский</term>
+    <term xml:lang="zh">冰島語</term>
+    <term xml:lang="ar">إيسلندية</term>
+    <term xml:lang="ja">アイスランド語</term>
+  </concept>
+  <concept code="it" id="ita" class="roa">
+    <term xml:lang="it">Italiano</term>
+    <term xml:lang="fr">Italien</term>
+    <term xml:lang="en">Italian</term>
+    <term xml:lang="de">Italienisch</term>
+    <term xml:lang="ru">Итальянский</term>
+    <term xml:lang="zh">意大利語</term>
+    <term xml:lang="ar">إيطالية</term>
+    <term xml:lang="ja">イタリア語</term>
+  </concept>
+  <concept code="jw" id="jaw" class="?">
+    <term xml:lang="jw">?</term>
+    <!-- iso3a="jav" -->
+    <term xml:lang="fr">Javanais</term>
+    <term xml:lang="en">Javanese</term>
+    <term xml:lang="de">Javanisch</term>
+    <term xml:lang="ru">Яванский</term>
+    <term xml:lang="zh">爪哇語</term>
+    <term xml:lang="ar">جاوية</term>
+    <term xml:lang="ja">ジャワ語</term>
+  </concept>
+  <concept code="ja" id="jpn" class="?">
+    <term xml:lang="ja">日本語</term>
+    <term xml:lang="fr">Japonais</term>
+    <term xml:lang="en">Japanese</term>
+    <term xml:lang="de">Japanisch</term>
+    <term xml:lang="ru">Японский</term>
+    <term xml:lang="zh">日語</term>
+    <term xml:lang="ar">يابانية</term>
+    <term xml:lang="ja">日本語</term>
+  </concept>
+  <concept id="jpr" class="?">
+    <term xml:lang="jpr">?</term>
+    <term xml:lang="fr">Judéo-perse</term>
+    <term xml:lang="en">Judeo-Persian</term>
+  </concept>
+  <concept id="jrb" class="sem">
+    <term xml:lang="jrb">?</term>
+    <term xml:lang="fr">Judéo-arabe</term>
+    <term xml:lang="en">Judeo-Arabic</term>
+  </concept>
+  <concept id="kaa" class="?">
+    <term xml:lang="kaa">?</term>
+    <term xml:lang="fr">Kara-kalpak</term>
+    <term xml:lang="en">Kara-Kalpak</term>
+  </concept>
+  <concept id="kab" class="ber">
+    <term xml:lang="kab">?</term>
+    <term xml:lang="fr">Kabyle</term>
+    <term xml:lang="en">Kabyle</term>
+  </concept>
+  <concept id="kac" class="?">
+    <term xml:lang="kac">?</term>
+    <term xml:lang="fr">Kachin</term>
+    <term xml:lang="en">Kachin</term>
+  </concept>
+  <concept code="kl" id="kal" class="?">
+    <term xml:lang="kal">?</term>
+    <term xml:lang="fr">Groënlandais</term>
+    <term xml:lang="en">Greenlandic</term>
+    <term xml:lang="de">Grönländisch</term>
+    <term xml:lang="ru">Гренландский</term>
+    <term xml:lang="zh">格陵蘭語</term>
+    <term xml:lang="ar">غرينلاندية</term>
+    <term xml:lang="ja">グリーンランド語</term>
+  </concept>
+  <concept id="kam" class="?">
+    <term xml:lang="kam">?</term>
+    <term xml:lang="fr">Kamba</term>
+    <term xml:lang="en">Kamba</term>
+  </concept>
+  <concept code="kn" id="kan" class="dra">
+    <term xml:lang="kn">ಕನ್ನಡ</term>
+    <term xml:lang="fr">Kannada</term>
+    <term xml:lang="en">Kannada</term>
+    <term xml:lang="de">Kannada</term>
+    <term xml:lang="ru">Каннада</term>
+    <term xml:lang="zh">卡納達語</term>
+    <term xml:lang="ar">كنادية</term>
+    <term xml:lang="ja">カンナダ語</term>
+  </concept>
+  <concept id="kar" class="?">
+    <term xml:lang="kar">?</term>
+    <term xml:lang="fr">Karen</term>
+    <term xml:lang="en">Karen</term>
+  </concept>
+  <concept code="ks" id="kas" class="?">
+    <term xml:lang="kas">?</term>
+    <term xml:lang="fr">Cachemiri</term>
+    <term xml:lang="en">Kashmiri</term>
+    <term xml:lang="de">Kaschmirisch</term>
+    <term xml:lang="ru">Кашмирский</term>
+    <term xml:lang="zh">克什米爾語</term>
+    <term xml:lang="ar">كشميرية</term>
+    <term xml:lang="ja">カシミール語</term>
+  </concept>
+  <concept code="ka" id="kat" class="?">
+    <!-- iso3a="geo" -->
+    <term xml:lang="ka">ქართული</term>
+    <term xml:lang="fr">Géorgien</term>
+    <term xml:lang="en">Géorgian</term>
+    <term xml:lang="de">Georgisch</term>
+    <term xml:lang="ru">Грузинский</term>
+    <term xml:lang="zh">格魯吉亞語</term>
+    <term xml:lang="ar">جورجية</term>
+    <term xml:lang="ja">ジョージア語</term>
+  </concept>
+  <concept id="kau" class="?">
+    <term xml:lang="kau">?</term>
+    <term xml:lang="fr">Kanouri</term>
+    <term xml:lang="en">Kanuri</term>
+  </concept>
+  <concept id="kaw" class="?">
+    <term xml:lang="kaw">?</term>
+    <term xml:lang="fr">Kawi</term>
+    <term xml:lang="en">Kawi</term>
+  </concept>
+  <concept code="kk" id="kaz" class="?">
+    <term xml:lang="kaz">?</term>
+    <term xml:lang="fr">Kazakh</term>
+    <term xml:lang="en">Kazakh</term>
+    <term xml:lang="de">Kasachisch</term>
+    <term xml:lang="ru">Казахский</term>
+    <term xml:lang="zh">哈薩克語</term>
+    <term xml:lang="ar">كازاخستانية</term>
+    <term xml:lang="ja">カザフ語</term>
+  </concept>
+  <concept id="kha" class="?">
+    <term xml:lang="kha">?</term>
+    <term xml:lang="fr">Khasi</term>
+    <term xml:lang="en">Khasi</term>
+  </concept>
+  <concept id="khi" class="?">
+    <term xml:lang="khi">?</term>
+    <term xml:lang="fr">Vhoï-san (langues)</term>
+    <term xml:lang="en">Khoisan (Other)</term>
+  </concept>
+  <concept code="km" id="khm" class="?">
+    <term xml:lang="khm">?</term>
+    <term xml:lang="fr">Cambodgien</term>
+    <term xml:lang="en">Khmer</term>
+    <term xml:lang="de">Kambodschanisch</term>
+    <term xml:lang="ru">Кхмерский</term>
+    <term xml:lang="zh">柬埔寨語</term>
+    <term xml:lang="ar">كمبودجية</term>
+    <term xml:lang="ja">カンボジア語</term>
+  </concept>
+  <concept id="kho" class="?">
+    <term xml:lang="kho">?</term>
+    <term xml:lang="fr">Khotanais</term>
+    <term xml:lang="en">Khotanese</term>
+  </concept>
+  <concept code="ki" id="kik" class="?">
+    <term xml:lang="kik">?</term>
+    <term xml:lang="fr">Kikouyou</term>
+    <term xml:lang="en">Kikuyu</term>
+  </concept>
+  <concept id="kim" class="?">
+    <term xml:lang="kim">?</term>
+    <term xml:lang="fr">Kimboundou</term>
+  </concept>
+  <concept code="rw" id="kin" class="?">
+    <term xml:lang="kin">?</term>
+    <term xml:lang="fr">Kinyarouanda</term>
+    <term xml:lang="en">Kinyarwanda</term>
+    <term xml:lang="de">Kijarwanda</term>
+    <term xml:lang="ru">Кийарвандский</term>
+    <term xml:lang="zh">基亞爾旺達語</term>
+    <term xml:lang="ar">كينيارواندية</term>
+    <term xml:lang="ja">キヤーワンダ語</term>
+  </concept>
+  <concept code="ky" id="kir" class="?">
+    <term xml:lang="kir">?</term>
+    <term xml:lang="fr">Kirghiz</term>
+    <term xml:lang="en">Kirghiz</term>
+    <term xml:lang="de">Kirgisisch</term>
+    <term xml:lang="ru">Киргизский</term>
+    <term xml:lang="zh">吉爾吉斯語</term>
+    <term xml:lang="ar">قيرغيزية</term>
+    <term xml:lang="ja">キルギス語</term>
+  </concept>
+  <concept id="kmb" class="?">
+    <term xml:lang="kmb">?</term>
+    <term xml:lang="fr">Kimboundou</term>
+  </concept>
+  <concept id="kok" class="?">
+    <term xml:lang="kok">कोंकणी</term>
+    <term xml:lang="fr">Konkani</term>
+    <term xml:lang="en">Konkani</term>
+  </concept>
+  <concept code="kv" id="kom" class="?">
+    <term xml:lang="kom">?</term>
+    <term xml:lang="fr">Komi (zyriène)</term>
+    <term xml:lang="en">Komi</term>
+  </concept>
+  <concept id="kon" class="?">
+    <term xml:lang="kon">?</term>
+    <term xml:lang="fr">Kikongo</term>
+    <term xml:lang="en">Kongo</term>
+  </concept>
+  <concept code="ko" id="kor" class="?">
+    <term xml:lang="ko">한국어</term>
+    <term xml:lang="fr">Coréen</term>
+    <term xml:lang="en">Korean</term>
+    <term xml:lang="de">Koreanisch</term>
+    <term xml:lang="ru">Корейский</term>
+    <term xml:lang="zh">韓語</term>
+    <term xml:lang="ar">كورية</term>
+    <term xml:lang="ja">韓国語</term>
+  </concept>
+  <concept id="kos" class="?">
+    <term xml:lang="kos">?</term>
+    <term xml:lang="fr">Kosraéen</term>
+  </concept>
+  <concept id="kpe" class="?">
+    <term xml:lang="kpe">?</term>
+    <term xml:lang="fr">Kpèllé</term>
+    <term xml:lang="en">Kpelle</term>
+  </concept>
+  <concept id="kro" class="?">
+    <term xml:lang="kro">?</term>
+    <term xml:lang="fr">Krou</term>
+    <term xml:lang="en">Kru</term>
+  </concept>
+  <concept id="kru" class="?">
+    <term xml:lang="kru">?</term>
+    <term xml:lang="fr">Kouroukh</term>
+    <term xml:lang="en">Kurukh</term>
+  </concept>
+  <concept code="kj" id="kua" class="?">
+    <term xml:lang="kua">?</term>
+    <term xml:lang="fr">Ochikouanyama</term>
+    <term xml:lang="en">Kuanyama</term>
+  </concept>
+  <concept id="kum" class="?">
+    <term xml:lang="kum">?</term>
+    <term xml:lang="fr">Koumyk (koumouk)</term>
+    <term xml:lang="en">Kumyk</term>
+  </concept>
+  <concept code="ku" id="kur" class="?">
+    <term xml:lang="kur">?</term>
+    <term xml:lang="fr">Kurde</term>
+    <term xml:lang="en">Kurdish</term>
+    <term xml:lang="de">Kurdisch</term>
+    <term xml:lang="ru">Курдский</term>
+    <term xml:lang="zh">庫爾德語</term>
+    <term xml:lang="ar">كردية</term>
+    <term xml:lang="ja">クルド語</term>
+  </concept>
+  <concept id="kus" class="?">
+    <term xml:lang="kus">?</term>
+    <term xml:lang="fr">Kousaïe</term>
+    <term xml:lang="en">Kusaie</term>
+  </concept>
+  <concept id="kut" class="?">
+    <term xml:lang="kut">?</term>
+    <term xml:lang="fr">Koutenai</term>
+    <term xml:lang="en">Kutenai</term>
+  </concept>
+  <concept id="kyr" class="?">
+    <term xml:lang="kyr">?</term>
+    <term xml:lang="kyr">Кыргыз</term>
+    <term xml:lang="en">Kyrgyz</term>
+  </concept>
+  <concept id="lad" class="?">
+    <term xml:lang="lad">?</term>
+    <term xml:lang="fr">Ladino</term>
+    <term xml:lang="en">Ladino</term>
+  </concept>
+  <concept id="lah" class="?">
+    <term xml:lang="lah">?</term>
+    <term xml:lang="fr">Lahnda</term>
+    <term xml:lang="en">Lahnda</term>
+  </concept>
+  <concept id="lam" class="?">
+    <term xml:lang="lam">?</term>
+    <term xml:lang="fr">Lamba</term>
+    <term xml:lang="en">Lamba</term>
+  </concept>
+  <concept code="lo" id="lao" class="?">
+    <term xml:lang="lao">?</term>
+    <term xml:lang="fr">Laotien</term>
+    <term xml:lang="en">Lao</term>
+    <term xml:lang="de">Laotisch</term>
+    <term xml:lang="ru">Лаосский</term>
+    <term xml:lang="zh">老撾語</term>
+    <term xml:lang="ar">لاوسية</term>
+    <term xml:lang="ja">ラオタ語</term>
+  </concept>
+  <concept code="la" id="lat" class="ine">
+    <term xml:lang="lat">?</term>
+    <term xml:lang="fr">Latin</term>
+    <term xml:lang="en">Latin</term>
+    <term xml:lang="de">Lateinisch</term>
+    <term xml:lang="ru">Латинский</term>
+    <term xml:lang="zh">拉丁語</term>
+    <term xml:lang="ar">لاتينية</term>
+    <term xml:lang="ja">ラテン語</term>
+  </concept>
+  <concept code="lv" id="lav" class="bat">
+    <term xml:lang="lv">Latviešu</term>
+    <term xml:lang="fr">Letton</term>
+    <term xml:lang="en">Latvian</term>
+    <term xml:lang="de">Lettisch</term>
+    <term xml:lang="ru">Латышский</term>
+    <term xml:lang="zh">拉脫維亞列特語</term>
+    <term xml:lang="ar">لاتفية</term>
+    <term xml:lang="ja">ラトビアレット語</term>
+  </concept>
+  <concept id="lez" class="?">
+    <term xml:lang="lez">?</term>
+    <term xml:lang="fr">Lezguien</term>
+    <term xml:lang="en">Lezghian</term>
+  </concept>
+  <concept code="ln" id="lin" class="?">
+    <term xml:lang="lin">?</term>
+    <term xml:lang="fr">Lingala</term>
+    <term xml:lang="en">Lingala</term>
+    <term xml:lang="de">Lingalisch</term>
+    <term xml:lang="ru">Лингала</term>
+    <term xml:lang="zh">林加拉語</term>
+    <term xml:lang="ar">لينغالية</term>
+    <term xml:lang="ja">リンガラ語</term>
+  </concept>
+  <concept code="lt" id="lit" class="bat">
+    <term xml:lang="lt">lietuvių</term>
+    <term xml:lang="fr">Lituanien</term>
+    <term xml:lang="en">Lithuanian</term>
+    <term xml:lang="de">Litauisch</term>
+    <term xml:lang="ru">Литовский</term>
+    <term xml:lang="zh">立陶宛語</term>
+    <term xml:lang="ar">ليتوانية</term>
+    <term xml:lang="ja">リトアニア語</term>
+  </concept>
+  <concept id="lol" class="?">
+    <term xml:lang="lol">?</term>
+    <term xml:lang="fr">Mongo</term>
+    <term xml:lang="en">Mongo</term>
+  </concept>
+  <concept id="loz" class="?">
+    <term xml:lang="loz">?</term>
+    <term xml:lang="fr">Lozi</term>
+    <term xml:lang="en">Lozi</term>
+  </concept>
+  <concept code="lb" id="ltz" class="gem">
+    <term xml:lang="ltz">?</term>
+    <term xml:lang="fr">Luxembourgeois</term>
+    <term xml:lang="en">Letzeburgesch</term>
+    <term xml:lang="ru">Люксембургский</term>
+  </concept>
+  <concept id="lua" class="?">
+    <term xml:lang="lua">?</term>
+    <term xml:lang="fr">Luba-louloua</term>
+  </concept>
+  <concept id="lub" class="?">
+    <term xml:lang="lub">?</term>
+    <term xml:lang="fr">Louba-katanga</term>
+    <term xml:lang="en">Luba-Katanga</term>
+  </concept>
+  <concept id="lug" class="?">
+    <term xml:lang="lug">?</term>
+    <term xml:lang="fr">Louganda (ganda)</term>
+    <term xml:lang="en">Ganda</term>
+  </concept>
+  <concept id="lui" class="?">
+    <term xml:lang="lui">?</term>
+    <term xml:lang="fr">Luiseño</term>
+    <term xml:lang="en">Luiseno</term>
+  </concept>
+  <concept id="lun" class="?">
+    <term xml:lang="lun">?</term>
+    <term xml:lang="fr">Lounda</term>
+    <term xml:lang="en">Lunda</term>
+  </concept>
+  <concept id="luo" class="?">
+    <term xml:lang="luo">?</term>
+    <term xml:lang="fr">Louo (Kénya et Tanzanie)</term>
+    <term xml:lang="en">Luo (Kenya and Tanzania)</term>
+  </concept>
+  <concept id="lus" class="?">
+    <term xml:lang="lus">?</term>
+    <term xml:lang="fr">Lousaï</term>
+  </concept>
+  <concept id="mad" class="?">
+    <term xml:lang="mad">?</term>
+    <term xml:lang="fr">Madourais</term>
+    <term xml:lang="en">Madurese</term>
+  </concept>
+  <concept id="mag" class="?">
+    <term xml:lang="mag">?</term>
+    <term xml:lang="fr">Magahi</term>
+    <term xml:lang="en">Magahi</term>
+  </concept>
+  <concept code="mh" id="mah" class="?">
+    <term xml:lang="mah">?</term>
+    <term xml:lang="fr">Marshallais</term>
+    <term xml:lang="en">Marshall</term>
+  </concept>
+  <concept id="mai" class="?">
+    <term xml:lang="mai">?</term>
+    <term xml:lang="fr">Maithili</term>
+    <term xml:lang="en">Maithili</term>
+  </concept>
+  <concept id="mak" class="?">
+    <term xml:lang="mak">?</term>
+    <term xml:lang="fr">Macassar</term>
+    <term xml:lang="en">Makasar</term>
+  </concept>
+  <concept code="ml" id="mal" class="dra">
+    <term xml:lang="ml">Bahasa</term>
+    <term xml:lang="fr">Malayalam</term>
+    <term xml:lang="en">Malayalam</term>
+    <term xml:lang="de">Malajalam</term>
+    <term xml:lang="ru">Малаяли</term>
+    <term xml:lang="zh">德拉維族語</term>
+    <term xml:lang="ar">ملايالامية</term>
+    <term xml:lang="ja">マラヤーラム語</term>
+  </concept>
+  <concept id="man" class="?">
+    <term xml:lang="man">?</term>
+    <term xml:lang="fr">Mandingue</term>
+    <term xml:lang="en">Mandingo</term>
+  </concept>
+  <concept id="map" class="?">
+    <term xml:lang="map">?</term>
+    <term xml:lang="fr">Austronésien (langues)</term>
+    <term xml:lang="en">Austronesian (Other)</term>
+  </concept>
+  <concept code="mr" id="mar" class="?">
+    <term xml:lang="mr">मराठी</term>
+    <term xml:lang="fr">Marathe</term>
+    <term xml:lang="en">Marathi</term>
+    <term xml:lang="de">Marathi</term>
+    <term xml:lang="ru">Маратхи</term>
+    <term xml:lang="zh">馬拉地語</term>
+    <term xml:lang="ar">مراثية</term>
+    <term xml:lang="ja">マラッタ語</term>
+  </concept>
+  <concept id="mas" class="?">
+    <term xml:lang="mas">?</term>
+    <term xml:lang="fr">Massaï</term>
+    <term xml:lang="en">Masai</term>
+  </concept>
+  <concept id="mdr" class="?">
+    <term xml:lang="mdr">?</term>
+    <term xml:lang="fr">Mandar</term>
+  </concept>
+  <concept id="men" class="?">
+    <term xml:lang="men">?</term>
+    <term xml:lang="fr">Mendé</term>
+    <term xml:lang="en">Mende</term>
+  </concept>
+  <concept id="mga" class="cel">
+    <term xml:lang="mga">?</term>
+    <term xml:lang="fr">Irlandais, moyen (900/1200)</term>
+    <term xml:lang="en">Irish, Middle (900 - 1200)</term>
+  </concept>
+  <concept id="mic" class="?">
+    <term xml:lang="mic">?</term>
+    <term xml:lang="fr">Micmac (souriquois)</term>
+    <term xml:lang="en">Micmac</term>
+  </concept>
+  <concept id="min" class="?">
+    <term xml:lang="min">?</term>
+    <term xml:lang="fr">Minangkabao</term>
+    <term xml:lang="en">Minangkabau</term>
+  </concept>
+  <concept id="mis" class="?">
+    <term xml:lang="mis">?</term>
+    <term xml:lang="mis">Miscelaneous</term>
+    <term xml:lang="fr">Divers</term>
+    <term xml:lang="en">Miscellaneous (Other)</term>
+  </concept>
+  <concept code="mk" id="mkd" class="sla">
+    <!-- iso3a="mac" -->
+    <term xml:lang="mk">македонски</term>
+    <term xml:lang="fr">Macédonien</term>
+    <term xml:lang="en">Macedonian</term>
+    <term xml:lang="de">Mazedonisch</term>
+    <term xml:lang="ru">Македонский</term>
+    <term xml:lang="zh">馬其頓語</term>
+    <term xml:lang="ar">ماسيدونية</term>
+    <term xml:lang="ja">マカドニア語</term>
+  </concept>
+  <concept id="mkh" class="?">
+    <term xml:lang="mkh">?</term>
+    <term xml:lang="fr">môn-khmer (langues)</term>
+    <term xml:lang="en">Mon-Kmer (Other)</term>
+  </concept>
+  <concept code="mg" id="mlg" class="?">
+    <term xml:lang="mlg">?</term>
+    <term xml:lang="fr">Malgache</term>
+    <term xml:lang="en">Malagasy</term>
+    <term xml:lang="de">Malagasisch</term>
+    <term xml:lang="ru">Малагасийский</term>
+    <term xml:lang="zh">馬爾加什語</term>
+    <term xml:lang="ar">مالاغشية</term>
+    <term xml:lang="ja">マダガスカル語</term>
+  </concept>
+  <concept code="mt" id="mlt" class="sem">
+    <term xml:lang="mlt">?</term>
+    <term xml:lang="fr">Maltais</term>
+    <term xml:lang="en">Maltese</term>
+    <term xml:lang="de">Maltesisch</term>
+    <term xml:lang="ru">Мальтийский</term>
+    <term xml:lang="zh">馬爾他語</term>
+    <term xml:lang="ar">مالطية</term>
+    <term xml:lang="ja">マルタ語</term>
+  </concept>
+  <concept id="mnc" class="?">
+    <term xml:lang="mnc">?</term>
+    <term xml:lang="fr">Mandchou</term>
+  </concept>
+  <concept id="mni" class="?">
+    <term xml:lang="mni">?</term>
+    <term xml:lang="fr">Manipouri</term>
+    <term xml:lang="en">Manipuri</term>
+  </concept>
+  <concept id="mno" class="?">
+    <term xml:lang="mno">?</term>
+    <term xml:lang="fr">Manobo (langues)</term>
+    <term xml:lang="en">Manobo languages</term>
+  </concept>
+  <concept id="moh" class="?">
+    <term xml:lang="moh">?</term>
+    <term xml:lang="fr">Mohawk</term>
+    <term xml:lang="en">Mohawk</term>
+  </concept>
+  <concept code="mo" id="mol" class="roa">
+    <term xml:lang="mol">?</term>
+    <term xml:lang="fr">Moldave</term>
+    <term xml:lang="en">Moldavian</term>
+    <term xml:lang="de">Moldavisch</term>
+    <term xml:lang="ru">Молдавский</term>
+    <term xml:lang="zh">摩爾達維亞語</term>
+    <term xml:lang="ar">مولدافيانية</term>
+    <term xml:lang="ja">モルダビア語</term>
+  </concept>
+  <concept code="mn" id="mon" class="?">
+    <term xml:lang="mn">Монгол хэл</term>
+    <term xml:lang="fr">Mongol</term>
+    <term xml:lang="en">Mongolian</term>
+    <term xml:lang="de">Mongolisch</term>
+    <term xml:lang="ru">Монгольский</term>
+    <term xml:lang="zh">蒙古語</term>
+    <term xml:lang="ar">منغولية</term>
+    <term xml:lang="ja">モンゴル語</term>
+  </concept>
+  <concept id="mos" class="?">
+    <term xml:lang="mos">?</term>
+    <term xml:lang="fr">Mossi</term>
+    <term xml:lang="en">Mossi</term>
+  </concept>
+  <concept code="mi" id="mri" class="?">
+    <term xml:lang="mri">?</term>
+    <!-- iso3a="mao" -->
+    <term xml:lang="fr">Maori</term>
+    <term xml:lang="en">Maori</term>
+    <term xml:lang="de">Maorisch</term>
+    <term xml:lang="ru">Маори</term>
+    <term xml:lang="zh">毛利語</term>
+    <term xml:lang="ar">ماورية</term>
+    <term xml:lang="ja">マオリ語</term>
+  </concept>
+  <concept code="ms" id="msa" class="?">
+    <term xml:lang="msa">?</term>
+    <!-- iso3a="may" -->
+    <term xml:lang="fr">Malais</term>
+    <term xml:lang="en">Malayalam</term>
+    <term xml:lang="de">Malaysisch</term>
+    <term xml:lang="ru">Малайский</term>
+    <term xml:lang="zh">馬來語</term>
+    <term xml:lang="ar">ماليزية</term>
+    <term xml:lang="ja">マレー語</term>
+  </concept>
+  <concept id="mul" class="?">
+    <term xml:lang="mul">?</term>
+    <term xml:lang="fr">Multiple</term>
+    <term xml:lang="en">Multiple languages</term>
+  </concept>
+  <concept id="mun" class="?">
+    <term xml:lang="mun">?</term>
+    <term xml:lang="fr">Mounda (langues)</term>
+    <term xml:lang="en">Munda languages</term>
+  </concept>
+  <concept id="mus" class="?">
+    <term xml:lang="mus">?</term>
+    <term xml:lang="fr">Creek (mouskogui)</term>
+    <term xml:lang="en">Creek</term>
+  </concept>
+  <concept id="mwr" class="?">
+    <term xml:lang="mwr">?</term>
+    <term xml:lang="fr">Marvari</term>
+    <term xml:lang="en">Marwari</term>
+  </concept>
+  <concept code="my" id="mya" class="?">
+    <term xml:lang="my">?</term>
+    <!-- iso3a="bur" -->
+    <term xml:lang="fr">Burmese</term>
+    <term xml:lang="en"/>
+    <term xml:lang="de">Burmesisch</term>
+    <term xml:lang="ru">Бирманский</term>
+    <term xml:lang="zh">緬甸語</term>
+    <term xml:lang="ar">بورمية</term>
+    <term xml:lang="ja">ビルマ語</term>
+  </concept>
+  <concept id="myn" class="?">
+    <term xml:lang="myn">?</term>
+    <term xml:lang="fr">Maya (langues)</term>
+    <term xml:lang="en">Mayan languages</term>
+  </concept>
+  <concept id="nah" class="?">
+    <term xml:lang="nah">?</term>
+    <term xml:lang="fr">Aztèque (nahuatl)</term>
+    <term xml:lang="en">Aztec</term>
+  </concept>
+  <concept id="nai" class="?">
+    <term xml:lang="nai">?</term>
+    <term xml:lang="fr">Amérique septentrionale (langues amérindiennes)</term>
+    <term xml:lang="en">North American Indian (Other)</term>
+  </concept>
+  <concept code="na" id="nau" class="?">
+    <term xml:lang="nau">?</term>
+    <term xml:lang="fr">Nauri</term>
+    <term xml:lang="en">Nauru</term>
+    <term xml:lang="de">Nauruisch</term>
+    <term xml:lang="ru">Науру</term>
+    <term xml:lang="zh">瑙魯語</term>
+    <term xml:lang="ar">ناورووية</term>
+    <term xml:lang="ja">ナウル語</term>
+  </concept>
+  <concept code="nv" id="nav" class="?">
+    <term xml:lang="nav">?</term>
+    <term xml:lang="fr">Navaho</term>
+    <term xml:lang="en">Navajo</term>
+  </concept>
+  <concept code="nr" id="nbl" class="?">
+    <term xml:lang="nbl">?</term>
+    <term xml:lang="fr">Ndébélé du Sud</term>
+    <term xml:lang="en">Ndebele, South</term>
+  </concept>
+  <concept code="nd" id="nde" class="?">
+    <term xml:lang="nde">?</term>
+    <term xml:lang="fr">Ndébélé du Nord</term>
+    <term xml:lang="en">Ndebele, North</term>
+  </concept>
+  <concept code="ng" id="ndo" class="?">
+    <term xml:lang="ndo">?</term>
+    <term xml:lang="fr">Ndonga</term>
+    <term xml:lang="en">Ndongo</term>
+  </concept>
+  <concept code="ne" id="nep" class="?">
+    <term xml:lang="nep">?</term>
+    <term xml:lang="fr">Népalais</term>
+    <term xml:lang="en">Nepali</term>
+    <term xml:lang="de">Nepalisch</term>
+    <term xml:lang="ru">Непальский</term>
+    <term xml:lang="zh">尼泊爾語</term>
+    <term xml:lang="ar">نيبالية</term>
+    <term xml:lang="ja">ネパール語</term>
+  </concept>
+  <concept id="new" class="?">
+    <term xml:lang="new">?</term>
+    <term xml:lang="fr">Néwari</term>
+    <term xml:lang="en">Newari</term>
+  </concept>
+  <concept id="nia" class="?">
+    <term xml:lang="nia">?</term>
+    <term xml:lang="fr">Niassais</term>
+  </concept>
+  <concept id="nic" class="?">
+    <term xml:lang="nic">?</term>
+    <term xml:lang="fr">Nigéro-kordofaniennes (langues)</term>
+    <term xml:lang="en">Niger-Kordofanian (Other)</term>
+  </concept>
+  <concept id="niu" class="?">
+    <term xml:lang="niu">?</term>
+    <term xml:lang="fr">Niouéen</term>
+    <term xml:lang="en">Niuean</term>
+  </concept>
+  <concept code="nl" id="nld" class="gem">
+    <!-- iso3a="dut" -->
+    <term xml:lang="nl">Nederlands</term>
+    <term xml:lang="fr">Néerlandais</term>
+    <term xml:lang="en">Dutch</term>
+    <term xml:lang="de">Holländisch</term>
+    <term xml:lang="ru">Голландский</term>
+    <term xml:lang="zh">荷蘭語</term>
+    <term xml:lang="ar">هولندية</term>
+    <term xml:lang="ja">オランダ語</term>
+  </concept>
+  <concept code="nn" id="nno" class="gem">
+    <term xml:lang="nno">?</term>
+    <!--
+        <term xml:lang="nn">Norsk (Nynorsk)</term>
+-->
+    <term xml:lang="fr">Norvégien nynork</term>
+    <term xml:lang="en">Norwegian (Nynorsk)</term>
+  </concept>
+  <concept code="nb" id="nob" class="?">
+    <term xml:lang="nob">?</term>
+    <!--
+        <term xml:lang="nb">Norsk (bokmål)</term>
+    -->
+    <term xml:lang="fr">Norvégien bokmål</term>
+  </concept>
+  <concept id="non" class="?">
+    <term xml:lang="non">?</term>
+    <term xml:lang="fr">Norrois</term>
+    <term xml:lang="en">Norse, Old</term>
+  </concept>
+  <concept code="no" id="nor" class="gem">
+    <term xml:lang="no">Norsk</term>
+    <term xml:lang="fr">Norvégien</term>
+    <term xml:lang="en">Norwegian</term>
+    <term xml:lang="de">Norwegisch</term>
+    <term xml:lang="ru">Норвежский</term>
+    <term xml:lang="zh">挪威語</term>
+    <term xml:lang="ar">نرويجية</term>
+    <term xml:lang="ja">ノルウェー語</term>
+  </concept>
+  <concept id="nso" class="?">
+    <term xml:lang="nso">?</term>
+    <term xml:lang="fr">Sotho du Nord (pédi)</term>
+    <term xml:lang="en">Sotho, Northern</term>
+  </concept>
+  <concept id="nub" class="?">
+    <term xml:lang="nub">?</term>
+    <term xml:lang="fr">Nubien (langues)</term>
+    <term xml:lang="en">Nubian languages</term>
+  </concept>
+  <concept code="ny" id="nya" class="?">
+    <term xml:lang="nya">?</term>
+    <term xml:lang="fr">Nyandja, tchitchéwa</term>
+    <term xml:lang="en">Nyanja</term>
+  </concept>
+  <concept id="nym" class="?">
+    <term xml:lang="nym">?</term>
+    <term xml:lang="fr">Nyamwézi</term>
+    <term xml:lang="en">Nyamwezi</term>
+  </concept>
+  <concept id="nyn" class="?">
+    <term xml:lang="nyn">?</term>
+    <term xml:lang="fr">Nkolé (lounyankolé)</term>
+    <term xml:lang="en">Nyankole</term>
+  </concept>
+  <concept id="nyo" class="?">
+    <term xml:lang="nyo">?</term>
+    <term xml:lang="fr">Nyoro</term>
+    <term xml:lang="en">Nyoro</term>
+  </concept>
+  <concept id="nzi" class="?">
+    <term xml:lang="nzi">?</term>
+    <term xml:lang="fr">Nzéma</term>
+    <term xml:lang="en">Nzima</term>
+  </concept>
+  <concept code="oc" id="oci" class="roa">
+    <term xml:lang="oc">Occità</term>
+    <term xml:lang="fr">Occitan</term>
+    <term xml:lang="en">Langue d'Oc<!-- (post 1500)-->
+    </term>
+    <term xml:lang="de">Okzitanisch</term>
+    <term xml:lang="ru">Окситанский</term>
+    <term xml:lang="zh">奧克西塔語</term>
+    <term xml:lang="ar">أوكسيتانية</term>
+    <term xml:lang="ja">オキタン語</term>
+  </concept>
+  <concept id="oji" class="?">
+    <term xml:lang="oji">?</term>
+    <term xml:lang="fr">Ojibwa (saulteaux)</term>
+    <term xml:lang="en">Ojibwa</term>
+  </concept>
+  <concept code="or" id="ori" class="?">
+    <term xml:lang="ori">?</term>
+    <term xml:lang="fr">Oriya</term>
+    <term xml:lang="en">Oriya</term>
+    <term xml:lang="de">Orija</term>
+    <term xml:lang="ru">Орийя</term>
+    <term xml:lang="zh">奧裡雅語</term>
+    <term xml:lang="ar">أورية</term>
+    <term xml:lang="ja">オーリア語</term>
+  </concept>
+  <concept code="om" id="orm" class="?">
+    <term xml:lang="orm">?</term>
+    <term xml:lang="fr">Oromo</term>
+    <term xml:lang="en">Oromo</term>
+    <term xml:lang="de">Oromo</term>
+    <term xml:lang="ru">Оромо</term>
+    <term xml:lang="zh">奧洛莫語</term>
+    <term xml:lang="ar">أورومو</term>
+    <term xml:lang="ja">オロモ語</term>
+  </concept>
+  <concept id="osa" class="?">
+    <term xml:lang="osa">?</term>
+    <term xml:lang="fr">Osage</term>
+    <term xml:lang="en">Osage</term>
+  </concept>
+  <concept id="oss" class="?">
+    <term xml:lang="oss">?</term>
+    <term xml:lang="fr">Ossète</term>
+    <term xml:lang="en">Ossetic</term>
+  </concept>
+  <concept id="ota" class="?">
+    <term xml:lang="ota">?</term>
+    <term xml:lang="fr">Ottoman (turc osmanli) (1500/1928)</term>
+    <term xml:lang="en">Turkish, Ottoman (1500 - 1928)</term>
+  </concept>
+  <concept id="oto" class="?">
+    <term xml:lang="oto">?</term>
+    <term xml:lang="fr">Otomangue (langues)</term>
+    <term xml:lang="en">Otomian languages</term>
+  </concept>
+  <concept id="paa" class="?">
+    <term xml:lang="paa">?</term>
+    <term xml:lang="fr">Papou (langues)</term>
+    <term xml:lang="en">Papuan-Australian (Other)</term>
+  </concept>
+  <concept id="pag" class="?">
+    <term xml:lang="pag">?</term>
+    <term xml:lang="fr">Pangasinan</term>
+    <term xml:lang="en">Pangasinan</term>
+  </concept>
+  <concept id="pal" class="?">
+    <term xml:lang="pal">?</term>
+    <term xml:lang="fr">Pèhlevî</term>
+    <term xml:lang="en">Pahlavi</term>
+  </concept>
+  <concept id="pam" class="?">
+    <term xml:lang="pam">?</term>
+    <term xml:lang="fr">Pampangan (pampangueño)</term>
+    <term xml:lang="en">Pampanga</term>
+  </concept>
+  <concept code="pa" id="pan" class="?">
+    <term xml:lang="pa">ਪੰਜਾਬੀ</term>
+    <term xml:lang="fr">Pendjabi</term>
+    <term xml:lang="en">Panjabi</term>
+    <term xml:lang="de">Pundjabisch</term>
+    <term xml:lang="ru">Пунджабский</term>
+    <term xml:lang="zh">旁遮普語</term>
+    <term xml:lang="ar">بنجابية</term>
+    <term xml:lang="ja">パンジャビ語</term>
+  </concept>
+  <concept id="pap" class="?">
+    <term xml:lang="pap">?</term>
+    <term xml:lang="fr">Papiamento</term>
+    <term xml:lang="en">Papiamento</term>
+  </concept>
+  <concept id="pau" class="?">
+    <term xml:lang="pau">?</term>
+    <term xml:lang="fr">Palauan</term>
+    <term xml:lang="en">Palauan</term>
+  </concept>
+  <concept id="peo" class="?">
+    <term xml:lang="peo">?</term>
+    <term xml:lang="fr">Perse, vieux (-600/-400)</term>
+    <term xml:lang="en">Persian, Old (ca 600 - 400 B.C.)</term>
+  </concept>
+  <concept id="phi" class="?">
+    <term xml:lang="phi">?</term>
+    <term xml:lang="fr">Philippines (autres langues)</term>
+  </concept>
+  <concept id="phn" class="sem">
+    <term xml:lang="phn">?</term>
+    <term xml:lang="fr">Phénicien</term>
+    <term xml:lang="en">Phoenician</term>
+  </concept>
+  <concept code="pi" id="pli" class="?">
+    <term xml:lang="pli">?</term>
+    <term xml:lang="fr">Pali</term>
+    <term xml:lang="en">Pali</term>
+  </concept>
+  <concept code="pl" id="pol" class="sla">
+    <term xml:lang="pl">Polski</term>
+    <term xml:lang="fr">Polonais</term>
+    <term xml:lang="en">Polish</term>
+    <term xml:lang="de">Polnisch</term>
+    <term xml:lang="ru">Польский</term>
+    <term xml:lang="zh">波蘭語</term>
+    <term xml:lang="ar">بولندية</term>
+    <term xml:lang="ja">ポーランド語</term>
+  </concept>
+  <concept id="pon" class="?">
+    <term xml:lang="pon">?</term>
+    <term xml:lang="fr">Ponapien</term>
+    <term xml:lang="en">Ponape</term>
+  </concept>
+  <concept code="pt" id="por" class="roa">
+    <term xml:lang="pt">Português</term>
+    <term xml:lang="fr">Portugais</term>
+    <term xml:lang="en">Portuguese</term>
+    <term xml:lang="de">Portugiesisch</term>
+    <term xml:lang="ru">Португальский</term>
+    <term xml:lang="zh">葡萄牙語</term>
+    <term xml:lang="ar">برتغالية</term>
+    <term xml:lang="ja">ポルトガル語</term>
+  </concept>
+  <concept id="pra" class="?">
+    <term xml:lang="pra">?</term>
+    <term xml:lang="fr">Prâkrit</term>
+    <term xml:lang="en">Prakrit languages</term>
+  </concept>
+  <concept id="pro" class="?">
+    <term xml:lang="pro">?</term>
+    <term xml:lang="fr">Provençal (ancien-) ( /1500)</term>
+    <term xml:lang="en">Provencal, Old (to 1500)</term>
+  </concept>
+  <concept code="ps" id="pus" class="?">
+    <term xml:lang="pus">?</term>
+    <term xml:lang="fr">Pachto (pachtou)</term>
+    <term xml:lang="en">Pushto</term>
+    <term xml:lang="de">Paschtu</term>
+    <term xml:lang="ru">Пушту</term>
+    <term xml:lang="zh">普什圖語</term>
+    <term xml:lang="ar">باشتوية</term>
+    <term xml:lang="ja">パシト語</term>
+  </concept>
+  <concept id="qaa" class="?">
+    <term xml:lang="qaa">?</term>
+    <!-- iso3a="qtz" -->
+    <term xml:lang="fr">Local</term>
+  </concept>
+  <concept code="qu" id="que" class="?">
+    <term xml:lang="que">?</term>
+    <term xml:lang="fr">Quechua</term>
+    <term xml:lang="en">Quechua</term>
+    <term xml:lang="de">Quechua</term>
+    <term xml:lang="ru">Кечуа</term>
+    <term xml:lang="zh">奇楚亞語</term>
+    <term xml:lang="ar">كويشوا</term>
+    <term xml:lang="ja">クエチュア語</term>
+  </concept>
+  <concept id="raj" class="?">
+    <term xml:lang="raj">?</term>
+    <term xml:lang="fr">Radjasthani</term>
+    <term xml:lang="en">Rajasthani</term>
+  </concept>
+  <concept id="rap" class="?">
+    <term xml:lang="rap">?</term>
+    <term xml:lang="fr">Rapanoui (pascuan)</term>
+  </concept>
+  <concept id="rar" class="?">
+    <term xml:lang="rar">?</term>
+    <term xml:lang="fr">Rarotongan</term>
+    <term xml:lang="en">Rarotongan</term>
+  </concept>
+  <concept id="roa" class="ine">
+    <term xml:lang="roa">?</term>
+    <term xml:lang="fr">Romanes (langues)</term>
+    <term xml:lang="en">Romance (Other)</term>
+  </concept>
+  <concept code="rm" id="roh" class="roa">
+    <term xml:lang="roh">?</term>
+    <term xml:lang="fr">Rhéto-roman</term>
+    <term xml:lang="en">Rhaeto-Romance</term>
+    <term xml:lang="de">Rätoromanisch</term>
+    <term xml:lang="ru">Ретороманский</term>
+    <term xml:lang="zh">拉蒂亞羅曼斯語</term>
+    <term xml:lang="ar">رومانشية</term>
+    <term xml:lang="ja">レトロアン(ス)語</term>
+  </concept>
+  <concept id="rom" class="?">
+    <term xml:lang="rom">?</term>
+    <term xml:lang="fr">Romani (gitan)</term>
+    <term xml:lang="en">Romany</term>
+  </concept>
+  <concept code="ro" id="ron" class="roa">
+    <!-- iso3a="rum" -->
+    <term xml:lang="ro">Română</term>
+    <term xml:lang="fr">Roumain</term>
+    <term xml:lang="en">Romanian</term>
+    <term xml:lang="de">Rumänisch</term>
+    <term xml:lang="ru">Румынский</term>
+    <term xml:lang="zh">羅馬尼亞語</term>
+    <term xml:lang="ar">رومانية</term>
+    <term xml:lang="ja">ルーマニア語</term>
+  </concept>
+  <concept code="rn" id="run" class="?">
+    <term xml:lang="run">?</term>
+    <term xml:lang="fr">Roundi</term>
+    <term xml:lang="en">Rundi</term>
+    <term xml:lang="de">Kirundisch</term>
+    <term xml:lang="ru">Кирундский</term>
+    <term xml:lang="zh">基隆迪語</term>
+    <term xml:lang="ar">لكيروندية</term>
+    <term xml:lang="ja">キルンディ語</term>
+  </concept>
+  <concept code="ru" id="rus" class="sla">
+    <term xml:lang="ru">Русский</term>
+    <term xml:lang="fr">Russe</term>
+    <term xml:lang="en">Russian</term>
+    <term xml:lang="de">Russisch</term>
+    <term xml:lang="ru">Русский</term>
+    <term xml:lang="zh">俄語</term>
+    <term xml:lang="ar">روسية</term>
+    <term xml:lang="ja">ロシア語</term>
+  </concept>
+  <concept id="sad" class="?">
+    <term xml:lang="sad">?</term>
+    <term xml:lang="fr">Sandawé</term>
+    <term xml:lang="en">Sandawe</term>
+  </concept>
+  <concept code="sg" id="sag" class="?">
+    <term xml:lang="sag">?</term>
+    <term xml:lang="fr">Sango</term>
+    <term xml:lang="en">Sango</term>
+    <term xml:lang="de">Sango</term>
+    <term xml:lang="ru">Сангхо</term>
+    <term xml:lang="zh">桑戈語</term>
+    <term xml:lang="ar">سانغو</term>
+    <term xml:lang="ja">サングホ語</term>
+  </concept>
+  <concept id="sai" class="?">
+    <term xml:lang="sai">?</term>
+    <term xml:lang="fr">Amérique du Sud (langues améridiennes)</term>
+    <term xml:lang="en">South American Indian (Other)</term>
+  </concept>
+  <concept id="sal" class="?">
+    <term xml:lang="sal">?</term>
+    <term xml:lang="fr">Salish (langues)</term>
+    <term xml:lang="en">Salishan languages</term>
+  </concept>
+  <concept id="sam" class="?">
+    <term xml:lang="sam">?</term>
+    <term xml:lang="fr">Samaritain (araméen)</term>
+    <term xml:lang="en">Samaritan Aramaic</term>
+  </concept>
+  <concept code="sa" id="san" class="ine">
+    <term xml:lang="sa">संस्कृत</term>
+    <term xml:lang="fr">Sanscrit</term>
+    <term xml:lang="en">Sanskrit</term>
+    <term xml:lang="de">Sanskrit</term>
+    <term xml:lang="ru">Санскрит</term>
+    <term xml:lang="zh">梵語</term>
+    <term xml:lang="ar">سنسكريتية</term>
+    <term xml:lang="ja">サンスクリット語</term>
+  </concept>
+  <concept id="sas" class="?">
+    <term xml:lang="sas">?</term>
+    <term xml:lang="fr">Sassak</term>
+  </concept>
+  <concept id="sat" class="?">
+    <term xml:lang="sat">?</term>
+    <term xml:lang="fr">Santali</term>
+  </concept>
+  <concept id="sco" class="cel">
+    <term xml:lang="sco">?</term>
+    <term xml:lang="fr">Écossais</term>
+    <term xml:lang="en">Scots</term>
+  </concept>
+  <concept id="sel" class="?">
+    <term xml:lang="sel">?</term>
+    <term xml:lang="fr">Selkoup</term>
+    <term xml:lang="en">Selkup</term>
+  </concept>
+  <concept id="sem" class="?">
+    <term xml:lang="sem">?</term>
+    <term xml:lang="fr">Sémitique (langues)</term>
+    <term xml:lang="en">Semitic (Other)</term>
+  </concept>
+  <concept id="sga" class="?">
+    <term xml:lang="sga">?</term>
+    <term xml:lang="fr">Irlandais, ancien ( /900)</term>
+    <term xml:lang="en">Irish, Old (to 900)</term>
+  </concept>
+  <concept id="sgn" class="art">
+    <term xml:lang="sgn">?</term>
+    <term xml:lang="fr">Langage gestuel</term>
+  </concept>
+  <concept id="shn" class="?">
+    <term xml:lang="shn">?</term>
+    <term xml:lang="fr">Chan</term>
+    <term xml:lang="en">Shan</term>
+  </concept>
+  <concept id="sid" class="?">
+    <term xml:lang="sid">?</term>
+    <term xml:lang="fr">Sidama</term>
+    <term xml:lang="en">Sidamo</term>
+  </concept>
+  <concept code="si" id="sin" class="?">
+    <term xml:lang="sin">?</term>
+    <term xml:lang="fr">Singhalais</term>
+    <term xml:lang="en">Singhalese</term>
+    <term xml:lang="de">Singhalesisch</term>
+    <term xml:lang="ru">Сингальский</term>
+    <term xml:lang="zh">僧伽羅語</term>
+    <term xml:lang="ar">سنغاليزية</term>
+    <term xml:lang="ja">シンハラ語</term>
+  </concept>
+  <concept id="sio" class="?">
+    <term xml:lang="sio">?</term>
+    <term xml:lang="fr">Siou (langues)</term>
+    <term xml:lang="en">Siouan languages</term>
+  </concept>
+  <concept id="sit" class="?">
+    <term xml:lang="sit">?</term>
+    <term xml:lang="fr">Sino-tibétain (langues)</term>
+    <term xml:lang="en">Sino-Tibetan (Other)</term>
+  </concept>
+  <concept id="sla" class="ine">
+    <term xml:lang="sla">?</term>
+    <term xml:lang="fr">Slave (langues)</term>
+    <term xml:lang="en">Slavic (Other)</term>
+  </concept>
+  <concept code="sk" id="slk" class="sla">
+    <!-- iso3a="slo" -->
+    <term xml:lang="sk">Slovenčina</term>
+    <term xml:lang="fr">Slovaque</term>
+    <term xml:lang="en">Slovak</term>
+    <term xml:lang="de">Slowakisch</term>
+    <term xml:lang="ru">Словацкий</term>
+    <term xml:lang="zh">斯洛伐克語</term>
+    <term xml:lang="ar">سلوفاكية</term>
+    <term xml:lang="ja">スルバキア語</term>
+  </concept>
+  <concept code="sl" id="slv" class="sla">
+    <term xml:lang="sl">Slovenski</term>
+    <term xml:lang="fr">Slovène</term>
+    <term xml:lang="en">Slovenian</term>
+    <term xml:lang="de">Slowenisch</term>
+    <term xml:lang="ru">Словенский</term>
+    <term xml:lang="zh">斯洛文尼亞語</term>
+    <term xml:lang="ar">سلوفينية</term>
+    <term xml:lang="ja">スロベンニア語</term>
+  </concept>
+  <concept code="se" id="sme" class="?">
+    <term xml:lang="sme">?</term>
+    <term xml:lang="fr">Lapon du Nord (langues samé du Nord)</term>
+    <term xml:lang="ru">Северо-саамский</term>
+  </concept>
+  <concept id="smi" class="?">
+    <term xml:lang="smi">?</term>
+    <term xml:lang="fr">Lapon (langues samé)</term>
+    <term xml:lang="en">Sami languages</term>
+  </concept>
+  <concept code="sm" id="smo" class="?">
+    <term xml:lang="smo">?</term>
+    <term xml:lang="fr">Samoan</term>
+    <term xml:lang="en">Samoan</term>
+    <term xml:lang="de">Samoanisch</term>
+    <term xml:lang="ru">Самоанский</term>
+    <term xml:lang="zh">薩摩亞語</term>
+    <term xml:lang="ar">ساموية</term>
+    <term xml:lang="ja">サモア語</term>
+  </concept>
+  <concept code="sn" id="sna" class="?">
+    <term xml:lang="sna">?</term>
+    <term xml:lang="fr">Chona</term>
+    <term xml:lang="en">Shona</term>
+    <term xml:lang="de">Schonisch</term>
+    <term xml:lang="ru">Шона</term>
+    <term xml:lang="zh">馬紹那語</term>
+    <term xml:lang="ar">تشيشونية</term>
+    <term xml:lang="ja">ショナ語</term>
+  </concept>
+  <concept code="sd" id="snd" class="?">
+    <term xml:lang="snd">?</term>
+    <term xml:lang="fr">Sindhi</term>
+    <term xml:lang="en">Sindhi</term>
+    <term xml:lang="de">Zinti</term>
+    <term xml:lang="ru">Синдхи</term>
+    <term xml:lang="zh">信德語</term>
+    <term xml:lang="ar">سندية</term>
+    <term xml:lang="ja">シンド語</term>
+  </concept>
+  <concept id="snk" class="?">
+    <term xml:lang="snk">?</term>
+    <term xml:lang="fr">Soninké</term>
+  </concept>
+  <concept id="sog" class="?">
+    <term xml:lang="sog">?</term>
+    <term xml:lang="fr">Sogdien</term>
+    <term xml:lang="en">Sogdian</term>
+  </concept>
+  <concept code="so" id="som" class="?">
+    <term xml:lang="som">?</term>
+    <term xml:lang="fr">Somali</term>
+    <term xml:lang="en">Somali</term>
+    <term xml:lang="de">Somalisch</term>
+    <term xml:lang="ru">Сомалийский</term>
+    <term xml:lang="zh">索馬里語</term>
+    <term xml:lang="ar">صومالية</term>
+    <term xml:lang="ja">マリ語</term>
+  </concept>
+  <concept id="son" class="?">
+    <term xml:lang="son">?</term>
+    <term xml:lang="fr">Songoï (songhaï)</term>
+    <term xml:lang="en">Songhai</term>
+  </concept>
+  <concept code="st" id="sot" class="?">
+    <term xml:lang="sot">?</term>
+    <term xml:lang="fr">Sotho du Sud (sésoutho)</term>
+    <term xml:lang="en">Sotho, Southern</term>
+    <term xml:lang="de">Sesothisch</term>
+    <term xml:lang="ru">Сесото</term>
+    <term xml:lang="zh">塞索托語</term>
+    <term xml:lang="ar">سيسوتو</term>
+    <term xml:lang="ja">セト語</term>
+  </concept>
+  <concept code="sq" id="sqi" class="ine">
+    <!-- iso3a="alb" -->
+    <term xml:lang="sq">Shqipe</term>
+    <term xml:lang="fr">Albanais</term>
+    <term xml:lang="en">Albanese</term>
+    <term xml:lang="de">Albanisch</term>
+    <term xml:lang="ru">Албанский</term>
+    <term xml:lang="zh">阿爾巴尼亞語</term>
+    <term xml:lang="ar">ألبانية</term>
+    <term xml:lang="ja">アルバニア語</term>
+  </concept>
+  <concept code="sc" id="srd" class="roa">
+    <term xml:lang="srd">?</term>
+    <term xml:lang="fr">Sarde</term>
+    <term xml:lang="en">Sardinian</term>
+  </concept>
+  <concept code="sr" id="srp" class="sla">
+    <!-- iso3a="scc" -->
+    <term xml:lang="sr">српски</term>
+    <term xml:lang="fr">Serbe</term>
+    <term xml:lang="en">Serbian</term>
+    <term xml:lang="de">Serbisch</term>
+    <term xml:lang="ru">Сербский</term>
+    <term xml:lang="zh">塞爾維亞語</term>
+    <term xml:lang="ar">صربية</term>
+    <term xml:lang="ja">セルビア語</term>
+  </concept>
+  <concept id="srr" class="?">
+    <term xml:lang="srr">?</term>
+    <term xml:lang="fr">Sérère</term>
+    <term xml:lang="en">Serer</term>
+  </concept>
+  <concept id="ssa" class="?">
+    <term xml:lang="ssa">?</term>
+    <term xml:lang="fr">Nilo-saharien (langues)</term>
+    <term xml:lang="en">Nilo-Saharan (Other)</term>
+  </concept>
+  <concept code="ss" id="ssw" class="?">
+    <term xml:lang="ssw">?</term>
+    <term xml:lang="fr">Swazi (siswati)</term>
+    <term xml:lang="en">Siswant</term>
+    <term xml:lang="de">Swasiländisch</term>
+    <term xml:lang="ru">Сисвати</term>
+    <term xml:lang="zh">西斯瓦提語</term>
+    <term xml:lang="ar">سيسواتية</term>
+    <term xml:lang="ja">シスワティ語</term>
+  </concept>
+  <concept id="suk" class="?">
+    <term xml:lang="suk">?</term>
+    <term xml:lang="fr">Soukouma</term>
+    <term xml:lang="en">Sukuma</term>
+  </concept>
+  <concept code="su" id="sun" class="?">
+    <term xml:lang="sun">?</term>
+    <term xml:lang="fr">Soudanais</term>
+    <term xml:lang="en">Sudanese</term>
+    <term xml:lang="de">Sudanesisch</term>
+    <term xml:lang="ru">Суданский</term>
+    <term xml:lang="zh">蘇丹語</term>
+    <term xml:lang="ar">سودانية</term>
+    <term xml:lang="ja">スーダン語</term>
+  </concept>
+  <concept id="sus" class="?">
+    <term xml:lang="sus">?</term>
+    <term xml:lang="fr">Soussou</term>
+    <term xml:lang="en">Susu</term>
+  </concept>
+  <concept id="sux" class="?">
+    <term xml:lang="sux">?</term>
+    <term xml:lang="fr">Sumérien</term>
+    <term xml:lang="en">Sumerian</term>
+  </concept>
+  <concept code="sv" id="sve" class="gem">
+    <!-- iso3a="swe" -->
+    <term xml:lang="sv">Svenska</term>
+    <term xml:lang="fr">Suédois</term>
+    <term xml:lang="en">Swedish</term>
+    <term xml:lang="de">Schwedisch</term>
+    <term xml:lang="ru">Шведский</term>
+    <term xml:lang="zh">瑞典語</term>
+    <term xml:lang="ar">سويدية</term>
+    <term xml:lang="ja">スウェーデン語</term>
+  </concept>
+  <concept code="sw" id="swa" class="?">
+    <term xml:lang="swa">?</term>
+    <term xml:lang="fr">Souahéli</term>
+    <term xml:lang="en">Swahili</term>
+    <term xml:lang="de">Suaheli</term>
+    <term xml:lang="ru">Суахили</term>
+    <term xml:lang="zh">斯瓦希里語</term>
+    <term xml:lang="ar">سواحلية</term>
+    <term xml:lang="ja">スワヒリ語</term>
+  </concept>
+  <concept id="syr" class="?">
+    <term xml:lang="syr">?</term>
+    <term xml:lang="syr">ܣܘܪܝܝܐ</term>
+    <term xml:lang="fr">Syriaque</term>
+    <term xml:lang="en">Syriac</term>
+  </concept>
+  <concept id="tah" class="?">
+    <term xml:lang="tah">?</term>
+    <term xml:lang="fr">Tahitien</term>
+    <term xml:lang="en">Tahitian</term>
+  </concept>
+  <concept id="tai" class="?">
+    <term xml:lang="tai">?</term>
+    <term xml:lang="fr">Taï (langues)</term>
+  </concept>
+  <concept code="ta" id="tam" class="dra">
+    <term xml:lang="ta">தமிழ்</term>
+    <term xml:lang="fr">Tamoul</term>
+    <term xml:lang="en">Tamil</term>
+    <term xml:lang="de">Tamilisch</term>
+    <term xml:lang="ru">Тамильский</term>
+    <term xml:lang="zh">淡米爾語</term>
+    <term xml:lang="ar">تاميلية</term>
+    <term xml:lang="ja">タミル語</term>
+  </concept>
+  <concept code="tt" id="tat" class="?">
+    <term xml:lang="tt">Татар</term>
+    <term xml:lang="fr">Tatar</term>
+    <term xml:lang="en">Tatar</term>
+    <term xml:lang="de">Tatarisch</term>
+    <term xml:lang="ru">Татарский</term>
+    <term xml:lang="zh">韃靼語</term>
+    <term xml:lang="ar">تتارية</term>
+    <term xml:lang="ja">タタール語</term>
+  </concept>
+  <concept code="te" id="tel" class="dra">
+    <term xml:lang="te">తెలుగు</term>
+    <term xml:lang="fr">Telugu</term>
+    <term xml:lang="en">Telugu</term>
+    <term xml:lang="de">Telugu</term>
+    <term xml:lang="ru">Телугу</term>
+    <term xml:lang="zh">泰盧固語</term>
+    <term xml:lang="ar">تلوغو</term>
+    <term xml:lang="ja">テルグ語</term>
+  </concept>
+  <concept id="tem" class="?">
+    <term xml:lang="tem">?</term>
+    <term xml:lang="fr">Timné</term>
+    <term xml:lang="en">Timne</term>
+  </concept>
+  <concept id="ter" class="?">
+    <term xml:lang="ter">?</term>
+    <term xml:lang="fr">Térêna (téréno)</term>
+    <term xml:lang="en">Tereno</term>
+  </concept>
+  <concept id="tet" class="?">
+    <term xml:lang="tet">?</term>
+    <term xml:lang="fr">Tétun</term>
+  </concept>
+  <concept code="tg" id="tgk" class="?">
+    <term xml:lang="tgk">?</term>
+    <term xml:lang="fr">Tadjik</term>
+    <term xml:lang="en">Tajik</term>
+    <term xml:lang="de">Tadschikisch</term>
+    <term xml:lang="ru">Таджикский</term>
+    <term xml:lang="zh">塔吉克語</term>
+    <term xml:lang="ar">تادجيك</term>
+    <term xml:lang="ja">タジク語</term>
+  </concept>
+  <concept code="tl" id="tgl" class="?">
+    <term xml:lang="tgl">?</term>
+    <term xml:lang="fr">Tagal</term>
+    <term xml:lang="en">Tagalog</term>
+    <term xml:lang="de">Tagalog</term>
+    <term xml:lang="ru">Тагальский</term>
+    <term xml:lang="zh">他加祿語</term>
+    <term xml:lang="ar">تاغالوغية</term>
+    <term xml:lang="ja">タガログ語</term>
+  </concept>
+  <concept code="th" id="tha" class="tai">
+    <term xml:lang="th">ไทย</term>
+    <term xml:lang="fr">Thaïlandais</term>
+    <term xml:lang="en">Thai</term>
+    <term xml:lang="de">Thai</term>
+    <term xml:lang="ru">Тайский</term>
+    <term xml:lang="zh">泰語</term>
+    <term xml:lang="ar">تايلاندية</term>
+    <term xml:lang="ja">タイ語</term>
+  </concept>
+  <concept id="tig" class="?">
+    <term xml:lang="tig">?</term>
+    <term xml:lang="fr">Tigré</term>
+    <term xml:lang="en">Tigre</term>
+  </concept>
+  <concept code="ti" id="tir" class="sem">
+    <term xml:lang="tir">?</term>
+    <term xml:lang="fr">Tigrigna</term>
+    <term xml:lang="en">Tigrinya</term>
+    <term xml:lang="de">Tigrinja</term>
+    <term xml:lang="ru">Тигринья</term>
+    <term xml:lang="zh">提格裡尼亞語</term>
+    <term xml:lang="ar">تيغرية</term>
+    <term xml:lang="ja">チグリニャ語</term>
+  </concept>
+  <concept id="tiv" class="?">
+    <term xml:lang="tiv">?</term>
+    <term xml:lang="fr">Tiv</term>
+    <term xml:lang="en">Tivi</term>
+  </concept>
+  <concept id="tkl" class="?">
+    <term xml:lang="tkl">?</term>
+    <term xml:lang="fr">Tokélaouén</term>
+  </concept>
+  <concept id="tli" class="?">
+    <term xml:lang="tli">?</term>
+    <term xml:lang="fr">Tlingit</term>
+    <term xml:lang="en">Tlingit</term>
+  </concept>
+  <concept id="tmh" class="?">
+    <term xml:lang="tmh">?</term>
+    <term xml:lang="fr">Tamacheq</term>
+    <term xml:lang="en">Tamashek</term>
+  </concept>
+  <concept code="to" id="tog" class="?">
+    <term xml:lang="tog">?</term>
+    <term xml:lang="fr">Kitonga</term>
+    <term xml:lang="en">Tonga (Nyasa)</term>
+    <term xml:lang="de">Tongaisch</term>
+    <term xml:lang="ru">Тонганский</term>
+    <term xml:lang="zh">湯加語</term>
+    <term xml:lang="ar">تونغية</term>
+    <term xml:lang="ja">トンガ語</term>
+  </concept>
+  <concept id="ton" class="?">
+    <term xml:lang="ton">?</term>
+    <term xml:lang="fr">Tonga (îles Tonga)</term>
+    <term xml:lang="en">Tonga (Tonga Islands)</term>
+  </concept>
+  <concept id="tpi" class="?">
+    <term xml:lang="tpi">?</term>
+    <term xml:lang="fr">Tok pisine</term>
+  </concept>
+  <concept id="tru" class="?">
+    <term xml:lang="tru">?</term>
+    <term xml:lang="fr">Truk</term>
+    <term xml:lang="en">Truk</term>
+  </concept>
+  <concept id="tsi" class="?">
+    <term xml:lang="tsi">?</term>
+    <term xml:lang="fr">Tsimchiane</term>
+    <term xml:lang="en">Tsimshian</term>
+  </concept>
+  <concept code="tn" id="tsn" class="?">
+    <term xml:lang="tsn">?</term>
+    <term xml:lang="fr">Setchwana</term>
+    <term xml:lang="en">Tswana</term>
+    <term xml:lang="de">Sezuan</term>
+    <term xml:lang="ru">Сетсвана</term>
+    <term xml:lang="zh">塞茨瓦那語</term>
+    <term xml:lang="ar">ستسوانية</term>
+    <term xml:lang="ja">セツワナ語</term>
+  </concept>
+  <concept code="ts" id="tso" class="?">
+    <term xml:lang="tso">?</term>
+    <term xml:lang="fr">Tsonga</term>
+    <term xml:lang="en">Tsonga</term>
+    <term xml:lang="de">Tsongaisch</term>
+    <term xml:lang="ru">Цонга</term>
+    <term xml:lang="zh">聰加語</term>
+    <term xml:lang="ar">تسونغية</term>
+    <term xml:lang="ja">ヅォンガ語</term>
+  </concept>
+  <concept code="tk" id="tuk" class="?">
+    <term xml:lang="tuk">?</term>
+    <term xml:lang="fr">Turkmène</term>
+    <term xml:lang="en">Turkmen</term>
+    <term xml:lang="de">Turkmenisch</term>
+    <term xml:lang="ru">Туркменский</term>
+    <term xml:lang="zh">土庫曼語</term>
+    <term xml:lang="ar">تركمانية</term>
+    <term xml:lang="ja">トルクメン語</term>
+  </concept>
+  <concept id="tum" class="?">
+    <term xml:lang="tum">?</term>
+    <term xml:lang="fr">Tchitoumbouka</term>
+    <term xml:lang="en">Tumbuka</term>
+  </concept>
+  <concept code="tr" id="tur" class="tut">
+    <term xml:lang="tr">Türkçe</term>
+    <term xml:lang="fr">Turc</term>
+    <term xml:lang="en">Turkish</term>
+    <term xml:lang="de">Türkisch</term>
+    <term xml:lang="ru">Турецкий</term>
+    <term xml:lang="zh">土耳其語</term>
+    <term xml:lang="ar">تركية</term>
+    <term xml:lang="ja">トルコ語</term>
+  </concept>
+  <concept id="tut" class="?">
+    <term xml:lang="tut">?</term>
+    <term xml:lang="fr">Altaïque (langues)</term>
+    <term xml:lang="en">Altaic (Other)</term>
+  </concept>
+  <concept id="tvl" class="?">
+    <term xml:lang="tvl">?</term>
+    <term xml:lang="fr">Touvalouén</term>
+  </concept>
+  <concept code="tw" id="twi" class="?">
+    <term xml:lang="twi">?</term>
+    <term xml:lang="fr">Tchi</term>
+    <term xml:lang="en">Twi</term>
+    <term xml:lang="de">Twi</term>
+    <term xml:lang="ru">Тви</term>
+    <term xml:lang="zh">特維語</term>
+    <term xml:lang="ar">توي'ة</term>
+    <term xml:lang="ja">トウィ語</term>
+  </concept>
+  <concept id="tyv" class="?">
+    <term xml:lang="tyv">?</term>
+    <term xml:lang="fr">Touvine (touvain)</term>
+    <term xml:lang="en">Tuvinian</term>
+  </concept>
+  <concept id="uga" class="?">
+    <term xml:lang="uga">?</term>
+    <term xml:lang="fr">Ougaritique</term>
+    <term xml:lang="en">Ugaritic</term>
+  </concept>
+  <concept code="ug" id="uig" class="?">
+    <term xml:lang="uig">?</term>
+    <term xml:lang="fr">Ouïgour</term>
+    <term xml:lang="en">Uighur</term>
+    <term xml:lang="zh">uigur</term>
+  </concept>
+  <concept code="uk" id="ukr" class="sla">
+    <term xml:lang="uk">україньска</term>
+    <term xml:lang="fr">Ukrainien</term>
+    <term xml:lang="en">Ukrainian</term>
+    <term xml:lang="de">Ukrainisch</term>
+    <term xml:lang="ru">Украинский</term>
+    <term xml:lang="zh">烏克蘭語</term>
+    <term xml:lang="ar">أوكرانية</term>
+    <term xml:lang="ja">ウクライナ語</term>
+  </concept>
+  <concept id="umb" class="?">
+    <term xml:lang="umb">?</term>
+    <term xml:lang="fr">Oumboundou</term>
+    <term xml:lang="en">Umbundu</term>
+  </concept>
+  <concept id="und" class="?">
+    <term xml:lang="und">?</term>
+    <term xml:lang="fr">Indeterminé</term>
+    <term xml:lang="en">Undetermined</term>
+  </concept>
+  <concept code="ur" id="urd" class="?">
+    <term xml:lang="ur">اُردو</term>
+    <term xml:lang="fr">Ourdou</term>
+    <term xml:lang="en">Urdu</term>
+    <term xml:lang="de">Urdu</term>
+    <term xml:lang="ru">Урду</term>
+    <term xml:lang="zh">烏爾都語</term>
+    <term xml:lang="ar">أوردوية</term>
+    <term xml:lang="ja">ウルドゥー語</term>
+  </concept>
+  <concept code="uz" id="uzb" class="?">
+    <term xml:lang="uz">Ўзбек</term>
+    <!--     <term xml:lang="uz">U'zbek</term> -->
+    <term xml:lang="fr">Ouzbek</term>
+    <term xml:lang="en">Uzbek</term>
+    <term xml:lang="de">Usbekisch</term>
+    <term xml:lang="ru">Узбекский</term>
+    <term xml:lang="zh">烏孜別克語</term>
+    <term xml:lang="ar">أزبكية</term>
+    <term xml:lang="ja">ウズベク語</term>
+  </concept>
+  <concept id="vai" class="?">
+    <term xml:lang="vai">?</term>
+    <term xml:lang="fr">Vaï</term>
+    <term xml:lang="en">Vai</term>
+  </concept>
+  <concept id="ven" class="?">
+    <term xml:lang="ven">?</term>
+    <term xml:lang="fr">Venda</term>
+    <term xml:lang="en">Venda</term>
+  </concept>
+  <concept code="vi" id="vie" class="?">
+    <term xml:lang="vi">Tiếng Việt Nam</term>
+    <term xml:lang="fr">Vietnamien</term>
+    <term xml:lang="en">Vietnamese</term>
+    <term xml:lang="de">Vietnamesisch</term>
+    <term xml:lang="ru">Вьетнамский</term>
+    <term xml:lang="zh">越南語</term>
+    <term xml:lang="ar">فييتنامية</term>
+    <term xml:lang="ja">ベトナム語</term>
+  </concept>
+  <concept code="vo" id="vol" class="art">
+    <term xml:lang="vo">Volapük</term>
+    <term xml:lang="fr">Volapük</term>
+    <term xml:lang="en">Volapük</term>
+    <term xml:lang="de">Volapük</term>
+    <term xml:lang="ru">Волапюк</term>
+    <term xml:lang="zh">沃拉卜克語</term>
+    <term xml:lang="ar">فولابوك</term>
+    <term xml:lang="ja">ヴォラピュック語</term>
+  </concept>
+  <concept id="vot" class="?">
+    <term xml:lang="vot">?</term>
+    <term xml:lang="fr">Vote (votiak)</term>
+    <term xml:lang="en">Votic</term>
+  </concept>
+  <concept id="wak" class="?">
+    <term xml:lang="wak">?</term>
+    <term xml:lang="fr">Wakache (langues)</term>
+    <term xml:lang="en">Wakashan languages</term>
+  </concept>
+  <concept id="wal" class="?">
+    <term xml:lang="wal">?</term>
+    <term xml:lang="fr">Walamo</term>
+    <term xml:lang="en">Walamo</term>
+  </concept>
+  <concept id="war" class="?">
+    <term xml:lang="war">?</term>
+    <term xml:lang="fr">Waray</term>
+    <term xml:lang="en">Waray</term>
+  </concept>
+  <concept id="was" class="?">
+    <term xml:lang="was">?</term>
+    <term xml:lang="fr">Washo</term>
+    <term xml:lang="en">Washo</term>
+  </concept>
+  <concept id="wen" class="?">
+    <term xml:lang="wen">?</term>
+    <term xml:lang="fr">Sorabe (wende)</term>
+    <term xml:lang="en">Sorbian languages</term>
+  </concept>
+  <concept code="wo" id="wol" class="?">
+    <term xml:lang="wo">?</term>
+    <term xml:lang="fr">Ouolof</term>
+    <term xml:lang="en">Wolof</term>
+    <term xml:lang="de">Wolof</term>
+    <term xml:lang="ru">Уолофский</term>
+    <term xml:lang="zh">沃洛夫語</term>
+    <term xml:lang="ar">وولوفية</term>
+    <term xml:lang="ja">ウォロフ語</term>
+  </concept>
+  <concept code="xh" id="xho" class="?">
+    <term xml:lang="xho">?</term>
+    <term xml:lang="fr">Xhosa</term>
+    <term xml:lang="en">Xhosa</term>
+    <term xml:lang="de">Xhosa</term>
+    <term xml:lang="ru">Хоса</term>
+    <term xml:lang="zh">科薩語</term>
+    <term xml:lang="ar">جوسا</term>
+    <term xml:lang="ja">コーサ語</term>
+  </concept>
+  <concept id="yao" class="?">
+    <term xml:lang="yao">?</term>
+    <term xml:lang="fr">Yao</term>
+    <term xml:lang="en">Yao</term>
+  </concept>
+  <concept id="yap" class="?">
+    <term xml:lang="yap">?</term>
+    <term xml:lang="fr">Yap</term>
+    <term xml:lang="en">Yap</term>
+  </concept>
+  <concept code="yi" id="yid" class="gem">
+    <term xml:lang="yid">?</term>
+    <term xml:lang="fr">Yidich</term>
+    <term xml:lang="en">Yiddish</term>
+    <term xml:lang="de">Jiddish</term>
+    <term xml:lang="ru">Идиш</term>
+    <term xml:lang="zh">依地語</term>
+    <term xml:lang="ar">يد'ية</term>
+  </concept>
+  <concept code="yo" id="yor" class="?">
+    <term xml:lang="yor">?</term>
+    <term xml:lang="fr">Yorouba</term>
+    <term xml:lang="en">Yoruba</term>
+    <term xml:lang="de">Joruba</term>
+    <term xml:lang="ru">Йорубский</term>
+    <term xml:lang="zh">約魯巴語</term>
+    <term xml:lang="ar">يوروبية</term>
+    <term xml:lang="ja">ヨルバ語</term>
+  </concept>
+  <concept id="ypk" class="?">
+    <term xml:lang="ypk">?</term>
+    <term xml:lang="fr">Youpik (langues)</term>
+  </concept>
+  <concept id="zap" class="?">
+    <term xml:lang="zap">?</term>
+    <term xml:lang="fr">Zapotèque</term>
+    <term xml:lang="en">Zapotec</term>
+  </concept>
+  <concept id="zen" class="?">
+    <term xml:lang="zen">?</term>
+    <term xml:lang="fr">Zénaga</term>
+    <term xml:lang="en">Zenaga</term>
+  </concept>
+  <concept code="za" id="zha" class="sit">
+    <term xml:lang="zha">?</term>
+    <term xml:lang="fr">Zhuang (Tchouang)</term>
+    <term xml:lang="en">Zhuang</term>
+    <term xml:lang="zh">zhuang</term>
+  </concept>
+  <concept code="zh" id="zho" class="sit">
+    <!-- iso3a="chi" -->
+    <term xml:lang="zh">華語</term>
+    <term xml:lang="fr">Chinois</term>
+    <term xml:lang="en">Chinese</term>
+    <term xml:lang="de">Chinesisch</term>
+    <term xml:lang="ru">Китайский</term>
+    <term xml:lang="zh">華語</term>
+    <term xml:lang="ar">صينية</term>
+    <term xml:lang="ja">中国語</term>
+  </concept>
+  <concept id="znd" class="?">
+    <term xml:lang="znd">?</term>
+    <term xml:lang="fr">Zandé</term>
+  </concept>
+  <concept code="zu" id="zul" class="?">
+    <term xml:lang="zul">?</term>
+    <term xml:lang="fr">Zoulou</term>
+    <term xml:lang="en">Zulu</term>
+    <term xml:lang="de">Zulu</term>
+    <term xml:lang="ru">Зулу</term>
+    <term xml:lang="zh">祖魯語</term>
+    <term xml:lang="ar">زولوية</term>
+    <term xml:lang="ja">ズールー語</term>
+  </concept>
+  <concept id="zun" class="?">
+    <term xml:lang="zun">?</term>
+    <term xml:lang="fr">Zuñi</term>
+    <term xml:lang="en">Zuni</term>
+  </concept>
+</glossary>

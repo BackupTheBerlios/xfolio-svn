@@ -1,0 +1,19 @@
+2004-04-04 frederic.glorieux@ajlsm.com
+
+If nothing is working when you double-click on start.bat, heu, there's perhaps
+a problem, mail me, but phone is perhaps a faster solution.
+
+There's perhaps a problem in the java virtual machine.
+
+If you see a black window with messages like "Started org.mortbay.jetty.Server@17a8bd",
+it's better, a server is running.
+
+Have a look in your browser, under the address
+http://localhost/
+If no documents are served (an error message like "org.apache.cocoon.ResourceNotFoundException")
+
+Perhaps you need to say to the server where are the documents you want to serve
+
+The documents served should be declared as an absolute path in the file
+.../strabon/webapp/config.xmap
+

@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<!--
+		2004-04-06
+		frederic.glorieux@ajlsm.com
+
+    (c)2004 xfolio.org, ajlsm.com 
+    http://www.gnu.org/copyleft/gpl.html
+
+
+		Set dinamicaly parameters for the xfolio server, for now
+		  - source documents xfolio.efolder
+		  - skin xfolio.efolder
+		  - default lang xfolio.skin
+
+history
+		2004-06-08 context properties
+		2004-04-06 Have been java system properties
+		2004-04-05 Parameters where setted directly in the sitemap
+
+-->
+<xsp:page xmlns:xsp="http://apache.org/xsp" xmlns:input="http://apache.org/cocoon/xsp/input/1.0">
+	<xsp:structure>
+		<xsp:include>java.util.*</xsp:include>
+		<xsp:include>java.net.*</xsp:include>
+		<xsp:include>org.apache.avalon.framework.context.ContextException</xsp:include>
+		<xsp:include>org.apache.cocoon.environment.Redirector</xsp:include>
+		<xsp:include>org.apache.cocoon.acting.ServerPagesAction</xsp:include>
+		<xsp:include>org.apache.cocoon.environment.Session</xsp:include>
+	</xsp:structure>
+	<xsp:logic>
+
+      private Redirector actionRedirector;
+      private Map actionResultMap;
+      
+	// get from cocoon2.0 sources, perhaps there's better somewhere
+
+	/** Contextualize this class */
+	File context_work_dir;
+	public void contextualize(Context context) throws ContextException {
+		context_work_dir = (File) context.get(Constants.CONTEXT_WORK_DIR);
+	}
+
+    public void delDir(File dir)
+    {
+        if (dir==null) return;
+        if (dir.isFile()) dir.delete();
+        if (dir.isDirectory())
+        {
+            File[] files=dir.listFiles();
+            for (int i=0; i &lt; files.length; i++) {delDir(files[i]);}
+            dir.delete();
+        }
+    }
+    
+    public String path2dir(String path) {
+      if (path==null || "null".equals(path) || "".equals(path)) return null;
+      try {
+        
+        File dir=new File(path);
+        if (!dir.isAbsolute()) dir=new File(context.getRealPath("/"), path);
+        // maybe a file from a directory, take the parent
+        if (!dir.isDirectory() &amp;&amp; dir.isFile()) dir=dir.getParentFile();
+        // not a dir, return nothing
+        if (!dir.isDirectory()) return null;
+        return dir.getCanonicalPath();
+			}
+			catch (Exception e) {return null;}
+    }
+    
+    public boolean check (String s) {
+       return !(s == null || "null".equals(s) || "".equals(s));
+    }
+
+/*
+ Properties are used as context variable
+ if not set, a value is search as
+    a context initParameter
+    a system property
+    a request parameter (server on start)
+*/
+
+    public String searchValue(String name) {
+      String value=(String)context.getAttribute("xfolio."+name);
+      if (!check(value)) value=context.getInitParameter("xfolio."+name);
+      if (!check(value)) value=System.getProperty("xfolio."+name);
+      if (!check(value)) value=(String)request.getParameter(name);
+      return value;
+    }
+
+	</xsp:logic>
+	<admin>
+		<xsp:logic>
+// strange logic but efficient in sitemap logic
+// this action fails if everything is OK to continue sitemap process
+
+  boolean stop=false;
+
+/*
+see
+http://java.sun.com/j2se/1.4.2/docs/api/java/net/URLConnection.html#getFileNameMap()
+*/
+/*
+      new URI(
+        super.resolver.resolveURI("WEB-INF/classes/content-types.properties").getURI() 
+      ).normalize().toURL().getFile()
+*/
+
+
+ 
+/*
+  get Parameters to start the server
+    xfolio.efolder = the documents folder to serve
+    xfolio.skin = the default skin folder
+    xfolio.lang = the default lang
+    xfolio.domain = the internet domain for which this pages are generated
+    xfolio.site = a directory where to write the generated files
+
+*/
+
+
+/* 
+  to continue as fast as possible, 
+  verify if efolder path is set on context
+  if not, set it and take other params
+*/
+
+  String efolder=String.valueOf(context.getAttribute("xfolio.efolder"));
+  if (!(efolder == null  || "null".equals(efolder) || "".equals(efolder)) ) {
+  }
+  else {
+    efolder=context.getInitParameter("xfolio.efolder");
+    if (path2dir(efolder)==null) efolder=System.getProperty("xfolio.efolder");
+    if (path2dir(efolder)==null) efolder=String.valueOf(request.getParameter("efolder"));
+
+    // impossible to get a value, set nothing, stop 
+    if ( path2dir(efolder)==null ) stop=true;
+    // a value is provide, test it
+		else {
+      String dir=path2dir(efolder);
+      System.out.println("param requested : " + efolder);
+      System.out.println("efolder served : " + dir);
+      context.setAttribute("xfolio.efolder", dir + File.separator );
+      // delete workdir here, if efolder changes, problems may happen
+      System.out.println("Deleting Work dir : '" + context_work_dir +"'.");
+      delDir(context_work_dir);
+
+
+      // set skin for this context
+      
+      String skin=searchValue("skin");
+      // no test of availability of skin for now. Who should test if it exists ?
+      if (check(skin)) context.setAttribute("xfolio.skin", skin );
+
+      // set domain (documentation variable)
+
+      String domain=searchValue("domain");
+      if (check(domain)) context.setAttribute("xfolio.domain", domain);
+
+      // set site (a destination folder)
+
+      String site=searchValue("site");
+      if (check(site)) {
+        File siteDir=new File(site);
+        if (!siteDir.isAbsolute()) siteDir=new File(context.getRealPath("/"), site);
+        if (!siteDir.isDirectory() &amp;&amp; siteDir.isFile()) siteDir=siteDir.getParentFile();
+        context.setAttribute("xfolio.site", siteDir.getCanonicalPath());
+      }
+
+    }
+  }      
+
+
+  
+/*
+  dynamic skin
+
+  if a user ask for a skin by a param
+  dynamic skin for each user oblige to have session
+  the session value is setted on the request param skin
+  skin is a folder name xfolio/skins/{skin}
+*/
+
+	// a skin param requested
+	String skin=request.getParameter("skin");
+  Session session=null;
+	if (skin ==null) { } 
+	else if ("".equals(skin)) {
+		// delete session ?
+	}
+	else {
+		session=request.getSession(true);
+		session.setAttribute("skin", skin);
+	}
+
+<!--
+This should be executed only in generator mode
+-->
+
+this.actionRedirector = (Redirector)this.objectModel.get(ServerPagesAction.REDIRECTOR_OBJECT);
+this.actionResultMap = (Map)this.objectModel.get(ServerPagesAction.ACTION_RESULT_OBJECT);
+      if (this.actionRedirector == null) {
+
+			<!-- 
+	bug with request.getContextPath() to find a file path
+				<xsp:expr>context.getRealPath(request.getContextPath()+"/")</xsp:expr>
+      -->
+      <path>
+				<xsp:expr>context.getRealPath("/")</xsp:expr>
+			</path>
+
+      <!-- 
+  Provide a directory of the skin folders.
+        -->
+<!--          
+          if (session != null) {
+            <xsp:attribute name="session">
+              <xsp:expr>session.getAttribute("skin")</xsp:expr>
+            </xsp:attribute>
+          }
+-->
+
+      <skins>
+        <xsp:attribute name="context">
+          <xsp:expr>context.getAttribute("xfolio.skin")</xsp:expr>
+        </xsp:attribute>
+        <xsp:logic>
+          File[] skins=new File(context.getRealPath("/"), "skin").listFiles();
+          for (int i=0 ; i &lt; skins.length ; i++) {
+            String name=skins[i].getName();
+            if (
+              skins[i].isDirectory()
+              &amp;&amp; !"CVS".equals(name) 
+              &amp;&amp; !"Thumbs.db".equals(name)
+              &amp;&amp; !name.startsWith(".")
+              &amp;&amp; !name.startsWith("_")
+            ) {
+                <skin><xsp:expr>name</xsp:expr></skin>
+            }
+          }
+          </xsp:logic>
+			</skins>
+
+
+                    <xsp:comment> Sitemap properties </xsp:comment>
+                    <sitemap>
+                        <xsp:logic>
+		String[] names=parameters.getNames();
+                    try {
+                        for (int i=0; i &lt; names.length; i++) {
+                            <key class="sitemap">
+				<xsp:attribute name="name"><xsp:expr>names[i]</xsp:expr></xsp:attribute>
+				<xsp:attribute name="value"><xsp:expr>parameters.getParameter(names[i])</xsp:expr></xsp:attribute>
+                            </key>
+			}
+                    } catch (Exception e) {}
+
+                        </xsp:logic>
+                    </sitemap>
+
+			
+			<xsp:comment> Context properties </xsp:comment>
+			<context>
+				<xsp:logic>
+					for (Enumeration e = context.getAttributeNames() ; e.hasMoreElements() ;) {
+         		String key=e.nextElement().toString();
+
+				<key class="context">
+						<xsp:attribute name="name"><xsp:expr>key</xsp:expr></xsp:attribute>
+						<xsp:content><xsp:expr>context.getAttribute(key)</xsp:expr></xsp:content>
+					</key>
+     			}
+     			</xsp:logic>
+			</context>
+			<xsp:comment> System properties </xsp:comment>
+			    Set allKeys = System.getProperties().keySet();     // turn keys into a set
+			    // Turn the Set into an array of Strings
+			    String[] keys = (String[])allKeys.toArray(new String[allKeys.size()]);
+			    Arrays.sort(keys);  // sort the array
+			<system>
+				<xsp:logic>
+			    for (int i=0; i &lt; keys.length; i++) {
+			      // print each key and its value
+			      <key>
+						<xsp:attribute name="number">
+							<xsp:expr>i</xsp:expr>
+						</xsp:attribute>
+						<xsp:attribute name="name">
+							<xsp:expr>keys[i]</xsp:expr>
+						</xsp:attribute>
+						<xsp:content>
+							<xsp:expr>System.getProperty(keys[i])</xsp:expr>
+						</xsp:content>
+					</key>
+					}
+				</xsp:logic>
+			</system>			
+
+      }
+
+
+
+
+
+	// action fail if parameters are setted to give hand to sitemap
+	try {	
+		if (stop) this.objectModel.put(ServerPagesAction.ACTION_SUCCESS_OBJECT, Boolean.TRUE);
+		else this.objectModel.put(ServerPagesAction.ACTION_SUCCESS_OBJECT, Boolean.FALSE);
+	} 
+	catch (Exception e) {this.objectModel.put(ServerPagesAction.ACTION_SUCCESS_OBJECT, Boolean.FALSE);}
+	
+</xsp:logic>
+	</admin>
+</xsp:page>

@@ -1,0 +1,9 @@
+2004-02-27 frederic.glorieux@ajlsm.com
+
+In this folder you will find binaries libraries OS specific
+For now, there's only Windows exe.
+
+Requested are 
+ - java 1.4 JRE with tools.jar (compilation needed by cocoon)
+ - nconvert
+ - OO

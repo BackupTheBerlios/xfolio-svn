@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+maybe useful to generate a dynamic pipeline for static resources ?
+TODO:check dynamic sitemap
+-->
+<set>
+	<!-- xml -->
+	<key extension="xml" mime-type="text/xml"/>
+	<key extension="dbx" mime-type="text/xml"/>
+	<key extension="rdf" mime-type="application/rdf+xml"/>
+	<!-- text -->
+	<key extension="css" mime-type="text/css" />
+	<key extension="dtd" mime-type="text/plain" />
+	<key extension="htm" mime-type="text/html" />
+	<key extension="html" mime-type="text/html" />
+	<key extension="java" mime-type="text/x-java-source" />
+	<key extension="js" mime-type="text/javascript" />
+	<key extension="tsv" mime-type="text/tab-separated-values" />
+	<key extension="csv" mime-type="text/comma-separated-values" />
+	<key extension="txt" mime-type="text/plain" />
+	<key extension="vcf" mime-type="text/x-vcard" />
+	<key extension="text" mime-type="text/plain" />
+	<!-- image -->
+	<key extension="bmp" mime-type="image/bmp" />
+	<key extension="gif" mime-type="image/gif" />
+	<key extension="jpe" mime-type="image/jpeg" />
+	<key extension="jpeg" mime-type="image/jpeg" />
+	<key extension="jpg" mime-type="image/jpeg" />
+	<key extension="pbm" mime-type="image/x-portable-bitmap" />
+	<key extension="pgm" mime-type="image/x-portable-graymap" />
+	<key extension="png" mime-type="image/png" />
+	<key extension="ppm" mime-type="image/x-portable-pixmap" />
+	<key extension="rgb" mime-type="image/x-rgb" />
+	<key extension="svg" mime-type="image/svg-xml" />
+	<key extension="tif" mime-type="image/tiff" />
+	<key extension="tiff" mime-type="image/tiff" />
+	<!-- audio -->
+	<key extension="aif" mime-type="audio/x-aiff" />
+	<key extension="aifc" mime-type="audio/x-aiff" />
+	<key extension="aiff" mime-type="audio/x-aiff" />
+	<key extension="au" mime-type="audio/basic" />
+	<key extension="mid" mime-type="audio/midi" />
+	<key extension="midi" mime-type="audio/midi" />
+	<key extension="mp3" mime-type="audio/mpeg" />
+	<key extension="mp3" mime-type="audio/mpeg" />
+	<key extension="mpe" mime-type="audio/mpeg" />
+	<key extension="mpeg" mime-type="audio/mpeg" />
+	<key extension="mpg" mime-type="audio/mpeg" />
+	<key extension="wav" mime-type="audio/wav" />
+	<key extension="ra" mime-type="audio/x-pn-realaudio" />
+	<key extension="ram" mime-type="audio/x-pn-realaudio" />
+	<key extension="rm" mime-type="audio/x-pn-realaudio" />
+	<key extension="snd" mime-type="audio/basic" />
+	<!-- video -->
+	<key extension="avi" mime-type="video/x-msvideo" />
+	<key extension="mov" mime-type="video/quicktime" />
+	<key extension="qt" mime-type="video/quicktime" />
+	<!-- application -->
+	<key extension="sxw" mime-type="application/vnd.sun.xml.writer" />
+	<key extension="doc" mime-type="application/msword" />
+	<key extension="rtf" mime-type="application/rtf" />
+	<key extension="pdf" mime-type="application/pdf" />
+	<key extension="zip" mime-type="application/zip" />
+	<key extension="tar" mime-type="application/x-tar" />
+	<key extension="gz" mime-type="application/x-gzip" />
+	<key extension="swf" mime-type="application/x-shockwave-flash" />
+	<key extension="jar" mime-type="application/java-archive" />
+	<key extension="ser" mime-type="application/x-java-serialized-object" />
+	<key extension="eps" mime-type="application/postscript" />
+	<key extension="class" mime-type="application/java-class" />
+	<key extension="ai" mime-type="application/postscript" />
+	<key extension="jnlp" mime-type="application/x-java-jnlp-file" />
+	<key extension="ps" mime-type="application/postscript" />
+	<key extension="rtx" mime-type="application/richtext" />
+	<key extension="shtml" mime-type="application/x-server-parsed-html" />
+	<key extension="ssi" mime-type="application/x-server-parsed-html" />
+	<!-- misc -->
+	<key extension="wml" mime-type="x-world/x-vrml" />
+</set>

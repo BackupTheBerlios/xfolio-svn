@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/classes"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry sourcepath="/cocoon/src/java" kind="lib" path="WEB-INF/lib/cocoon-2.1.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/avalon-framework-4.1.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-component-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-datasource-1.1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-event-api-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-event-impl-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-i18n-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-instrument-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-instrument-manager-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-instrument-manager-interfaces-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-io-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-logger-1.0.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-logger-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-monitor-1.0.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-naming-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-pool-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-sourceresolve-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-store-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-testcase-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-util-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/excalibur-xmlutil-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-cli-1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-collections-3.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-dbcp-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-digester-1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-httpclient-2.0-final.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-jexl-1.0-beta-1-20040113.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-jxpath-20030909.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-1.0.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-pool-1.1.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

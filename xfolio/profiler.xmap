@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!--
+http://cocoon.apache.org/2.1/userdocs/concepts/profiler.html
+created 2003-07-09
+
+FG:frederic.glorieux@xfolio.org
+(c) xfolio.org, ajlsm.com, strabon.org
+Licence : GPL
+
+This sitemap is place to test performances of different pipes
+
+-->
+
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+
+ <map:pipelines>
+
+<!-- =========================== Cacheable ================================= -->
+
+  <map:pipeline type="profile-caching">
+
+      <map:match pattern="directory-cache">
+        <map:generate type="directory" src="{context-attr:xfolio.efolder}{1}">
+          <map:parameter name="depth" value="10"/>
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs.db"/>
+        </map:generate>
+        <map:serialize type="text"/>
+      </map:match>
+
+  </map:pipeline>
+
+<!-- =========================== Noncacheable ================================= -->
+
+  <map:pipeline type="profile-noncaching">
+
+      <map:match pattern="directory">
+        <map:generate type="directory" src="{context-attr:xfolio.efolder}">
+          <map:parameter name="depth" value="10"/>
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs.db"/>
+        </map:generate>
+        <map:serialize type="text"/>
+      </map:match>
+
+      <map:match pattern="metadir">
+        <map:generate type="metadir" src="{context-attr:xfolio.efolder}">
+          <map:parameter name="depth" value="10"/>
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs.db"/>
+        </map:generate>
+        <map:serialize type="text"/>
+      </map:match>
+
+
+  </map:pipeline>
+
+<!-- =========================== Profiler ================================= -->
+
+  <map:pipeline>
+
+
+
+   <map:match pattern="">
+    <map:generate type="profiler"/>
+    <map:transform src="transform/cocoon/profile2html.xsl">
+       <map:parameter name="use-request-parameters" value="true"/>
+    </map:transform>
+    <map:serialize/>
+   </map:match>
+
+      <map:match pattern="**.xfoliodir">
+        <map:select type="exists">
+          <!-- OpenOffice -->
+          <map:when test="{context-attr:xfolio.efolder}{1}.sxw">
+            <map:generate type="xsp" src="actions/oo.xsp">
+              <map:parameter name="sxw" value="{context-attr:xfolio.efolder}{1}.sxw"/>
+            </map:generate>
+            <map:transform src="transform/oo/oo2rdf.xsl">
+              <!-- URI of the doc -->
+              <map:parameter name="identifier" value="{context-attr:xfolio.domain}/{1}"/>
+              <!-- these are extensions from which a transformation is expected -->
+              <map:parameter name="extensions" value=" html dbx "/>
+            </map:transform>
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:when test="{context-attr:xfolio.efolder}{1}.jpg">
+            <map:generate type="xmp" src="{context-attr:xfolio.efolder}{1}.jpg"/>
+            <!--
+            <map:transform src="transform/meta/xmp2dc.xsl"/>
+-->
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:when test="{context-attr:xfolio.efolder}{1}.dbx">
+            <map:generate src="cocoon://{1}.dbx"/>
+            <map:transform src="transform/docbook/dbx/dbx2rdf.xsl">
+              <map:parameter name="source" value="http://{request:serverName}:{request:serverPort}{request:contextPath}/{1}.dbx"/>
+              <map:parameter name="target" value="http://{request:serverName}:{request:serverPort}{request:contextPath}/{1}.html"/>
+            </map:transform>
+            <map:serialize type="xml"/>
+          </map:when>
+          <map:otherwise>
+            <map:read src="cocoon://skin/default.rdf"/>
+          </map:otherwise>
+        </map:select>
+      </map:match>
+
+
+
+  <map:match pattern="**">
+    <map:read src="profiler.xmap"/>
+    <!-- maybe a way to transform the pipe in tests from here ? -->
+  </map:match>
+  
+   
+  </map:pipeline>
+ 
+ </map:pipelines>
+
+</map:sitemap>

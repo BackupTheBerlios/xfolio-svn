@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+created 2003-07-02
+FG:frederic.glorieux@xfolio.org
+(c) xfolio.org, ajlsm.com, strabon.org
+Licence : GPL
+
+This sitemap collect deprecated snippets, 
+kept as a "not so good idea" memory.
+-->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+      <!--
+This pipe answer entry of a zip file (with refresh)
+FG:2004-06-10
+This have been written because of a problem in caching when acces by jar protocol
+(cocoon 2.1.4), perhaps it has change in 2.1.5 ?
+
+MAYDO, deflat from a file by cocoon:/ or cocoon:// ?
+
+  parameters
+zip
+  absolute file path of the file to deflat, or relative to the root servlet 
+  CAUTION: to be changed in some contexts
+entry
+  path of the file to retrieve, deflated relatively to {path}
+path
+  relative path to define a unique directory where to deflat, relatively to {work-dir}
+
+  output
+file
+  absolute path of a file to read
+
+xml output is implemented as a generator (for agregation)
+others are readers
+
+      <map:match type="regexp" pattern="(.*)!/(.*)">
+        <map:act type="resource-exists" src="{context-attr:xfolio.efolder}{1}">
+          <map:act type="xsp" src="actions/deflat.xsp">
+            <map:parameter name="zip" value="{context-attr:xfolio.efolder}{../1}"/>
+            <map:parameter name="entry" value="{../2}"/>
+            <map:parameter name="path" value="unzip/{../1}!"/>
+            <map:match pattern="**.xml">
+              <map:generate src="{../file}"/>
+              <map:serialize type="xml"/>
+            </map:match>
+            <map:read src="{file}"/>
+          </map:act>
+        </map:act>
+      </map:match>
+
+    -->
+          <!--
+Old solution with a deflat.xsp action (problems of namespace)
+
+          <map:match pattern="**.oo">
+            <map:aggregate element="document" prefix="office" ns="http://openoffice.org/2000/office">
+              <map:part strip-root="true" src="cocoon:/{1}.sxw!/meta.xml"/>
+              <map:part strip-root="true" src="cocoon:/{1}.sxw!/styles.xml"/>
+              <map:part src="cocoon:/{1}.sxw!/content.xml"/>
+            </map:aggregate>
+            <map:serialize type="xml"/>
+          </map:match>
+
+Conforming to the doc, should work, but not
+          <map:match pattern="**.oo">
+            <map:aggregate element="document" prefix="office" ns="http://openoffice.org/2000/office">
+              <map:part src="jar:file:///{context-attr:xfolio.efolder}/{1}.sxw!/content.xml"/>
+              <map:part strip-root="true" src="jar:file:///{context-attr:xfolio.efolder}/{1}.sxw!/meta.xml"/>
+              <map:part strip-root="true" src="jar:file:///{context-attr:xfolio.efolder}/{1}.sxw!/styles.xml"/>
+            </map:aggregate>
+            <map:serialize type="xml"/>
+          </map:match>
+-->
+          <!-- transform docbook fo in rtf  -->
+          <!-- don't work  and jfor will be embed in fop -->
+          <!--
+          <map:match pattern="**.rtf">
+            <map:generate src="cocoon:/{1}.fo"/>
+            <map:serialize type="fo2rtf"/>
+          </map:match>
+-->
+        <!--
+
+  views for an image
+
+remember, cocoon:/ is very, very slow !!! 
+<map:generate type="xmp" src="cocoon:/{1}.jpg"/>
+  
+-->
+
+</map:sitemap>

@@ -1,0 +1,44 @@
+# MIME type mappings
+
+# xml
+text/xml    xml dbx rdf
+text/rdf    rdf
+
+
+# text
+
+text/plain  txt text
+text/html   html htm
+text/css    css
+text/rtf    rtf
+application/rtf rtf
+text/vnd.wap.wml    wml
+text/x-vcard    vcf
+text/javascript js
+text/vbscript   vbs
+
+# image
+
+image/jpeg  jpeg jpg jpe
+image/png   png
+image/gif   gif
+image/tiff  tiff tif
+image/svg+xml   svg svgz
+image/svg-xml   svg
+
+# medias
+
+video/mpeg  mpeg mpg mpe
+video/quicktime mov
+audio/midi  mid
+audio/mpeg  mp3
+
+# Binaries
+
+application/vnd.sun.xml.writer    sxw
+application/pdf pdf
+model/vrml  wrl
+application/smil    smil
+application/x-javascript    js
+application/zip zip
+application/octet-stream

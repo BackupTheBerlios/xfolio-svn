@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+= WHAT =
+
+How to display text documents in a more fancy web layout ? The templates !
+Best process could be, tell your designer to produce the HTML page
+he likes, and ask him (or do it) to put tags code where he wants the text and 
+also, different widgets that the engine can provide (navigation, searching
+and so on).
+
+This a template for the xfolio app to embed articles in a new 
+design for <http://strabon.org>
+
+= WHO =
+
+* [[FG]] Glorieux, Frédéric <frederic.glorieux@xfolio.org>
+* [[ML]] Ligot, Mathias <mligot@msh-paris.fr>
+
+= STATUS =
+
+Nothing have yet defined for this work, 
+even for design or xfolio usage.
+
+= CHANGES =
+
+* 2004-10-05:[FG] creation of template
+* 2004-09   :[ML] design
+
+= HOW =
+
+The template was declared html UTF8, well...
+With all SGML entities like &eacute; or &nbsp; in text article, 
+I'm wondering how it will works with arabic and greek.
+
+= WHY =
+
+
+There is already a professionnal design answering to
+[AT] WP 5 développement du serveur pilote et du portail principal 
+D5.3 Charte graphique
+But why not ? Let's have a new skin for xfolio.
+
+= TODO =
+
+Implement a clean menu, without all Macromedia stuff.
+
+= REFERENCES =
+
+* [[AT]] Annexes Techniques décrivant le projet Strabon
+* <http://strabon.org/test>
+* [[strabon]] <http://strabon.org/>
+
+
+
+
+-->
+<html xmlns:foo="http://xfolio.org/ns/skin" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <link href="strabon1.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <table width="95%" align="center" cellpadding="0" cellspacing="0" id="base">
+      <tr>
+        <td width="200" align="left" valign="bottom">
+          <p>
+            <br />
+            <a href="http://www.strabon.org" target="_parent">
+              <img src="strabon_S.gif" alt="Strabon" name="logoSTABON" width="191" height="50" vspace="5" border="0" id="logoSTABON" />
+            </a>
+          </p>
+        </td>
+        <!-- InstanceBeginEditable name="up_logo" -->
+        <td>&#160;</td>
+        <!-- InstanceEndEditable -->
+        <td width="100" align="right" valign="top">
+          <p>
+            <a href="http://www.eumedis.net/fr/projects/sector/2" target="_blank">
+              <img src="eumedis_fr_S.gif" alt="Eumedis - Secteur 3" name="logoEUMEDIS" width="50" height="82" border="0" align="right" id="logoEUMEDIS" />
+            </a>
+          </p>
+        </td>
+      </tr>
+      <tr valign="bottom">
+        <td height="10" colspan="3">
+          <hr id="lineHigh" />
+        </td>
+      </tr>
+      <tr>
+        <td height="20">&#160;</td>
+      </tr>
+      <tr valign="top">
+        <td width="200">
+ 
+ <foo:menu/>
+    </td>
+        <td style="	border-left: thin solid #CCCCCC; padding-left:1ex;">
+          <foo:identifier/>
+          <foo:langs />
+          <foo:article>
+            <h1 class="title">Article title</h1>
+          
+          </foo:article>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <br />
+          <hr id="lineBottom" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <!-- recherche ? -->
+        </td>
+        <td valign="middle" align="center" class="menuglobal">
+          <a href="http://www.strabon.org/test/html/programme/pr_menu.htm">Espace 
+        Programme</a> | <a href="http://www.strabon.org/test/html/connaissance/co_menu.htm">Espace 
+        Connaissance</a> | <a href="http://www.strabon.org/test/html/voyageur/vo_menu.htm">Espace 
+        Voyageur</a> | <a href="http://www.strabon.org/test/html/auteur/au_menu.htm">Espace Auteur</a>
+          <br /><br />
+          Plan du Site | Crédits 
+        | <a href="html/programme/documents/legal/pr_legal.htm">Infos Légales</a> | <a href="mailto:contact@strabon.org">Contacts</a> | 
+        <a href="html/programme/pr_partenaires.htm">Partenaires</a>
+        </td>
+        <td align="right" valign="bottom">
+        </td>
+      </tr>
+      <tr valign="bottom">
+        <td align="left">
+          <a href="http://www.msh-paris.fr">
+            <br />
+            <img src="logomsh.gif" width="128" height="32" vspace="5" border="0" align="bottom" />
+          </a>
+        </td>
+        <td align="center" class="menuglobal">
+          <em>STRABON est un programme de la Maison des Sciences de l'Homme</em>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

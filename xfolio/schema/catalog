@@ -1,0 +1,7 @@
+-- from the default OASIS catalog for Apache Cocoon --
+-- the strabon.org catalog of DTD supported --
+
+OVERRIDE YES
+
+PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dummy.dtd"
+PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "dummy.dtd"

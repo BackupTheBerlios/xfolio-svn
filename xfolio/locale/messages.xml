@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--+
+    | 
+    | messages for XFolio
+    | 2004-04-01 frederic.glorieux@ajlsm.com
+    |
+    +-->
+<catalogue xml:lang="en">
+	<message key="admin">Xfolio, Administration</message>
+	<message key="noTitle">No title</message>
+	<message key="notFound">Sorry, XFolio have nothing to serve at this address.</message>
+	<message key="one">one</message>
+	<message key="two">two</message>
+</catalogue>

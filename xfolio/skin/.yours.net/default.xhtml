@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+2004-02-17
+2004-06-10
+
+frederic.glorieux@ajlsm.com
+
+
+	what:
+This is a default html layout with some custom tags to be processed by a transformation
+to put different contents. For now, an article, a menu, a metadata record as an identitification bar.
+
+	syntax:
+The included parts are expressed in a very simple namespace
+
+	history:
+Come from an xsl becoming a bit too complex to be simple editable layout.
+
+	MAYDO:
+A more configurable taglib, for example to choose which meta to display
+in menu or with images.
+
+-->
+<html xmlns:stb="http://xfolio.org/ns/skin" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	</head>
+	<body>
+				<table bgcolor="red" id="navbar" width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<!-- TODO path -->
+						<td nowrap="nowrap" align="left">
+							<a href="http://strabon.pncvd.it">strabon.pncvd.it</a>
+							<stb:path>
+								<!-- this tag will be replaced by a clickable URI for the document -->
+							</stb:path>
+							&#160; 
+						<stb:langs />
+						&#160; 
+						<stb:formats />
+						</td>
+						<td align="right">
+							<stb:skin />
+						</td>
+					</tr>
+				</table>
+			
+			<table>
+				<tr>
+			<td valign="top">
+			<stb:menu />
+			</td>
+			<td>
+
+
+
+				<stb:article />
+
+			</td>
+</tr></table>
+	</body>
+</html>

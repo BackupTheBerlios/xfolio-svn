@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<!DOCTYPE article SYSTEM "../../schema/docbook/dtd/docbookx.dtd">
+<article>
+  <title>Un exemple de document docbook</title>
+  <titleabbrev>docbook</titleabbrev>
+  <articleinfo>
+    <date role="modification">2003-09-30</date>
+    <authorgroup>
+      <author>
+        <firstname>Frédéric</firstname>
+        <surname>Glorieux</surname>
+        <affiliation>
+          <orgname>AJLSM</orgname>
+        </affiliation>
+        <email>frederic.glorieux@ajlsm.com</email>
+      </author>
+    </authorgroup>
+    <abstract>
+      <para>
+       Ce petit article en docbook est destiné à illustrer le support que 
+       XFolio fait de ce schéma.
+		</para>
+    </abstract>
+  </articleinfo>
+  <para>
+    Un petit paragraphe d'introduction, avec une note de bas de page.
+  <footnote>
+      <para>Une note</para>
+    </footnote>
+  </para>
+  <section>
+    <title>Première section de niveau 1</title>
+    <para>Avec un paragraphe.</para>
+    <orderedlist>
+      <title>Une liste ordonnée</title>
+      <listitem>
+        <para>premier item</para>
+      </listitem>
+      <listitem>
+        <para>deuxième item</para>
+      </listitem>
+    </orderedlist>
+    <section>
+      <title>1.1</title>
+      <para>Une citation
+          <blockquote>
+          <para>Etre ou ne pas être...</para>
+        </blockquote>
+      </para>
+    </section>
+    <section>
+      <title>1.2</title>
+      <para>Coucou</para>
+      <section>
+        <title>1.2.1</title>
+        <para>
+          <acronym>HTTP</acronym>
+        </para>
+      </section>
+    </section>
+    <section>
+      <title>Section</title>
+      <itemizedlist>
+        <title>Liste</title>
+        <listitem>
+          <itemizedlist>
+            <title>Liste imbriquée</title>
+            <listitem>
+              <para>Un item</para>
+            </listitem>
+            <listitem>
+              <para>Un autre</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Un para</para>
+          <orderedlist>
+            <title> avec un liste</title>
+            <listitem>
+              <para>pleine d'items</para>
+            </listitem>
+            <listitem>
+              <para>elle aussi</para>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
+          <example>
+            <title>Du code</title>
+            <programlisting>
+&lt;article&gt;
+&lt;title&gt;programlisting&lt;/title&gt;
+&lt;para&gt;
+L'ennuyeux en édition DTD c'est que l'on ne peut pas mettre n'importe quoi ici, mais des entités en place d'éléments. Tiens, je fais exprès de mettre une ligne trop longue pour ennuyer la visualisation.
+&lt;para&gt;
+
+&lt;/article&gt;</programlisting>
+          </example>
+        </listitem>
+      </itemizedlist>
+    </section>
+  </section>
+  <section>
+    <sectioninfo>
+      <title>Info de section</title>
+      <subtitle> Avec un sous-titre ?</subtitle>
+    </sectioninfo>
+    <title> Section </title>
+    <variablelist>
+      <title>Une liste de termes</title>
+      <varlistentry>
+        <term>terme 1</term>
+        <term>terme 2</term>
+        <listitem>
+          <para>Définition</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>racine</term>
+        <listitem>
+          <variablelist>
+            <title>Une liste de termes imbriquée</title>
+            <varlistentry>
+              <term>branche</term>
+              <listitem>
+                <para>Définition</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <segmentedlist>
+      <title>Une liste segmentée est uen sorte de tableau ?</title>
+      <segtitle>A : </segtitle>
+      <segtitle>B : </segtitle>
+      <segtitle>C : </segtitle>
+      <seglistitem>
+        <seg>1 A</seg>
+        <seg>1 B</seg>
+        <seg>1 C</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>2 A</seg>
+        <seg>2 B</seg>
+        <seg>2 C</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>3 A</seg>
+        <seg>3 B</seg>
+        <seg>3 C</seg>
+      </seglistitem>
+    </segmentedlist>
+    <para>Un lien
+    <ulink url="http://www.ietf.org/rfc/rfc1766.txt">http://www.ietf.org/rfc/rfc1766.txt</ulink>]
+</para>
+    <qandaset>
+      <title>FAQ</title>
+      <qandadiv>
+        <title>Div</title>
+        <qandaentry>
+          <question>
+            <para>Question</para>
+          </question>
+          <answer>
+            <para>Autre réponse</para>
+          </answer>
+          <answer>
+            <para>réponse</para>
+          </answer>
+        </qandaentry>
+      </qandadiv>
+    </qandaset>
+  </section>
+</article>

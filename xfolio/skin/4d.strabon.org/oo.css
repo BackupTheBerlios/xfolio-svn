@@ -1,0 +1,47 @@
+
+/* common generated oo classes */
+
+
+.hanging-indent { 
+	text-indent: -3em; margin-left: 3em; 
+}
+
+.subtitle {
+    font-family: Garamond, Georgia, serif;
+    font-style:italic;
+}
+
+p.first-line-indent {text-indent:2em;}
+.no a {
+	text-decoration:none;
+}
+dl.toc dt {
+    font-weight:normal;  
+    margin-top:0px; 
+    margin-bottom:0px; 
+}
+dl.toc dd { 
+	margin-left:2ex;
+	margin-top:0px; 
+	margin-bottom:0px;
+}
+dl.toc dl {
+	margin-left:0px; 
+	margin-top:0px; 
+	margin-bottom:0px;
+}
+a.top {
+	clear:none;
+	float:right;
+	margin-top:-0.7em;
+}
+
+.marginalia {
+	text-align:right;
+	width:10ex;
+	font-size:80%;
+	float:right;
+	clear:none;
+	right:0;
+	color:#4263B0;
+}

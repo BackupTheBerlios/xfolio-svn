@@ -1,0 +1,742 @@
+
+/*
+	html generic css
+	
+	This stylesheet match generic html tags
+	with some useful classes and ids
+	
+	idea   : write here all good ideas and practices on html css
+	goal   : generic styling of html tested in different situations
+	usage  : default import, xml editors
+	syntax : separate specific (colors, sizes, decorations ...) for fast edit
+
+	modified 2003-02-15
+	created  2001-08-01
+	
+	frederic.glorieux@ajlsm.com
+ */
+
+/* images */
+
+
+/*
+#banner a {
+	display:block;
+	border:none; 
+	color:inherit; 
+	text-decoration:none;
+	background: url('banner.png');
+	width:468px; 
+	height:60px;
+}
+*/
+#navbar {
+	font-size:10pt;
+	padding:0;
+	padding-left:1em;
+	margin:0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(style=1, opacity=100, finishOpacity=0, startX=0, finishX=0, startY=20, finishY=0);
+	background: #FFCC00 url('back-tonic.png');
+	color:#293974 ;
+	font-weight:bold;
+	border-bottom:outset 2px;
+	border-top:outset 2px;
+}
+#navbar * {
+	filter: progid:DXImageTransform.Microsoft.dropShadow( Color=#999999,offX=1,offY=1,positive=true);
+}
+
+/* COLORS */
+
+/* a dark on light */
+body { 
+	color : #332000; 
+	background-color : #FFFEFA 
+} 
+
+/* a dark blue */
+code,
+dt { 
+	color:#3F577E; 
+} 
+cite,
+small { 
+	color:#000000; 
+}
+
+/* ButtonFace #DCDAD0  #F0EDE0*/
+
+dl.item {
+	background-color:#FFFFFF;
+	border-color:#F0EDE0;
+	color:black;
+}
+dl.item dt {
+	background-color:#F0EDE0;
+}
+
+kbd { 
+	background-color:#D0DAE0; 
+	color:#000000; 
+}
+/* GreyText #C0B899 */
+/* highlight  light on dark #4682B4 */
+
+caption td, 
+caption small,
+caption h1,
+caption h2,
+caption h3,
+caption a,
+caption { 
+	background-color:#6082A0; 
+	color:#FFFFCC; 
+	border:0px;
+}
+caption a:link, 
+caption a:visited { 
+	color: #CCEEFF; 
+}
+caption a:hover { 
+	color: #3F577E; 
+	background:#FCFAe0 
+}
+
+
+
+
+a:link { 
+	color:#000080; 
+}
+/*
+	LINKS
+ */
+
+a {
+	cursor: pointer;
+	cursor: hand;
+}
+a:active {cursor: wait;}
+
+a:visited { 
+	text-decoration:none; 
+	color:#800080; 
+}
+a:hover, 
+a:hover * { 
+	text-decoration:underline; 
+	color: red; 
+}
+a:active, 
+a:active * {
+	background:#CC3333;
+	color:#FFFFFF; 
+	text-decoration:none; 
+}
+
+
+h3 a:link, 
+h3 a:visited { 
+	color:#3F407E; 
+}
+h1, 
+h1 a, 
+h1 a:visited {
+	color: #F4904D;
+}
+h1 a:hover { 
+	background-color:#6082A0; 
+	color:#FFFFCC; 
+	text-decoration:none;
+}
+
+h2, 
+h2 a, 
+h2 a:visited {
+	color: #8E9BC2; 
+	font-weight: bold; 
+}
+h2 a:hover { 
+	background-color:#6082A0; 
+	color:#FFFFCC; 
+	text-decoration:none;
+}
+h3 a, 
+h3 a:visited  {
+	color:#000000
+}
+h3 a:hover { 
+	background-color:#6082A0; 
+	color:#FFFFCC; 
+	text-decoration:none;
+}
+
+
+/*
+	TYPOGRAPHY
+	
+	important property to define graphic identity
+ 	font-family for all elements + some bold  and italic
+
+ */
+
+html, 
+body { 
+	font-family: Georgia, "Gill Alternate One Monotype", "Gill Sans", "Trebuchet MS", Universal, Arial, sans-serif; 
+	font-weight:normal; 
+}
+
+small, 
+label, 
+legend, 
+button,  
+select, 
+input, 
+caption, 
+caption td, 
+caption small, 
+caption a:link,
+form,
+legend,
+#navbar,
+table.table,
+dl.item { 
+	font-family: Universal, Arial, sans-serif;  
+}
+tt, pre { 
+	font-family: "Lucida Console", Courier, "MS Courier New", monospace; 
+}
+h1 { 
+	font-family: Tahoma, Verdana, sans-serif; 
+}
+q, blockquote, h1 em, em, h1 i, em h1, i h1 { 
+	font-family: Garamond, Melior, Georgia, Times,  serif; 
+}
+center h1 {
+	font-family:Impact, Tahoma, Verdana, sans-serif;
+}
+h2 {
+	font-family:"Trebuchet MS", sans-serif; 
+}
+
+
+
+/* GENERATED CONTENTS */
+	/* Add an envelope symbol to mailto links (Mozilla) */
+/*
+	a[href^="mailto:"]:before { content: "\2709  " }
+*/
+	kbd:before {content: "[";}
+	kbd:after  {content: "]";}
+	cite:before { content: "\""} 
+	cite:after { content: "\""}
+	q:before { content: "« "}
+	q:after { content: " »"}
+
+/* 
+	GLOBAL FORMATTING
+	test if it's an xml compliant css 
+	{display: inline;}
+*/
+
+html {
+	margin:0; 
+	padding:0;
+}
+html, 
+body, 
+frameset { 
+	border:none;  
+}
+
+head {display:none;}
+html, 
+body, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+div, 
+p, 
+blockquote, 
+dl, 
+dt, 
+dd { 
+	display:block;
+}
+/* buggy with MS.IE
+table {display: table ; height: auto ;}
+tr {display: table-row ; height: auto ;}
+th {display: table-header ; height: auto ;}
+td {display: table-cell ; height: auto ;}
+*/
+
+/* for sizes of blocks from border and not content */
+
+div {
+	-moz-box-sizing: margin-box;
+	box-sizing: margin-box;
+}
+
+
+/*
+	SIZES
+ 	
+	All sizes are relative to the body element.
+	By inheritance, defining an absolute size for default should
+	affect all other proportions.
+	
+ */
+
+/* what is normal ?
+	body
+	{ font-size:normal; }
+	*/
+
+/* for total inherit font-size */
+table {
+	font-size:100%; 
+}
+
+select {
+	font-size:80%; 
+	vertical-align:bottom;
+}
+
+code, 
+kbd { 
+	font-size: 90%; 
+}
+
+small { 
+	font-size:70%; 
+}
+
+input { 
+	font-size:90%; 
+}
+
+
+/*
+	MARGINS, PADDINGS, ALIGNMENTS
+	
+	This section is opened to adjust alignments
+	
+ */
+body { 
+	margin-left:7%; 
+	margin-right:4%; 
+	margin-top:3%; 
+	margin-bottom:2%;  
+}
+p,
+ul,
+ol,
+dl,
+center,
+li { 
+	margin-top: 1ex; 
+	margin-bottom: 1ex; 
+}
+p,
+li { 
+	text-align:justify; 
+}
+li p { 
+	text-indent:0px; 
+}
+ul,
+ol {  
+	margin-left: 1em; 
+}
+/*
+	LISTS
+ */
+dl dl { margin-left: 2em; }
+dt { 
+	font-weight: bold; 
+	margin-top:1ex; 
+	margin-bottom:0.2ex;  
+}
+dd { 
+	text-align:justify; 
+	margin-top:0ex; 
+	margin-bottom:1em; 
+}
+dd p {
+	margin-top:0.5ex;
+	margin-bottom:0.5ex;
+}
+
+/*		dd dt
+	{ display: inline} */
+/* not easy enough to override
+menu {
+	border: 2px outset;
+	padding-top: 1ex; padding-bottom: 1ex; padding-left: 1em; padding-right: 1em;
+}
+menu * { text-align:left; }
+menu a:link { display:block; }
+menu a:link, menu a:visited { text-decoration: none; padding-left:1ex; padding-right:1ex}
+menu a:active { color: white; background:red;   }
+*/
+
+
+/*
+	INLINES (semantic)
+ */
+
+big   { font-weight: 900; text-align:center; }
+b, strong { font-weight: bold; }
+i, em { font-style: italic;}
+u { text-decoration:underline; }
+abbr  {}
+acronym { font-weight: bold; }
+cite  { font-style: italic;} 
+q     { font-style: italic; }
+samp  {  }
+dfn   { font-weight:bold; font-style:italic; }
+samp  { font-style:italic; }
+var   { font-style:normal; font-weight:bold;}
+
+	/* computing */
+
+code  { font-style: normal; }
+kbd   {  
+	font-style: normal; 
+	font-weight: bold; 
+	border-width: 2px; 
+	border-style: outset;
+	padding-left: 1ex; 
+	padding-right: 1ex; 
+	text-decoration: none
+}
+
+address {}
+ins     {}
+del     {}
+
+
+/* to test
+IMG,OBJECT,APPLET,EMBED,IFRAME {
+display:expression(
+	parseInt(this.offsetWidth)==468 || parseInt(this.currentStyle.width)==468 
+	|| (this.src && this.src.indexOf('http\:\/\/ad')==0) ? 'none' : '');
+}
+*/
+
+
+/*
+	TABLES
+ */
+table.table { 
+	width:100%;
+}
+caption { 
+	text-align:left; 
+	padding-left:1em; 
+	padding-right:1em; 
+}
+table.table td { 
+	padding-left:0.5ex; 
+	padding-right:0.5ex; 
+	border-bottom: solid 1px #CCCCCC; 
+}
+
+.alert { 
+	color: red;
+	font-weight:bold;
+	text-align:left;
+	text-indent: 0;
+}
+
+
+/*
+	TITLES
+ */
+
+/* title of document */
+center h1 {
+	font-size:200%;
+	font-weight: 900; 
+	text-align:center;
+	border:none;
+}
+/* subtitle of document */
+center em h1 {
+	margin-top:0px; padding-top:0px;
+	font-size:150%;
+	font-style:italic;
+	font-weight:normal; 
+	text-align:center;
+	border:none;
+}
+
+h1 { 
+	font-weight: 900; 
+	font-size:150%; padding-top:1ex; margin-bottom:0.5ex;
+}
+
+h1 em { 
+	font-weight:normal; display:block; color : #332000;
+}
+
+h1, h1 a:link, h1 a:visited { 
+	color:#C0B899; 
+}
+h2 {
+	color:#333399;
+	text-indent:1em;
+	border-bottom: 2px groove; 
+	font-size:117%; margin-top:1em; margin-bottom:0;
+}
+h2 a:link, h2 a:visited { 
+	text-decoration:none; color:#0000FF; 
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover { 
+	background-color:#6082A0; 
+	color:#FFFFCC; 
+}
+
+h3{ 
+	font-weight: 900; 
+	text-indent:2em; 
+	border-bottom:solid 1px; 
+	font-size:105%; margin-top:1em; margin-bottom:0;
+}
+
+h3 a:link { 
+	text-decoration:none 
+}
+
+h6 { 
+	border-bottom:groove 2px ; 
+	font-weight:900; 
+	font-size:100%; 
+	margin-top:1em; 
+	margin-bottom:0.5ex;
+}
+td h1, 
+td h2, 
+td h3, 
+td h4, 
+td h5, 
+td h6, 
+caption h1, 
+caption h2, 
+caption h3, 
+caption h4, 
+caption h5, 
+caption h6 { 
+	margin-top:0; margin-bottom:0;
+}
+
+
+/*
+	TEXT
+ */
+
+
+
+/*
+	CONTROLS
+ */
+
+form.form { 
+	background-color:#D0DAE0; 
+	color:#000000; 
+	margin:0; 
+	border:outset 2px; 
+	padding:1ex; 
+}
+
+textarea { 
+	width:100%;
+}
+
+
+input,select,textarea {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+
+input:focus, 
+select:focus, 
+textarea:focus {
+	background-color: #ffffff;
+}
+legend {
+	  border-bottom: groove 2; padding-left:1em; padding-right:1em; padding-top: 0.4ex;
+	  padding-bottom: 0.2ex;
+	  margin-bottom:1ex;
+	  font-weight:900; 
+}
+select { 
+	background: White; color: Black;
+}
+
+input[type=submit], 
+input[type=reset], 
+input[type=button],
+button { 
+	cursor: pointer;
+	cursor: hand;
+}
+	
+label {
+	white-space:nowrap
+}
+
+/* other blocks handling */
+
+dl.item {
+	-moz-border-radius: 10px;
+	border: 2px solid;
+	width: 30ex;
+	width-max:50ex;
+	min-width: 20ex;
+	margin: 0px 0px 8px 2%;
+	padding: 0px;
+}
+
+dl.item dt {
+	padding-top:0.7ex;
+	padding-bottom:0.7ex;
+	padding-left:1em;
+	padding-right:1em;
+	margin:0;
+}
+dl.item dd {
+	margin-left:0;
+	padding-left:1.5em;
+	padding-right:1em;
+	padding-top:1ex;
+	padding-bottom:1ex;
+}
+dl.item dd p {
+	padding-top:1ex;
+	padding-bottom:1ex;
+}
+
+span.subject {
+	text-decoration:underline;
+}
+
+
+
+/* InfoBackground #FCFAE0  */
+pre {
+	white-space:pre;
+	color: #732264;
+	background-color:#F5F5F0;
+	margin-left: 5%;
+	border-left: 1px solid #732264;
+	padding: 15px;
+	line-height: 110%;
+	width: 90%; // causes bug in IE 5.0 Windows
+	scrollbar-face-color: #527BBD;
+	scrollbar-arrow-color: #DEE7F7;;
+	scrollbar-track-color: #DEE7F7;
+}
+/* IE5 Mac hack \*/
+pre {
+	overflow: auto;
+	overflow-y: hidden;
+}
+/* End IE5 Mac hack */
+
+
+
+/*
+	The CSS Anarchist's Cookbook <http://www.oreillynet.com/pub/a/network/2000/07/21/magazine/css_anarchist.html>
+	break every non semantic HTML
+ */
+
+/* no deprecated tag */
+font { 
+	color: inherit !important;
+	background: inherit !important;
+	font-family: inherit !important;
+	font-size: inherit !important; 
+}
+blink {
+	text-decoration: inherit !important;
+}
+
+
+/* no banner in mozilla ? */
+/*
+*[height="60"][width="468"], *[height="60px"][width="468px"] {
+opacity: 0.1 !important;
+}
+*/
+
+/*
+img:hover { height: 100% !important; width: 100% !important;}
+a:link img, a:visited img {outline: 2px solid blue !important;}
+a:hover img {border: 2px solid red !important;}
+*/
+
+/*
+fed up of navigation ?
+a:hover, a:focus {display: none !important;}
+img {height: 40px; width: 40px }
+
+*/
+
+/* 
+very light and intersting show structure view
+
+* {display: block !important; margin-left: 1em !important; padding-left: 0.5em;
+border-left: 1px solid black !important; font-size: 1em !important;
+background: white !important; color: black !Important;}
+img {height: 1em !important;}
+table {display: table !important; height: auto !important;}
+tr {display: table-row !important; height: auto !important;}
+th {display: table-header !important; height: auto !important;}
+td {display: table-cell !important; height: auto !important;}
+*/
+
+/* show url of absolute links for printing, works only in mozilla */
+
+@media print {
+	body { font-size:12pt !important; }
+	/* show links ? moz 
+	a[href^="http://"]:after { content: " <"attr(href)"> "; }
+	*/
+	/* show anchors ? moz 
+	a[name]:before { content: "[" attr(name) "] "; }
+	*/
+	/* *[id]:before { content: "[" attr(id) "] "; } */
+	/* still buggy in moz */
+* {
+		float:none !important; 
+		position:relative !important; 
+		height:auto !important;
+		width:auto !important;
+		overflow:visible !important;	
+}
+	.noprint {display:none; }
+	/* try to render table printable */
+	table {width:100%; font-size:80%; }
+}
+
+/* SNIPPETS to think */
+
+/* alpha modif on hover image
+.pic, a.pic, a.pic img {
+filter: alpha(opacity=50);
+-moz-opacity: 0.5; 
+}
+a.pic:hover, a.pic:hover img {
+filter: alpha(opacity=100);
+-moz-opacity: 1.0;
+} 
+*/
+
+
+/********* end sheet ************/

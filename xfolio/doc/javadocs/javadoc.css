@@ -1,0 +1,73 @@
+@import url("../../skin/xfolio.org/html.css");
+
+/* html.css override */
+body { font-family: Arial, Geneva, Arial, Helvetica, Verdana,  sans-serif;  }
+
+pre {
+	overflow:visible;	
+	line-height:95%;
+	font-size:80%;
+	white-space:pre;
+	background-color:#FFFFFF;
+	margin: 0px;
+	border: none;
+	padding: 0px;
+}
+
+code {
+
+}
+
+
+/* like h2 in main */
+.FrameTitleFont {
+	font-family:Verdana, Arial, sans-serif;
+	font-weight: 900; 
+	display:block;
+	color:#CC8000;
+	margin-top:1em; 
+	margin-bottom:1ex;
+}
+
+
+
+/* like h3 in main */
+
+.FrameHeadingFont {
+	display:block;
+	font-weight: 900; 
+	padding-left:2em; 
+	font-size:105%; 
+	margin-top:1em; 
+	margin-bottom:1ex;
+}
+
+/*
+
+
+.NavBarCell1 font b { font-size: 70% }
+.NavBarCell2 font b { font-size: 50% }
+.NavBarCell3 font b { font-size: 70% }
+font b { font-size: 18px; }
+
+
+
+.TableHeadingColor     { background: #E0E0E0; }
+.TableSubHeadingColor  { background: #DCDAD0; }
+.TableRowColor         { background: #F9F9F9; }
+
+
+.NavBarCell1    { background-color:#D0D0D0;}
+.NavBarCell1Rev { background-color:#A0A0A0;}
+.NavBarFont1    { font-size: 70%; }
+.NavBarFont1Rev { font-size: 70%; }
+.NavBarCell2    { background-color:#E0E0E0;}
+.NavBarCell3    { background-color:#F0F0F0;}
+
+
+
+
+.FrameHeadingFont { font-size: 120%; font-weight: bold; }
+.FrameItemFont    { font-size: 100%; }
+
+*/

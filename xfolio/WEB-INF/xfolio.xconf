@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+xfolio changes, search for "xfolio"
+
+catalog path
+input modules
+
+-->
+
+<cocoon version="2.1">
+  <input-modules>
+    <!-- FG:2004-06-22 some input module for xfolio, servlet context params -->
+    <component-instance logger="core.modules.input" name="context"       class="org.apache.cocoon.components.modules.input.ContextModule">
+      <lenient>false</lenient>
+      <function name="java.lang.String" prefix="str"/>
+    </component-instance>
+    <component-instance logger="core.modules.input" name="context-attr"       class="org.apache.cocoon.components.modules.input.ContextAttributeModule"/>
+
+</input-modules>
+
+  <!--
+  FG: expose and order a schema folder for xfolio.
+  -->   
+	<entity-resolver logger="core.resolver">
+		<parameter name="catalog" value="schema/catalog"/>
+		<parameter name="verbosity" value="1"/>
+	</entity-resolver>
+  <!--+
+      | Saxon XSLT Processor
+      | For old (6.5.2) Saxon use:
+      |  <parameter name="transformer-factory" value="com.icl.saxon.TransformerFactoryImpl"/>
+      | For new (7.x?) Saxon use:
+      |  <parameter name="transformer-factory" value="net.sf.saxon.TransformerFactoryImpl"/>
+  +-->
+  <component logger="core.xslt-processor"
+             role="org.apache.excalibur.xml.xslt.XSLTProcessor/saxon"
+             class="org.apache.excalibur.xml.xslt.XSLTProcessorImpl">
+     <parameter name="use-store" value="true"/>
+     <parameter name="transformer-factory" value="com.icl.saxon.TransformerFactoryImpl"/>
+  </component>
+
+<!-- ================ Internationalization Catalogs =================== -->
+
+  <!--+
+      | I18n Bundle Factory
+      |
+      | BundleFactory loads Bundles with i18n resources for the given locale.
+      | Bundles are loaded from the 'catalogue_location'. Bundle base name is
+      | 'catalogue_name' value.
+      | If 'cache-at-startup' is true then BundleFactory preloads bundles.
+      +-->
+  <i18n-bundles logger="core.i18n-bundles">
+    <catalogue-name>messages</catalogue-name>
+    <catalogue-location>context://samples/i18n/translations</catalogue-location>
+    <cache-at-startup>true</cache-at-startup>
+  </i18n-bundles>
+
+</cocoon>

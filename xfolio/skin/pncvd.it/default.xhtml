@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	creation:
+2004-02-17
+
+	modified:
+2004-02-17
+
+	author:
+frederic.glorieux@ajlsm.com
+
+	publisher:
+http://strabon.org
+
+	what:
+This is a default html layout with some custom tags to be processed by a transformation
+to put different contents. For now, an article, a menu, a metadata record as an identitification bar.
+
+	syntax:
+The included parts are expressed in a very simple namespace
+
+	history:
+Come from an xsl becoming a bit too complex to be simple editable layout.
+
+	TODO:
+Resolve links from here.
+
+-->
+<html xmlns:foo="http://xfolio.org/ns/skin" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<!-- default html style -->
+		<link rel="stylesheet" type="text/css" href="html.css" />
+		<!-- style for oo generated html -->
+		<link rel="stylesheet" type="text/css" href="oo.css" />
+		<!-- critic, layout to combine blocs -->
+		<link rel="stylesheet" type="text/css" href="layout.css" />
+		<!-- specific strabon style -->
+		<!-- <link rel="stylesheet" type="text/css" href="strabon.css" /> -->
+		<link rel="stylesheet" type="text/css" href="cilento.css" />
+		<!-- script to adjust character size to width of window, and simulate position:fixed -->
+		<script type="text/javascript" src="html.js"> &#32; </script>
+	</head>
+	<body background="fondino3.jpg" onload="if(window.init) init();" onresize="if (window.fit) fit(90)">
+		<div id="header">
+			<!-- careful, no space ! -->
+			<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<a name="top" />
+				<tr>
+					<td>
+						<a href="http://www.strabon.org">
+							<img src="strabon_logo_200.jpg" alt="strabon.org" border="0" />
+						</a>
+						<a href="http://www.pncvd.it" target="_blank">
+							<img src="barra2_r1_c01.gif" alt="Parc Cilento" border="0" bgcolor="#fff" /> Parco Nazionale del Cilento e Vallo di Diano</a>
+					</td>
+				</tr>
+			</table>
+			<div>
+				<table id="navbar" width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<!-- TODO path -->
+						<td nowrap="nowrap" align="left">
+							<a href="http://strabon.pncvd.it">strabon.pncvd.it</a>
+							<foo:path>
+								<!-- this tag will be replaced by a clickable URI for the document -->
+							</foo:path>
+							&#160; 
+						<foo:langs />
+						&#160; 
+						<foo:formats />
+						</td>
+						<td align="right">
+							<foo:skin />
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="side">
+			<div class="img">
+				<a href="/">
+					<img src="barra2_r1_c01.gif" alt="test" border="0" />
+				</a>
+			</div>
+			<foo:menu />
+			<foo:toc />
+			<p> &#160; </p>
+			<img src="cocoon.jpg" alt="Thanks Cocoon" style="vertical-align:bottom;" />
+			<p> &#160; </p>
+		</div>
+		<div id="main1">
+			<!-- <p> &#160; </p> -->
+			<div id="main">
+				<p>&#160;</p>
+				<foo:article />
+			</div>
+		</div>
+			<table width="90%" align="center" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<th align="left">
+				&#160; 
+						<a href="mailto:contact@strabon.org">contact@strabon.org</a>
+				&#160; 
+					</th>
+					<td>
+									<img src="mab35x23trasp.gif" alt="MAB" style="vertical-align:bottom;" />
+				<img src="unesco35x23trasp.gif" alt="UNESCO" style="vertical-align:bottom;" />
+				<img src="unescologotrasp.gif" alt="World Heritage" style="vertical-align:bottom;" />
+				<img src="eritagetrasp.gif" alt="World Eritage" style="vertical-align:bottom;" />
+
+					</td>
+					
+					<th align="right">
+				&#160; 
+						<span id="copyright">© 2004</span>
+				&#160; 
+					</th>
+				</tr>
+			</table>
+	</body>
+</html>

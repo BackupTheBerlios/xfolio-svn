@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--+
+    This is the Cocoon web-app configurations file
+    +-->
+    <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd"
+    [
+	<!ENTITY init-params SYSTEM "config.web">
+    ]>
+<web-app>
+
+  <!-- Context Configuration ========================================== -->
+
+  <!--+
+      | Set a context property useful to allow you to ProxyPass your
+      | web application mounted to a different URI without loosing the
+      | ability to do cookie-based sessions.
+      | WARNING: this is Jetty specific!
+      +-->
+  <!--context-param>
+    <param-name>org.mortbay.jetty.servlet.SessionPath</param-name>
+    <param-value>/some/path/to/your/webapp</param-value>
+    <description>An override of the session cookie path</description>
+   </context-param-->
+   
+  <!-- Servlet Configuration ========================================== -->
+
+  <servlet>
+    <servlet-name>Cocoon</servlet-name>
+    <display-name>Cocoon</display-name>
+    <description>Cocoon</description>
+
+    <!--
+      The regular servlet class (trusts the servlet container classloader)
+    <servlet-class>org.apache.cocoon.servlet.CocoonServlet</servlet-class>
+
+2004-07-11:FG 
+Very bad idea but an overriding servlet class have been tested to modify
+the logkit.xconf parsing.
+
+      -->
+    <servlet-class>org.apache.cocoon.servlet.CocoonServlet</servlet-class>
+
+    <!--
+      This parameter tells cocoon to set the thread's context classloader to
+      its own classloader. If you experience strange classloader issues,
+      try setting this parameter to "true" or using ParanoidCocoonServlet.
+    -->
+    <init-param>
+      <param-name>init-classloader</param-name>
+      <param-value>false</param-value>
+    </init-param>
+
+    <!--
+      This parameter allows to set system properties
+    -->
+    <!--
+    <init-param>
+      <param-name>force-property</param-name>
+      <param-value>
+        org.apache.commons.logging.Log=org.apache.commons.logging.impl.LogKitLogger
+      </param-value>
+    </init-param>
+    -->
+
+    <!--
+      This parameter points to the main configuration file for Cocoon.
+      Note that the path is specified in absolute notation but it will be
+      resolved relative to the servlets webapp context path
+    -->
+    <init-param>
+      <param-name>configurations</param-name>
+      <param-value>/WEB-INF/cocoon.xconf</param-value>
+    </init-param>
+
+    <!--
+      This parameter indicates the configuration file of the LogKit management
+    -->
+    <init-param>
+      <param-name>logkit-config</param-name>
+      <param-value>/WEB-INF/logkit.xconf</param-value>
+    </init-param>
+
+    <!--
+      This parameter indicates the category id of the logger from the LogKit
+      configuration used by the CocoonServlet.
+    -->
+    <init-param>
+      <param-name>servlet-logger</param-name>
+      <param-value>access</param-value>
+    </init-param>
+
+    <!--
+      This parameter indicates the category id of the logger from the LogKit
+      management configuration for the Cocoon engine.
+      This logger is used for all components described in the cocoon.xconf
+      and sitemap.xmap file not having specified a logger with the
+      logger="..." attribute in the component configuration file.
+    -->
+    <init-param>
+      <param-name>cocoon-logger</param-name>
+      <param-value>core</param-value>
+    </init-param>
+
+    <!--
+      This parameter indicates the log level to use throughout startup of the
+      system. As soon as the logkit.xconf the setting of the logkit.xconf
+      configuration is used instead! Only for startup and if the logkit.xconf is
+      not readable/available this log level is of importance.
+
+      Available levels are:
+        DEBUG:        prints all level of log messages.
+        INFO:         prints all level of log messages except DEBUG ones.
+        WARN:         prints all level of log messages except DEBUG and INFO ones.
+        ERROR:        prints all level of log messages except DEBUG, INFO and WARN ones.
+        FATAL_ERROR:  prints only log messages of this level
+    -->
+    <init-param>
+      <param-name>log-level</param-name>
+      <param-value>ERROR</param-value>
+    </init-param>
+
+    <!--
+      Allow reinstantiating (reloading) of the cocoon instance. If this is
+      set to "yes" or "true", a new cocoon instance can be created using
+      the request parameter "cocoon-reload". Default is no for security reasons.
+
+2004-07-11:FG modification, allow reload in dev
+    -->
+
+    <init-param>
+      <param-name>allow-reload</param-name>
+      <param-value>yes</param-value>
+    </init-param>
+
+    <!--
+      This parameter is used to list classes that should be loaded at
+      initialization time of the servlet. For example, JDBC Drivers used need to
+      be named here. Additional entries may be inserted here during build
+      depending on your build properties.
+    -->
+    <init-param>
+      <param-name>load-class</param-name>
+      <param-value>
+        <!-- For parent ComponentManager sample:
+        org.apache.cocoon.samples.parentcm.Configurator -->
+        <!-- For IBM WebSphere:
+        com.ibm.servlet.classloader.Handler -->
+      
+        <!-- For Database Driver: -->
+        <!-- 2004-04-02 frederic.glorieux@ajlsm.com, try to be light and control what is done -->
+        <!-- org.hsqldb.jdbcDriver -->
+
+</param-value>
+    </init-param>
+
+    <!--
+      Causes all files in multipart requests to be processed.
+      Default is false for security reasons.
+      Unsupported values will be interpreted as false.
+    -->
+    <init-param>
+      <param-name>enable-uploads</param-name>
+      <param-value>false</param-value>
+    </init-param>
+
+    <!--
+      This parameter allows to specify where Cocoon should put uploaded files.
+      The path specified can be either absolute or relative to the context
+      path of the servlet. On windows platform, absolute directory must start
+      with volume: C:\Path\To\Upload\Directory
+
+      The default directory is "upload-dir" in the work-directory
+
+    <init-param>
+      <param-name>upload-directory</param-name>
+      <param-value>WEB-INF/work/upload-dir</param-value>
+    </init-param>
+    -->
+<!--
+2004-02-20  frederic.glorieux@ajlsm.com
+TOTHINK Could be interesting to put upload-dir in a nice archive place ?
+Then all upload need to be driven precisely by the application
+-->
+
+
+    <!--
+      Causes all files in multipart requests to be saved to upload-dir.
+      Default is true for security reasons.
+      Unsupported values will be interpreted as false.
+    -->
+    <init-param>
+      <param-name>autosave-uploads</param-name>
+      <param-value>true</param-value>
+    </init-param>
+
+    <!--
+      Specify handling of name conflicts when saving uploaded files to disk.
+      Acceptable values are deny, allow, rename (default). Files are renamed
+      x_filename where x is an integer value incremented to make the new
+      filename unique.
+    -->
+    <!-- 2004-04-27 replace -->
+    <init-param>
+      <param-name>overwrite-uploads</param-name>
+      <param-value>allow</param-value>
+    </init-param>
+
+    <!--
+      Specify maximum allowed size of the upload. Defaults to 10 Mb.
+
+    <init-param>
+      <param-name>upload-max-size</param-name>
+      <param-value>10000000</param-value>
+    </init-param>
+    -->
+
+    <!--
+      This parameter allows to specify where Cocoon should create its page
+      and other objects cache. The path specified can be either absolute or
+      relative to the context path of the servlet. On windows platform,
+      absolute directory must start with volume: C:\Path\To\Cache\Directory
+
+      The default directory is "cache-dir" in the work-directory
+
+    <init-param>
+      <param-name>cache-directory</param-name>
+      <param-value>WEB-INF/work/cache-dir</param-value>
+    </init-param>
+    -->
+<!--
+2004-02-20 frederic.glorieux@ajlsm.com
+like for work, keep cache in webapp ?
+Should be interesting to find a light cocoon cache reader ?
+-->
+
+    <!--
+      This parameter allows to specify where Cocoon should put it's
+      working files. The path specified is either absolute or relative
+      to the context path of the Cocoon servlet. On windows platform,
+      absolute directory must start with volume: C:\Path\To\Work\Directory
+
+      The default directory is "cocoon-files" directory in the servlet
+      context's temp directory (context property javax.servlet.context.tempdir).
+
+2004-02-20 frederic.glorieux@ajlsm.com
+Work directory in webapp is the best place to have a precompiled application ready to work,
+even on CD.
+TODO: check servlet doc to see if strabon web.xml could be append to a standard cocoon web.xml 
+
+
+    <init-param>
+      <param-name>work-directory</param-name>
+      <param-value>WEB-INF/work</param-value>
+    </init-param>
+
+    -->
+
+
+    <!--
+      This parameter allows to specify additional directories or jars
+      which Cocoon should put into it's own classpath.
+      Note that you must separate them using the platforms path.separator
+      (":" for *nix and ";" for Windows systems). Also note that absolute
+      pathes are taken as such but relative pathes are rooted at the context
+      root of the Cocoon servlet.
+
+    <init-param>
+      <param-name>extra-classpath</param-name>
+      <param-value>WEB-INF/extra-classes1:/[YOU-ABSOLUTE-PATH-TO]/own.jar</param-value>
+    </init-param>
+    -->
+
+<!--
+2004-02-20 frederic.glorieux@ajlsm.com
+Nice feature to add some external app which are not in the classical cocoon distrib !
+-->
+    <!--
+      This parameter allows you to select the parent component manager.
+      The class will be instantiated via the constructor that takes a single
+      String as a parameter. That String will be equal to the text after the
+      '/'.
+
+      Cocoon honors the LogEnabled, Initializable and Disposable interfaces for
+      this class, if it implements them.
+
+      If you uncomment the following lines the parent CM is set to the Parent CM
+      sample, which will look up a configuration via JNDI at
+      org/apache/cocoon/samples/parentcm/ParentCMConfiguration and use it.
+    <init-param>
+      <param-name>parent-component-manager</param-name>
+      <param-value>org.apache.cocoon.samples.parentcm.ParentComponentManager/org/apache/cocoon/samples/parentcm/ParentCMConfiguration</param-value>
+    </init-param>
+    -->
+
+    <!--
+      If you set this parameter to 'true' or 'yes', Cocoon will add processing
+      time to the end of each response. Value 'hide' adds processing time as an
+      HTML comment. By default, processing time is not added (corresponds to
+      value 'no').
+      NOTE: If you use this feature, Cocoon might generated a wrong content
+      length header in the response. This is due to the internal processing
+      of Readers and the Caching. So, this might be the reason if you get
+      a warning about a wrong content length.
+      See http://nagoya.apache.org/bugzilla/show_bug.cgi?id=17370.
+    <init-param>
+      <param-name>show-time</param-name>
+      <param-value>hide</param-value>
+    </init-param>
+    -->
+
+    <!--
+       If true or not set, this class will try to catch and handle all Cocoon
+       exceptions. If false, it will rethrow them to the servlet container.
+    -->
+    <init-param>
+      <param-name>manage-exceptions</param-name>
+      <param-value>true</param-value>
+    </init-param>
+
+    <!--
+       If true, Avalon Excalibur instrumentation will be enabled on all
+       Instrumentable components with Cocoon and your Cocoon application.
+
+    <init-param>
+      <param-name>enable-instrumentation</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    -->
+
+    <!--
+       This defines the location of the instrument manager configuration, only
+       used if the init-param enable-instrumentation is enabled.
+
+    <init-param>
+      <param-name>instrumentation-config</param-name>
+      <param-value>/WEB-INF/instrumentation.xconf</param-value>
+    </init-param>
+    -->
+
+    <!--
+      Set encoding used by the container. If not set the ISO-8859-1 encoding
+      will be assumed.
+    -->
+<!--
+frederic.glorieux@ajlsm.com, everything in unicode
+-->
+    <init-param>
+      <param-name>container-encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+    <!--
+      Set form encoding. This will be the character set used to decode request
+      parameters. If not set the ISO-8859-1 encoding will be assumed.
+    -->
+<!--
+frederic.glorieux@ajlsm.com, handling multilingual forms in unicode
+-->
+    <init-param>
+      <param-name>form-encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+
+    <!--
+      This parameter allows you to startup Cocoon2 immediately after startup
+      of your servlet engine.
+    -->
+    <load-on-startup>1</load-on-startup>
+
+
+  </servlet>
+
+
+
+
+  <!-- URL space mappings ============================================= -->
+
+  <!--
+    Cocoon handles all the URL space assigned to the webapp using its sitemap.
+    It is recommended to leave it unchanged. Under some circumstances though
+    (like integration with proprietary webapps or servlets) you might have
+    to change this parameter.
+  -->
+  <servlet-mapping>
+    <servlet-name>Cocoon</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <!--
+    Some servlet engines (Tomcat) have defaults which are not overriden
+    by '/' mapping, but must be overriden explicitly.
+  -->
+  <servlet-mapping>
+    <servlet-name>Cocoon</servlet-name>
+    <url-pattern>*.jsp</url-pattern>
+  </servlet-mapping>
+  <!--
+    Some servlet engines (WebLogic) have defaults which are not overriden
+    by '/' mapping, but must be overriden explicitly.
+  -->
+  <servlet-mapping>
+    <servlet-name>Cocoon</servlet-name>
+    <url-pattern>*.html</url-pattern>
+  </servlet-mapping>
+
+  <!-- various MIME type mappings ====================================== -->
+  <!-- this an iseay and centralize place to add mime-types -->
+  
+  <!-- some more XML mime-type -->
+
+  <mime-mapping>
+    <extension>xml</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>xsl</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>xconf</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>xmap</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>dbx</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>rdf</extension>
+    <mime-type>text/xml</mime-type>
+  </mime-mapping>
+
+  <!-- some more text mime-type -->
+  
+  <mime-mapping>
+    <extension>css</extension>
+    <mime-type>text/css</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>ent</extension>
+    <mime-type>text/plain</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>grm</extension>
+    <mime-type>text/plain</mime-type>
+  </mime-mapping>
+
+  <mime-mapping>
+    <extension>vcf</extension>
+    <mime-type>text/x-vcard</mime-type>
+  </mime-mapping>
+
+  <!-- misc -->
+
+  <mime-mapping>
+    <extension>sxw</extension>
+    <mime-type>application/vnd.sun.xml.writer</mime-type>
+  </mime-mapping>
+
+<!-- 
+2004-07-12:FG added from the default web.xml of tomcat
+maybe not so precise in other servlet engine (jetty)
+
+-->
+    <mime-mapping>
+        <extension>abs</extension>
+        <mime-type>audio/x-mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ai</extension>
+        <mime-type>application/postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aif</extension>
+        <mime-type>audio/x-aiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aifc</extension>
+        <mime-type>audio/x-aiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aiff</extension>
+        <mime-type>audio/x-aiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>aim</extension>
+        <mime-type>application/x-aim</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>art</extension>
+        <mime-type>image/x-jg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>asf</extension>
+        <mime-type>video/x-ms-asf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>asx</extension>
+        <mime-type>video/x-ms-asf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>au</extension>
+        <mime-type>audio/basic</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>avi</extension>
+        <mime-type>video/x-msvideo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>avx</extension>
+        <mime-type>video/x-rad-screenplay</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>bcpio</extension>
+        <mime-type>application/x-bcpio</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>bin</extension>
+        <mime-type>application/octet-stream</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>bmp</extension>
+        <mime-type>image/bmp</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>body</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>cdf</extension>
+        <mime-type>application/x-cdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>cer</extension>
+        <mime-type>application/x-x509-ca-cert</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>class</extension>
+        <mime-type>application/java</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>cpio</extension>
+        <mime-type>application/x-cpio</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>csh</extension>
+        <mime-type>application/x-csh</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>dib</extension>
+        <mime-type>image/bmp</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>doc</extension>
+        <mime-type>application/msword</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>dtd</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>dv</extension>
+        <mime-type>video/x-dv</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>dvi</extension>
+        <mime-type>application/x-dvi</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>eps</extension>
+        <mime-type>application/postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>etx</extension>
+        <mime-type>text/x-setext</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>exe</extension>
+        <mime-type>application/octet-stream</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>gif</extension>
+        <mime-type>image/gif</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>gtar</extension>
+        <mime-type>application/x-gtar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>gz</extension>
+        <mime-type>application/x-gzip</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>hdf</extension>
+        <mime-type>application/x-hdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>hqx</extension>
+        <mime-type>application/mac-binhex40</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>htc</extension>
+        <mime-type>text/x-component</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>htm</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>hqx</extension>
+        <mime-type>application/mac-binhex40</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ief</extension>
+        <mime-type>image/ief</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jad</extension>
+        <mime-type>text/vnd.sun.j2me.app-descriptor</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jar</extension>
+        <mime-type>application/java-archive</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>java</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jnlp</extension>
+        <mime-type>application/x-java-jnlp-file</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpe</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpeg</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jpg</extension>
+        <mime-type>image/jpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>js</extension>
+        <mime-type>text/javascript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jsf</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>jspf</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>kar</extension>
+        <mime-type>audio/x-midi</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>latex</extension>
+        <mime-type>application/x-latex</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>m3u</extension>
+        <mime-type>audio/x-mpegurl</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mac</extension>
+        <mime-type>image/x-macpaint</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>man</extension>
+        <mime-type>application/x-troff-man</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>me</extension>
+        <mime-type>application/x-troff-me</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mid</extension>
+        <mime-type>audio/x-midi</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>midi</extension>
+        <mime-type>audio/x-midi</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mif</extension>
+        <mime-type>application/x-mif</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mov</extension>
+        <mime-type>video/quicktime</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>movie</extension>
+        <mime-type>video/x-sgi-movie</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mp1</extension>
+        <mime-type>audio/x-mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mp2</extension>
+        <mime-type>audio/x-mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mp3</extension>
+        <mime-type>audio/x-mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpa</extension>
+        <mime-type>audio/x-mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpe</extension>
+        <mime-type>video/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpeg</extension>
+        <mime-type>video/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpega</extension>
+        <mime-type>audio/x-mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpg</extension>
+        <mime-type>video/mpeg</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>mpv2</extension>
+        <mime-type>video/mpeg2</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ms</extension>
+        <mime-type>application/x-wais-source</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>nc</extension>
+        <mime-type>application/x-netcdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>oda</extension>
+        <mime-type>application/oda</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pbm</extension>
+        <mime-type>image/x-portable-bitmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pct</extension>
+        <mime-type>image/pict</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pdf</extension>
+        <mime-type>application/pdf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pgm</extension>
+        <mime-type>image/x-portable-graymap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pic</extension>
+        <mime-type>image/pict</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pict</extension>
+        <mime-type>image/pict</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pls</extension>
+        <mime-type>audio/x-scpls</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>png</extension>
+        <mime-type>image/png</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pnm</extension>
+        <mime-type>image/x-portable-anymap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>pnt</extension>
+        <mime-type>image/x-macpaint</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ppm</extension>
+        <mime-type>image/x-portable-pixmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ps</extension>
+        <mime-type>application/postscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>psd</extension>
+        <mime-type>image/x-photoshop</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>qt</extension>
+        <mime-type>video/quicktime</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>qti</extension>
+        <mime-type>image/x-quicktime</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>qtif</extension>
+        <mime-type>image/x-quicktime</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ras</extension>
+        <mime-type>image/x-cmu-raster</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rgb</extension>
+        <mime-type>image/x-rgb</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rm</extension>
+        <mime-type>application/vnd.rn-realmedia</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>roff</extension>
+        <mime-type>application/x-troff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rtf</extension>
+        <mime-type>application/rtf</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>rtx</extension>
+        <mime-type>text/richtext</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sh</extension>
+        <mime-type>application/x-sh</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>shar</extension>
+        <mime-type>application/x-shar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sit</extension>
+        <mime-type>application/x-stuffit</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>smf</extension>
+        <mime-type>audio/x-midi</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>snd</extension>
+        <mime-type>audio/basic</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>src</extension>
+        <mime-type>application/x-wais-source</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sv4cpio</extension>
+        <mime-type>application/x-sv4cpio</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>sv4crc</extension>
+        <mime-type>application/x-sv4crc</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>swf</extension>
+        <mime-type>application/x-shockwave-flash</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>t</extension>
+        <mime-type>application/x-troff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tar</extension>
+        <mime-type>application/x-tar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tcl</extension>
+        <mime-type>application/x-tcl</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tex</extension>
+        <mime-type>application/x-tex</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>texi</extension>
+        <mime-type>application/x-texinfo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>texinfo</extension>
+        <mime-type>application/x-texinfo</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tif</extension>
+        <mime-type>image/tiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tiff</extension>
+        <mime-type>image/tiff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tr</extension>
+        <mime-type>application/x-troff</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>tsv</extension>
+        <mime-type>text/tab-separated-values</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>txt</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ulw</extension>
+        <mime-type>audio/basic</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>ustar</extension>
+        <mime-type>application/x-ustar</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xbm</extension>
+        <mime-type>image/x-xbitmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xml</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xpm</extension>
+        <mime-type>image/x-xpixmap</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xsl</extension>
+        <mime-type>text/xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>xwd</extension>
+        <mime-type>image/x-xwindowdump</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>wav</extension>
+        <mime-type>audio/x-wav</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svg</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>svgz</extension>
+        <mime-type>image/svg+xml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <!-- Wireless Bitmap -->
+        <extension>wbmp</extension>
+        <mime-type>image/vnd.wap.wbmp</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <!-- WML Source -->
+        <extension>wml</extension>
+        <mime-type>text/vnd.wap.wml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <!-- Compiled WML -->
+        <extension>wmlc</extension>
+        <mime-type>application/vnd.wap.wmlc</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <!-- WML Script Source -->
+        <extension>wmls</extension>
+        <mime-type>text/vnd.wap.wmlscript</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <!-- Compiled WML Script -->
+        <extension>wmlscriptc</extension>
+        <mime-type>application/vnd.wap.wmlscriptc</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>wrl</extension>
+        <mime-type>x-world/x-vrml</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>Z</extension>
+        <mime-type>application/x-compress</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>z</extension>
+        <mime-type>application/x-compress</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>zip</extension>
+        <mime-type>application/zip</mime-type>
+    </mime-mapping>
+    
+
+
+</web-app>

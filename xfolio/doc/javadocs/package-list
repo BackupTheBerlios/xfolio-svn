@@ -1,0 +1,4 @@
+org.apache.cocoon.components.modules.input
+org.apache.cocoon.components.pipeline.impl
+org.apache.cocoon.generation
+org.apache.cocoon.reading

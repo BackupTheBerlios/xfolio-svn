@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+created 2003-11-05
+
+FG:frederic.glorieux@xfolio.org
+PT:terray@4dconcept.fr
+
+(c) xfolio.org, ajlsm.com, strabon.org
+Licence : GPL
+
+
+The heart of xfolio, the pipe process
+
+  history/features
+2004-06-17  a resize parameter on layout
+2004-06-15  more reflexion on caching process
+2004-06-08  parameters are attached to the tomcat context
+2004-05-10  first launch parameters setting
+2004-05-01  docbook support
+2004-03-01  the OpenOffice logic
+2003-11-01  first tests of a direct pipe process of documents
+
+  TODO
+Change one more time passing of parameters to be free of context (sitemap parameters ?), think to sdx 
+make a "domain" parameter available for all sitemap
+implement a "write site" in real time
+generate site on start
+an sxw generator agregate a template
+
+  ideas Cocoon 2.1.5
+calendar generator (+ transform !!)
+filter transformer (efficient sax selector)
+
+-->
+<map:sitemap xmlns:map="http://apache.org/cocoon/sitemap/1.0">
+  <map:components>
+    <!-- 
+generators 
+    -->
+    <map:generators default="file">
+      <map:generator name="xmp" src="org.apache.cocoon.generation.XMPjpgGenerator"/>
+      <map:generator label="content" logger="sitemap.generator.mediadir" name="mediadir" src="org.apache.cocoon.generation.MediaDirectoryGenerator"/>
+    </map:generators>
+    <!-- 
+transformers
+    -->
+    <map:transformers default="xslt">
+      <!-- NOTE: This is the default XSLT processor. -->
+      <map:transformer logger="sitemap.transformer.xslt" name="xslt" pool-grow="2" pool-max="32" pool-min="8" src="org.apache.cocoon.transformation.TraxTransformer">
+        <use-request-parameters>false</use-request-parameters>
+        <use-session-parameters>false</use-session-parameters>
+        <use-cookie-parameters>false</use-cookie-parameters>
+        <xslt-processor-role>saxon</xslt-processor-role>
+        <check-includes>true</check-includes>
+      </map:transformer>
+      <!-- Configure i18n transformer -->
+      <map:transformer name="i18n" logger="sitemap.transformer.i18n" src="org.apache.cocoon.transformation.I18nTransformer">
+        <catalogues default="messages">
+          <catalogue id="messages" name="messages" location="locale"/>
+        </catalogues>
+        <cache-at-startup>true</cache-at-startup>
+      </map:transformer>
+    </map:transformers>
+    <!-- 
+serializers
+    -->
+    <map:serializers default="xhtm">
+      <!-- a default xhtml serializer, without Doctype declaration -->
+      <map:serializer logger="sitemap.serializer.xhtml" mime-type="text/html" name="xhtm" pool-grow="2" pool-max="64" pool-min="2" src="org.apache.cocoon.serialization.XMLSerializer">
+        <encoding>UTF-8</encoding>
+      </map:serializer>
+            <map:serializer name="debug" mime-type="text/plain" logger="sitemap.serializer.text" src="org.apache.cocoon.serialization.XMLSerializer">
+        <indent>yes</indent>
+        <encoding>UTF-8</encoding>
+      </map:serializer>
+
+    </map:serializers>
+    <!-- 
+actions
+    -->
+    <map:actions>
+      <map:action name="xsp" logger="sitemap.action.serverpages" pool-grow="2" pool-max="32" pool-min="4" src="org.apache.cocoon.acting.ServerPagesAction"/>
+    </map:actions>
+    <!-- 
+matchers
+    -->
+    <map:matchers default="wildcard">
+      <map:matcher name="size" src="org.apache.cocoon.matching.WildcardRequestParameterMatcher" logger="sitemap.matcher.wildcard-request">
+        <parameter-name>size</parameter-name>
+      </map:matcher>
+    </map:matchers>
+  </map:components>
+  <map:resources>
+    <!--
+  this resource serve static files with mime/type matched from file extension
+  The caller should provide a folder where to read, default is webapp
+  -->
+    <map:resource name="static">
+      <!-- xml -->
+      <map:match pattern="**.xhtml">
+        <map:generate src="{../folder}{1}.xhtml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <map:match pattern="**.xml">
+        <map:generate src="{../folder}{1}.xml"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <map:match pattern="**.xsd">
+        <map:generate src="{../folder}{1}.xsd"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <map:match pattern="**.dbx">
+        <map:generate src="{../folder}{1}.dbx"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- text -->
+      <map:match pattern="**.css">
+        <map:read src="{1}.css" mime-type="text/css"/>
+      </map:match>
+      <map:match pattern="**.dtd">
+        <map:read src="{../folder}{1}.dtd" mime-type="text/plain"/>
+      </map:match>
+      <map:match pattern="**.htm">
+        <map:read src="{../folder}{1}.htm" mime-type="text/html"/>
+      </map:match>
+      <map:match pattern="**.html">
+        <map:generate type="html" src="{../folder}{1}.html"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <map:match pattern="**.java">
+        <map:read src="{../folder}{1}.java" mime-type="text/x-java-source"/>
+      </map:match>
+      <map:match pattern="**.js">
+        <map:read src="{../folder}{1}.js" mime-type="text/javascript"/>
+      </map:match>
+      <map:match pattern="**.tsv">
+        <map:read src="{../folder}{1}.tsv" mime-type="text/tab-separated-values"/>
+      </map:match>
+      <map:match pattern="**.csv">
+        <map:read src="{../folder}{1}.csv" mime-type="text/comma-separated-values"/>
+      </map:match>
+      <map:match pattern="**.txt">
+        <map:read src="{../folder}{1}.txt" mime-type="text/plain"/>
+      </map:match>
+      <map:match pattern="**.vcf">
+        <map:read src="{../folder}{1}.vcf" mime-type="text/x-vcard"/>
+      </map:match>
+      <!-- image -->
+      <map:match pattern="**.png">
+        <map:read src="{../folder}{1}.png" mime-type="image/png"/>
+      </map:match>
+      <map:match pattern="**.gif">
+        <map:read src="{../folder}{1}.gif" mime-type="image/gif"/>
+      </map:match>
+      <map:match pattern="**.jpe">
+        <map:read src="{../folder}{1}.jpe" mime-type="image/jpeg"/>
+      </map:match>
+      <map:match pattern="**.jpeg">
+        <map:read src="{../folder}{1}.jpeg" mime-type="image/jpeg"/>
+      </map:match>
+      <map:match pattern="**.jpg">
+        <map:read src="{../folder}{1}.jpg" mime-type="image/jpeg"/>
+      </map:match>
+      <map:match pattern="**.svg">
+        <map:read src="{../folder}{1}.svg" mime-type="image/svg-xml"/>
+      </map:match>
+      <map:match pattern="**.tif">
+        <map:read src="{../folder}{1}.tif" mime-type="image/tiff"/>
+      </map:match>
+      <map:match pattern="**.tiff">
+        <map:read src="{../folder}{1}.tiff" mime-type="image/tiff"/>
+      </map:match>
+      <!-- audio -->
+      <map:match pattern="**.mp3">
+        <map:read src="{../folder}{1}.mp3" mime-type="audio/mpeg"/>
+      </map:match>
+      <!-- video -->
+      <map:match pattern="**.avi">
+        <map:read src="{../folder}{1}.avi" mime-type="video/x-msvideo"/>
+      </map:match>
+      <map:match pattern="**.mov">
+        <map:read src="{../folder}{1}.mov" mime-type="video/quicktime"/>
+      </map:match>
+      <map:match pattern="**.qt">
+        <map:read src="{../folder}{1}.qt" mime-type="video/quicktime"/>
+      </map:match>
+      <!-- application -->
+      <map:match pattern="**.sxw">
+        <map:read src="{../folder}{1}.sxw" mime-type="application/vnd.sun.xml.writer"/>
+      </map:match>
+      <map:match pattern="**.doc">
+        <map:read src="{../folder}{1}.doc" mime-type="application/msword"/>
+      </map:match>
+      <map:match pattern="**.rtf">
+        <map:read src="{../folder}{1}.rtf" mime-type="application/rtf"/>
+      </map:match>
+      <map:match pattern="**.pdf">
+        <map:read src="{../folder}{1}.pdf" mime-type="application/pdf"/>
+      </map:match>
+      <map:match pattern="**.zip">
+        <map:read src="{../folder}{1}.zip" mime-type="application/zip"/>
+      </map:match>
+      <!-- default without mime-type -->
+      <map:match pattern="**.*">
+        <map:read src="{../folder}{1}.{2}"/>
+      </map:match>
+    </map:resource>
+    <!--
+
+    the resource to build an html page 
+the main goal of this aggregation is to take 
+ - an xhtml standalone view of a document
+ - a template with a skin layout
+ - and navigation information
+
+The process of creating a different navigation for each page is safe client side 
+but expensive server side. Maybe optimisation possible with an xml:db ?
+
+params
+  identifier
+The URI to display for this requested page, also used to resolve relative
+links for formats and langs
+
+    -->
+    <map:resource name="layout">
+      <map:match type="regexp" pattern="^(.*/)?([^_]*)(_[a-z][a-z])?\.html$">
+        <map:aggregate element="aggregate">
+          <map:part src="cocoon:/skin/default.xhtml" element="template"/>
+          <map:part src="cocoon:/{1}{2}{3}.xhtml" element="content"/>
+          <map:part src="cocoon:/{1}dir.rdf" element="menu"/>
+          <map:part src="cocoon:/skin/" element="skins"/>
+          <map:part src="cocoon:/{1}{2}.rdf"/>
+        </map:aggregate>
+        <map:transform src="transform/xfolio/layout.xsl">
+          <!-- image is able to be resized by this server -->
+          <!--
+          <map:parameter name="resize" value="true"/>
+          -->
+          <!-- provide the skin folder from which get css and images -->
+          <map:parameter name="skin" value="{request:contextPath}/skin/"/>
+          <!-- say for which file is build this menu to say you are here -->
+          <map:parameter name="this" value="http://{request:serverName}:{request:serverPort}{request:contextPath}/{1}{2}"/>
+          <map:parameter name="identifier" value="{context-attr:xfolio.domain}/{1}{2}{3}.html"/>
+          <map:parameter name="language" value="{3}"/>
+          <!-- used to resolve rdf link for images (?better in xhtml?) -->
+          <map:parameter name="context" value="{1}"/>
+          <map:parameter name="branch" value="{1}"/>
+        </map:transform>
+        <!-- Paul Terray - 6 mai 2004 - terray@4dconcept.fr -->
+        <!-- New stylesheet transform, to filter STRABON links -->
+        <map:transform src="transform/xfolio/links.xsl"/>
+        <map:transform type="i18n">
+          <map:parameter name="locale" value="{3}"/>
+        </map:transform>
+        <map:serialize type="xhtm"/>
+      </map:match>
+    </map:resource>
+  </map:resources>
+  <map:pipelines>
+    <map:pipeline>
+      <!-- 
+        2004-05-04 FG
+
+  this pipeline check if all needed properties are set
+  if not, an admin page is provided, only one time
+  for security reasons, the only access to admin is when the server is started
+  so rights policy lay on sys-admin security, not on the app
+
+  parameters are needed, 
+  a simple form is provide to set them by the one who start the server  
+  MAYDO: set it only from localhost ?
+
+-->
+      <map:match pattern="**">
+        <map:act type="serverpages" src="actions/params.xsp">
+          <map:generate src="actions/params.xsp" type="serverpages"/>
+          <map:transform src="transform/xfolio/params.xsl"/>
+          <map:serialize type="xhtm"/>
+          <!-- admin could not appear in skin, because skin is set by it -->
+        </map:act>
+      </map:match>
+      <!-- first validation try -->
+      <!--
+What to do with that ?
+      <map:match pattern="linkstatus/**">
+         <map:generate type="linkstatus" src="http://{request:serverName}:{request:serverPort}{request:contextPath}/{1}"/>
+         <map:transform src="context://transform/cocoon/linkstatus2html.xslt"/>
+         <map:serialize type="xml"/>
+     </map:match>
+-->
+      <!--
+   <map:match pattern="profile.xml">
+    <map:generate type="profiler"/>
+    <map:serialize type="xml"/>
+   </map:match>
+
+  <map:pipeline type="profile-caching">
+
+   <map:match pattern="caching-testsite.html">
+    <map:generate src="test.xml"/>
+    <map:transform src="test2page.xsl"/>
+    <map:transform src="context://samples/common/style/xsl/html/complex-page2html.xsl">
+     <map:parameter name="contextPath" value="{request:contextPath}"/>
+    </map:transform>
+    <map:serialize type="html"/>
+   </map:match>
+
+  </map:pipeline>
+
+
+
+  <map:pipeline type="profile-noncaching">
+
+   <map:match pattern="noncaching-testsite.html">
+    <map:generate src="test.xml"/>
+    <map:transform src="test2page.xsl"/>
+    <map:transform src="context://samples/common/style/xsl/html/complex-page2html.xsl">
+     <map:parameter name="contextPath" value="{request:contextPath}"/>
+    </map:transform>
+    <map:serialize type="html"/>
+   </map:match>
+
+  </map:pipeline>
+
+-->
+      <!-- FG: this should be for debug only -->
+      <map:match pattern="status">
+        <map:generate src="actions/params.xsp" type="serverpages">
+          <map:parameter name="context-attr" value="?{context-attr:xfolio.efolder}?"/>
+        </map:generate>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!-- internal resources in the webapp (what about file without extensions ?) -->
+      <map:match pattern="**.*">
+        <map:act type="resource-exists" src="{1}.{2}">
+          <map:call resource="static">
+            <map:parameter name="folder" value=""/>
+          </map:call>
+        </map:act>
+      </map:match>
+      <!-- this is requested to have the list of available skins -->
+      <map:match pattern="skin/">
+        <map:generate type="directory" src="skin">
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs.db$"/>
+        </map:generate>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+      logic of requested resource in skin 
+
+      For now, skins are only folders in a reserved place.
+      It is provide directly by the the static pipeline for internal resources.
+      Here are redirections on parameters.
+      Important thing is to simplify link rewriting in case of images and CSS.
+
+      skin file requested, not found upper, try 
+        1) session skin 
+        2) context skin
+        3) default skin
+      -->
+      <map:match pattern="skin/**">
+        <map:select type="resource-exists">
+          <map:when test="skin/{session-attr:skin}/{1}">
+            <map:redirect-to uri="cocoon:/skin/{session-attr:skin}/{1}"/>
+          </map:when>
+          <map:when test="skin/{context-attr:xfolio.skin}/{1}">
+            <map:redirect-to uri="cocoon:/skin/{context-attr:xfolio.skin}/{1}"/>
+          </map:when>
+          <map:when test="skin/strabon.org/{1}">
+            <map:redirect-to uri="cocoon:/skin/strabon.org/{1}"/>
+          </map:when>
+          <!-- what to do if nothing found ? -->
+          <map:otherwise>
+            <map:generate src="actions/params.xsp" type="serverpages">
+              <map:parameter name="context-attr" value="?{context-attr:xfolio.skin}?"/>
+            </map:generate>
+            <map:serialize type="xml"/>
+          </map:otherwise>
+        </map:select>
+      </map:match>
+      <!-- 
+This is a test pipeline to generate buttons from a master SVG file
+not yet plugged
+
+Buttons should be defined by a skin.
+Problem is, how to handle that if no buttons.svg provide ?
+
+	sitemap knows how URI of one button is remapped, 
+	say it to the SVG for him find its CSS 
+
+buttons could be styled for "over, click..."
+-->
+      <!--
+			<map:match pattern="**buttons/*.png">
+				<map:act type="resource-exists" src="{1}buttons.svg">
+					<map:generate src="cocoon:/{../1}buttons/{../2}.svg"/>
+					<map:serialize type="svg2png"/>
+				</map:act>
+			</map:match>
+			<map:match pattern="**buttons/*.svg">
+				<map:act type="resource-exists" src="{1}buttons.svg">
+					<map:generate src="{../1}buttons.svg"/>
+					<map:match pattern="**/*-*.svg">
+						<map:transform src="stylesheets/svg/buttons.xsl">
+							<map:parameter name="mode" value="pipe"/>
+							<map:parameter name="symbol" value="{2}"/>
+							<map:parameter name="class" value="{3}"/>
+						</map:transform>
+						<map:serialize type="svg"/>
+					</map:match>
+					<map:match pattern="**/*.svg">
+						<map:transform src="stylesheets/svg/buttons.xsl">
+							<map:parameter name="mode" value="pipe"/>
+							<map:parameter name="symbol" value="{2}"/>
+							<map:parameter name="skin" value="/{../../1}"/>
+						</map:transform>
+						<map:serialize type="svg"/>
+					</map:match>
+				</map:act>
+			</map:match>
+-->
+    </map:pipeline>
+    <map:pipeline>
+      <!-- 
+This pipeline should one day transform images with ImageMagick
+for now, it's a redirection to resize jpeg images
+Don't use match on parameter,
+infinite loop, when redirection because the request parameter is kept
+     <map:match pattern="**.jpg">
+
+      <map:match pattern="**.jpg">
+        <map:act type="serverpages" src="actions/image.xsp">
+          <map:read mime-type="image/jpg" src="cocoon:/{../1}_{size}.jpg"/>
+        </map:act>
+      </map:match>
+
+-->
+      <!-- 
+resize images, reader rewrited to have width and height as max width preserve ratio
+-->
+      <map:match pattern="**_*.jpg">
+        <map:read type="image" mime-type="image/jpg" src="cocoon:/{1}.jpg">
+          <map:parameter name="expires" value="0"/>
+          <map:parameter name="width" value="{2}"/>
+          <map:parameter name="height" value="{2}"/>
+        </map:read>
+      </map:match>
+      <!--
+This pipe answer entry of a zip file (with refresh)
+FG:2004-06-10
+This have been written because of a problem in caching when acces by jar protocol
+(cocoon 2.1.4), perhaps it has change in 2.1.5 ?
+
+MAYDO, deflat from a file by cocoon:/ or cocoon:// ?
+
+  parameters
+zip
+  absolute file path of the file to deflat, or relative to the root servlet 
+  CAUTION: to be changed in some contexts
+entry
+  path of the file to retrieve, deflated relatively to {path}
+path
+  relative path to define a unique directory where to deflat, relatively to {work-dir}
+
+  output
+file
+  absolute path of a file to read
+
+xml output is implemented as a generator (for agregation)
+others are readers
+    -->
+      <map:match pattern="(.*/)?(.*)\.(zip|sxw)/(.*)" type="regexp">
+        <map:act type="resource-exists">
+          <map:parameter name="url" value="{context-attr:xfolio.efolder}{1}{2}.{3}"/>
+          <map:act type="xsp" src="actions/deflat.xsp">
+            <map:parameter name="zip" value="{context-attr:xfolio.efolder}{../1}{../2}.{../3}"/>
+            <map:parameter name="entry" value="{../4}"/>
+            <map:parameter name="path" value="unzip/{../1}{../2}"/>
+            <map:match pattern="**.xml">
+              <map:generate src="{../file}"/>
+              <map:serialize type="xml"/>
+            </map:match>
+            <map:read src="{file}"/>
+          </map:act>
+        </map:act>
+      </map:match>
+      <!--
+MAYDO, an OO generator, = zip serializer
+
+Use a default oo template from skin.
+Tricky things may be done for that (ex: ToC ? header...)
+
+  <zip:archive xmlns:zip="http://apache.org/cocoon/zip-archive/1.0">
+     <zip:entry name="foo.html" src="cocoon://dynFoo.html"/>
+     <zip:entry name="images/bar.jpeg" src="bar.jpeg"/>
+     <zip:entry name="index.html" serializer="html">
+       <html>
+         <head>
+           <title>Index page</title>
+         </head>
+         <body>
+           Please go <a href="foo.html">there</a>
+         </body<
+       </html>
+     </zip:entry>
+   </zip:archive:zip>
+
+-->
+      <!--
+FG:2004-06-15
+this provide an rdf of dc records of a folder (ex: for navigation)
+on a 2 level directory (to have file in directories
+
+parameters
+  context
+from which to get an RDF record when server is running
+  includes
+extensions supposed to provide a dc record to include
+  domain
+your domain for a persistant identifier 
+  branch
+path of the dir requested, relative to here (or the root of efolder)
+
+-->
+      <map:match pattern="^(.*/)?dir.rdf$" type="regexp">
+        <map:generate type="mediadir" src="{context-attr:xfolio.efolder}{1}">
+          <map:parameter name="depth" value="2"/>
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs.db$"/>
+        </map:generate>
+        <map:transform src="transform/xfolio/dir2rdf.xsl">
+          <map:parameter name="context" value="cocoon:"/>
+          <map:parameter name="includes" value="' dbx sxw  '"/>
+          <map:parameter name="domain" value="{context-attr:xfolio.domain}"/>
+          <map:parameter name="branch" value="/{1}"/>
+        </map:transform>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+      <!--
+FG:2004-06-15
+transform dir.rdf produced upper in a pretty html view (default mode of the xsl)
+
+xhtml is handle after by the layout resource (better could be done ?)
+
+parameters
+  language
+Language to choose from multilingual fields
+  resize
+Allow thumbnail display
+  from
+domain+branch, used to reduce absolute URI to relative
+
+-->
+      <map:match pattern="^(.*/)?dir(_[a-z][a-z])?\.xhtml$" type="regexp">
+        <map:generate src="cocoon:/{1}dir.rdf"/>
+        <map:transform src="transform/xfolio/rdf2html.xsl">
+          <map:parameter name="language" value="{2}"/>
+          <map:parameter name="resize" value="true"/>
+          <map:parameter name="identifier" value="{context-attr:xfolio.domain}/{1}"/>
+        </map:transform>
+        <map:serialize type="xhtm"/>
+      </map:match>
+      <map:match pattern="^(.*/)?dir(_[a-z][a-z])?\.html$" type="regexp">
+        <map:call resource="layout"/>
+      </map:match>
+      <!--
+toc generation
+-->
+      <map:match pattern="^(.*/)?toc.rdf$" type="regexp">
+        <map:generate type="directory" src="{context-attr:xfolio.efolder}{1}">
+          <map:parameter name="depth" value="10"/>
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs^"/>
+        </map:generate>
+        <map:serialize type="xml"/>
+        <map:transform src="transform/xfolio/dir2rdf.xsl">
+          <map:parameter name="context" value="cocoon:"/>
+          <map:parameter name="includes" value="' dbx sxw  '"/>
+          <map:parameter name="domain" value="{context-attr:xfolio.domain}"/>
+          <map:parameter name="branch" value="/{1}"/>
+        </map:transform>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+    <!--
+
+
+  transformations from supported formats
+
+-->
+    <map:pipeline>
+      <map:match pattern="**.*">
+        <!--
+ open office from source
+-->
+        <map:act type="resource-exists">
+          <map:parameter name="url" value="{context-attr:xfolio.efolder}{1}.sxw"/>
+          <map:match pattern="**.oo">
+            <map:aggregate element="document" prefix="office" ns="http://openoffice.org/2000/office">
+              <map:part strip-root="true" src="cocoon:/{1}.sxw/meta.xml"/>
+              <map:part strip-root="true" src="cocoon:/{1}.sxw/styles.xml"/>
+              <map:part src="cocoon:/{1}.sxw/content.xml"/>
+            </map:aggregate>
+            <map:serialize type="xml"/>
+          </map:match>
+          <!-- internal only, getted by **.rdf -->
+          <map:match type="regexp" pattern="(.*/)?(.*).dc">
+            <map:generate label="oo" src="cocoon:/{1}{2}.oo"/>
+            <map:transform src="transform/oo/oo2rdf.xsl">
+              <!-- URI of the doc -->
+              <map:parameter name="identifier" value="{context-attr:xfolio.domain}/{1}{2}"/>
+              <!-- these are extensions from which a transformation is expected -->
+              <map:parameter name="extensions" value=" html dbx "/>
+            </map:transform>
+            <map:serialize type="xml"/>
+          </map:match>
+          <!-- xhtml before layout -->
+          <map:match type="regexp" pattern="^(.*/)?([^_]*)(_[a-z][a-z])?\.xhtml$">
+            <map:generate label="oo" src="cocoon:/{1}{2}{3}.oo"/>
+            <map:transform src="transform/oo/oo2html.xsl">
+              <!-- provide default CSS ? -->
+              <map:parameter name="css" value="{request:contextPath}/skin/html.css"/>
+              <!-- validation mode is used to provide messages instead of bad practices -->
+              <map:parameter name="validation" value="true"/>
+              <!-- folder from which resolve embeded files -->
+              <map:parameter name="pictures" value="{2}{3}.sxw/"/>
+              <!-- give a language ? -->
+              <map:parameter name="lang" value="{3}"/>
+            </map:transform>
+            <map:serialize type="xhtm"/>
+          </map:match>
+          <!-- get a docbook -->
+          <map:match type="regexp" pattern="(.*/)?(.*).dbx">
+            <map:generate label="oo" src="cocoon:/{1}{2}.oo"/>
+            <map:transform src="transform/oo/oo2dbx.xsl">
+              <!-- from where to have images, better should be identifier without lang ?? -->
+              <map:parameter name="pictures" value="{2}"/>
+            </map:transform>
+            <map:serialize type="xml"/>
+          </map:match>
+          <!-- transform a docbook in fo -->
+          <map:match pattern="**.fo">
+            <map:generate label="oo" src="cocoon:/{1}.dbx"/>
+            <map:transform src="transform/docbook/fo/docbook.xsl"/>
+            <map:serialize type="xml"/>
+          </map:match>
+          <!-- transform docbook fo in pdf  -->
+          <map:match pattern="**.pdf">
+            <map:generate src="cocoon:/{1}.fo"/>
+            <map:serialize type="fo2pdf"/>
+          </map:match>
+          <!-- transform docbook fo in rtf  -->
+          <!-- don't work  and jfor will be embed in fop -->
+          <!--
+          <map:match pattern="**.rtf">
+            <map:generate src="cocoon:/{1}.fo"/>
+            <map:serialize type="fo2rtf"/>
+          </map:match>
+-->
+          <!-- html build from xhtml -->
+          <map:match pattern="**.html">
+            <map:call resource="layout"/>
+          </map:match>
+        </map:act>
+        <!--
+
+  views for an image
+  
+-->
+        <map:act type="resource-exists">
+          <map:parameter name="url" value="{context-attr:xfolio.efolder}{1}.jpg"/>
+          <map:match pattern="**.xhtml">
+            <map:generate src="cocoon:/{1}.rdf"/>
+            <map:transform src="transform/xfolio/rdf2html.xsl">
+              <map:parameter name="mode" value="image"/>
+            </map:transform>
+            <map:serialize type="xhtm"/>
+          </map:match>
+          <map:match pattern="**.html">
+            <map:call resource="layout"/>
+          </map:match>
+          <map:match type="regexp" pattern="(.*/)?(.*)\.xmp">
+            <map:generate type="xmp" src="{context-attr:xfolio.efolder}{1}{2}.jpg"/>
+            <map:serialize type="xml"/>
+          </map:match>
+          <!--
+          <map:match type="regexp" pattern="(.*/)?(.*)\.rdf">
+            <map:generate type="mediadir" src="{context-attr:xfolio.efolder}{1}">
+              <map:parameter name="include" value="^{2}"/>
+            </map:generate>
+
+            <map:transform src="transform/xfolio/file2rdf.xsl">
+
+              <map:parameter name="server" value="http://{request:serverName}:{request:serverPort}{request:contextPath}/"/>
+              <map:parameter name="path" value="{1}"/>
+            </map:transform>
+            <map:serialize type="xml"/>
+          </map:match>
+-->
+        </map:act>
+        <!--
+
+     versions of a docbook 
+
+-->
+        <map:act type="resource-exists">
+          <map:parameter name="url" value="{context-attr:xfolio.efolder}{1}.dbx"/>
+          <!-- resolve includes -->
+          <map:match pattern="**.dbx">
+            <map:generate src="{context-attr:xfolio.efolder}{1}.dbx"/>
+            <map:transform src="transform/docbook/dbx/xinclude.xsl"/>
+            <map:serialize type="xml"/>
+          </map:match>
+          <!-- TODO, better rdf from docbook -->
+          <map:match pattern="**.dc">
+            <map:generate src="cocoon:/{1}.dbx"/>
+            <map:transform src="transform/docbook/dbx/dbx2rdf.xsl">
+              <map:parameter name="source" value="http://{request:serverName}:{request:serverPort}{request:contextPath}/{1}.dbx"/>
+              <map:parameter name="target" value="http://{request:serverName}:{request:serverPort}{request:contextPath}/{1}.html"/>
+            </map:transform>
+            <map:serialize type="xml"/>
+          </map:match>
+          <map:match pattern="**.xhtml">
+            <map:generate src="cocoon:/{1}.dbx"/>
+            <map:transform src="transform/docbook/dbx/dbx2html.xsl">
+              <map:parameter name="css" value="{request:contextPath}/skin/html.css"/>
+            </map:transform>
+            <map:serialize type="xhtm"/>
+          </map:match>
+          <map:match pattern="**.html">
+            <map:call resource="layout"/>
+          </map:match>
+        </map:act>
+      </map:match>
+      <!--
+
+      give an rdf for an identifier,
+      with all possible versions of a document (language, formats)
+
+2004-04-08 FG Bugs have been seen here under jetty with the include
+
+-->
+      <map:match type="regexp" pattern="(.*/)?(.*).rdf">
+        <map:generate type="mediadir" src="{context-attr:xfolio.efolder}{1}">
+          <map:parameter name="include" value="^{2}"/>
+          <map:parameter name="exclude" value="^CVS$|^\.|^_|^Thumbs.db$"/>
+        </map:generate>
+        <map:transform src="transform/xfolio/file2rdf.xsl">
+          <map:parameter name="context" value="cocoon:"/>
+          <map:parameter name="includes" value="' dbx sxw  '"/>
+          <map:parameter name="domain" value="{context-attr:xfolio.domain}"/>
+          <map:parameter name="branch" value="/{1}"/>
+        </map:transform>
+        <map:transform type="xinclude"/>
+        <map:serialize type="xml"/>
+      </map:match>
+    </map:pipeline>
+    <!--
+heavy resources may not be useful to cache
+-->
+    <map:pipeline type="noncaching">
+      <!--
+
+static pipeline from efolder
+put it after, some mime-types may result of transformations
+
+2004-03-30 FG, DONE, static mime-types as a resource
+-->
+      <map:match pattern="**.*">
+        <!-- resources in the content folder -->
+        <map:act type="resource-exists" src="{context-attr:xfolio.efolder}{1}.{2}">
+          <map:call resource="static">
+            <map:parameter name="folder" value="{context-attr:xfolio.efolder}"/>
+          </map:call>
+        </map:act>
+      </map:match>
+    </map:pipeline>
+    <!--
+=====================================
+    redirections
+=====================================
+-->
+    <map:pipeline>
+      <!--
+dangerous redirections !!! may loop
+better should be an action on a directory
+-->
+      <!-- directory, show index -->
+      <map:match type="regexp" pattern="^(.*/)?$">
+        <map:redirect-to uri="cocoon:/{1}index.html"/>
+      </map:match>
+      <!-- no format requested, try html -->
+      <map:match type="regexp" pattern="^(.*/)?([^\.]+)$">
+        <map:redirect-to uri="cocoon:/{1}{2}.html"/>
+      </map:match>
+      <!--
+here should find a way to get language from header parameters ?
+-->
+      <!-- no language requested, try fr -->
+      <map:match type="regexp" pattern="^(.*/)?([^_]+)\.html$">
+        <map:redirect-to uri="cocoon:/{1}{2}_fr.html"/>
+      </map:match>
+      <!-- no fr try en -->
+      <map:match type="regexp" pattern="^(.*/)?([^_]+)_fr\.html$">
+        <map:redirect-to uri="cocoon:/{1}{2}_en.html"/>
+      </map:match>
+      <!-- no en try ar -->
+      <map:match type="regexp" pattern="^(.*/)?([^_]+)_en\.html$">
+        <map:redirect-to uri="cocoon:/{1}{2}_ar.html"/>
+      </map:match>
+      <!-- no ar try it -->
+      <map:match type="regexp" pattern="^(.*/)?([^_]+)_ar\.html$">
+        <map:redirect-to uri="cocoon:/{1}{2}_it.html"/>
+      </map:match>
+      <!-- no index, give a directory -->
+      <map:match type="regexp" pattern="^(.*/)?index_[a-z][a-z]?\.html$">
+        <map:redirect-to uri="cocoon:/{1}dir{2}.html"/>
+      </map:match>
+      <!--
+if we are here, page not found
+-->
+      <map:match pattern="**.xhtml">
+        <map:generate src="not-found.xhtml"/>
+        <map:serialize type="xhtm"/>
+      </map:match>
+      <!-- this will call and transform the not-found.xhtml -->
+      <map:match pattern="**.html">
+        <map:call resource="layout"/>
+      </map:match>
+    </map:pipeline>
+    <map:pipeline>
+      <!--
+custom error messages
+-->
+      <map:handle-errors>
+        <map:select type="exception">
+          <!-- TODO, nicer not found message -->
+          <map:when test="not-found">
+            <map:generate type="notifying"/>
+            <map:transform src="transform/cocoon/error.xsl">
+              <map:parameter name="css" value="{request:contextPath}/resources/styles/html.css"/>
+            </map:transform>
+            <map:serialize label="no" type="html"/>
+          </map:when>
+          <map:when test="invalid-continuation">
+            <map:generate src="not-found.xml"/>
+            <map:transform src="transform/cocoon/error.xsl">
+              <map:parameter name="contextPath" value="{request:contextPath}"/>
+            </map:transform>
+            <map:serialize status-code="404"/>
+          </map:when>
+          <map:otherwise>
+            <map:generate type="notifying"/>
+            <map:transform src="transform/cocoon/error.xsl">
+              <map:parameter name="css" value="{request:contextPath}/resources/styles/html.css"/>
+            </map:transform>
+            <map:serialize type="html"/>
+          </map:otherwise>
+        </map:select>
+      </map:handle-errors>
+    </map:pipeline>
+  </map:pipelines>
+</map:sitemap>

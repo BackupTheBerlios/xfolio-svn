@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--+
+    |
+    | localisation XFolio
+    | 2004-04-01 frederic.glorieux@ajlsm.com
+		|
+    +-->
+
+<catalogue xml:lang="fr">
+  <message key="img-notalink">Votre image n'a pas été insérée comme un lien.</message>
+  <message key="admin">Xfolio, Administration</message>
+	<message key="one">un</message>
+	<message key="two">deux</message>
+	<message key="noTitle">Sans titre</message>
+	<message key="notFound">Désolé, Xfolio n'a rien pu trouver à cette adresse.</message>
+</catalogue>

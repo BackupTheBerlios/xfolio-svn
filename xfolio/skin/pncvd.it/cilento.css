@@ -1,0 +1,210 @@
+/*
+unseen by browser <6, prefer link in the html
+@import url("html.css");
+*/
+/* override html.css */
+
+
+/*
+
+specific colors of layout
+
+
+colors
+
+#4263B0 ?
+#293974 blue color for orange back
+#FF9900 orange for links
+#FFCC00 orange light for active link
+#2B5891 ?
+*/
+
+
+body { 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	margin:0; padding:0; 
+	background: #293974 url('fondino3.jpg');
+	color:#000000;
+}
+/* default color for links */
+a {
+	font-weight: bold; 
+}
+
+.img {
+  float:left;
+  background: url(/skins/cilento/shadowAlpha.png) no-repeat bottom right !important;
+  background: url(shadow.gif) no-repeat bottom right;
+  margin: 10px 0 0 10px !important;
+  margin: 10px 0 0 5px;
+}
+.img img {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  margin: -6px 6px 6px -6px;
+  padding: 4px;
+}
+
+#header {
+
+}
+
+/* if you want a nice select in the navbar */
+#navbar select {
+	border:none;
+	padding:0;
+	margin:0;
+	/* should work */
+	background: inherit; 
+	font-family:inherit;
+	font-weight:inherit;
+	/* patch to non conformant inheritage */
+	background: #FFCC00 url('back-tonic.png');
+	color:#293974;
+	font-weight:bold;
+	font-family:Verdana, sans-srif;
+}
+
+#navbar a,
+#header a,
+#navbar a:link,
+#header a:link,
+#navbar a:visited,
+#header a:visited, 
+#side a:link,
+#side a:visited 
+{
+	color:#293974;
+	text-decoration:none;
+}
+
+/* background as navbar */
+#side {
+	/* background: #EEEEE0 url('back-light.png'); */
+	/* color:#000000; */
+	padding:1ex;
+        font-size:small;
+        font-family:Arial, sans-serif;
+}
+
+
+
+/* a semantic menu, in side bar  */
+menu {
+	margin:0px; 
+	border:outset 1px; 
+	background:#FFFFFF;
+	padding-left:0.3ex;
+	padding-right:0.3ex;
+	padding-top:1px;
+	padding-bottom:1px;
+	font-size:80%;
+}
+/* background like footer */
+menu li {
+	display:block;
+	border:inset 1px #000000;
+	/* background: #293974 url('back-dark.png');
+	color:#FFFFFF; */
+	padding:0.5ex;
+	list-style-type:none;
+	margin-top:0.3ex;
+	margin-bottom:0.3ex;
+	font-weight:bold;
+}
+#side menu a, 
+#side menu a:link, 
+#side menu a:visited {
+	/* color:#FFFFFF; */
+	text-decoration:none;
+	font-weight:bold;
+}
+
+#side menu a:hover, 
+#side menu a:hover * {
+	color:#FFCC00;
+	text-decoration:underline;
+}
+
+
+
+#side menu li.here {
+	background: #FFCC00 url('back-tonic.png');
+	color:#293974;
+	font-weight:bold;
+}
+
+#side menu li.here a, 
+#side menu li.here a:link, 
+#side menu li.here a:hover, 
+#side menu li.here a:visited {
+	color:#293974;
+	text-decoration:none;
+}
+
+
+#footer {
+	font-weight:bold;
+	font-size:80%;
+	padding-left:1em;
+	padding-right:1em;
+	width:100%;
+/*
+	color:#FFFFFF;
+	background: #293974 url('back-dark.png');
+*/
+}
+
+#footer td {
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+
+#main, #side {
+
+}
+
+#main,
+#main table {
+
+}
+
+.abstract {
+	background: #EEEEE0 url('back-light.png');
+}
+
+#toc a, 
+#toc a:visited {
+	font-family: Arial, sans-serif;
+	color: #F4904D;
+}
+
+dl.toc a, 
+dl.toc a:visited  {
+	color:#4263B0
+}
+
+h1 {
+	color: #FF9900;
+	border-bottom: 2px ridge;
+	font-family: Arial, sans-serif;
+}
+
+.abstract {
+      display:block; text-indent:0; text-align:justify; 
+      background-color:#F1EDE1;
+      padding-left:1em; padding-right:1ex;
+      padding-top:0.5ex; padding-bottom:0.5ex;
+    }
+
+	table {margin:0; padding:0; border:none;}
+
+@media print {
+	#banner a {width:100%}
+  }
+
+/********* end sheet ************/
+ 

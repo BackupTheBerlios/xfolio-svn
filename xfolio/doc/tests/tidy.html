@@ -1,0 +1,664 @@
+<!--TOOLBAR_EXEMPT-->
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1" />
+<TITLE>Microsoft Corporation</TITLE>
+<META http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0))" />
+<META NAME="KEYWORDS" CONTENT="products; headlines; downloads; news; Web site; what's new; solutions; services; software; contests; corporate news;" />
+<META NAME="DESCRIPTION" CONTENT="The entry page to Microsoft's Web site. Find software, solutions, answers, support, and Microsoft news." />
+<META NAME="MS.LOCALE" CONTENT="EN-US" />
+<META NAME="CATEGORY" CONTENT="home page" />
+<STYLE TYPE="text/css">
+<!--
+	A:link {color:#003399}
+	A:visited {color:#800080}
+	A:hover {color:#FF3300}
+	TD {font-family: Verdana,Arial,Helvetica; font-size: x-small;}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+	var userAgent = navigator.userAgent;
+	var MSIEIndex = userAgent.indexOf("MSIE");
+	if (userAgent.indexOf("Win")  != -1 &&
+		userAgent.indexOf("MSIE") != -1 &&
+		userAgent.substring((MSIEIndex + 5),(MSIEIndex + 8)) >= 5.5)
+		window.location.replace("/homepage/ms.htm");
+//-->
+</script>
+<link rel="stylesheet" type="text/css" href="/homepage/default.css" />
+<script language="javascript">
+<!--
+var doImage = doImage;
+var TType = TType;
+
+function footerjs(doc)
+{
+	if (doImage == null)
+	{
+		var a= new Array();
+		a[0] = prepTrackingString(window.location.hostname,7);
+		if (TType == null){a[1] = prepTrackingString('PV',8);}
+		else{a[1] = prepTrackingString(TType,8);}
+		
+		a[2] = prepTrackingString(window.location.pathname,0);
+		
+		if( '' != window.document.referrer){a[a.length] = prepTrackingString(window.document.referrer,5);}
+		
+		buildIMG(a);
+	}
+}
+
+function buildIMG(pArr)
+{
+	var TG = '<LAYER visibility="hide"><div style="display:none;"><IMG src="' + location.protocol + '//c.microsoft.com/trans_pixel.asp?';
+	for(var i=0; i<pArr.length; i++)
+	{
+		if(0 == i) TG +=  pArr[i];
+		else TG += '&' + pArr[i];
+	}
+	TG +='" height="0" width="0" hspace="0" vspace="0" Border="0"></div></layer>';
+	document.writeln(TG);
+}
+
+function prepTrackingString(ts, type)
+{
+	var rArray;
+	var rString;
+	var pName = '';
+	if (0 == type){
+		pName = 'p=';
+		rString = ts.substring(1);
+		rArray = rString.split('/');
+	}
+	if (1 == type){
+		pName = 'qs=';
+		rString = ts.substring(1);
+		rArray = rString.split('&');		
+	}
+	if (2 == type){
+		pName = 'f=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (3 == type){
+		pName = 'tPage=';
+		rString = escape(ts);
+		return pName+rString;
+	}
+	if (4 == type){
+		pName = 'sPage=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (5 == type){
+		pName = 'r=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (6 == type){
+		pName = 'MSID=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (7 == type){
+		pName = 'source=';
+		rString = ts.toLowerCase();
+		if(rString.indexOf("microsoft.com") != -1){
+			rString = rString.substring(0,rString.indexOf("microsoft.com"));
+			if('' == rString)
+				rString = "www";
+			else
+				rString = rString.substring(0,rString.length -1);
+		}
+		return pName + rString;
+	}
+	if (8 == type){
+		pName = 'TYPE=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	rString = '';
+	if(null != rArray){
+		if(0 == type)
+			for( j=0; j < rArray.length - 1; j++)
+				rString += rArray[j] + '_';  
+		else
+			for( j=0; j < rArray.length  ; j++)
+				rString += rArray[j] + '_';  
+	}
+	rString = rString.substring(0, rString.length - 1);  	 	
+	return pName + rString;
+}
+//-->
+</script>
+<script language="Javascript" src="/library/include/ctredir.js"></script>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TOPMARGIN="0" LEFTMARGIN="0" MARGINWIDTH="0" MARGINHEIGHT="0" TEXT="#000000">
+<BASEFONT FACE="Verdana, Arial, Helvetica" SIZE="3">
+<div id="masthead" class="resetStyles"><table cellpadding="0" cellspacing="0" width="100%" border="0"><tr><td width="100%"><table cellpadding="0" cellspacing="0" width="100%" height="22" border="0"><tr><td id="regionIdGraphic" bgcolor="#4B92D9"></td><td width="100%" bgcolor="#1E77D3"><img src="/homepage/images/gradient1.jpg" width="250" height="22" alt="*" title="" /></td></tr></table></td><td id="globalToolbar" bgcolor="#1E77D3" height="22" nowrap="" dir="ltr" align="left"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="gt0" nowrap="true" onmouseover="this.className='gt1';" onmouseout="this.className='gt0';"><a href="">Microsoft.com Home</a></td><td class="gtsep">|</td><td class="gt0" nowrap="true" onmouseover="this.className='gt1';" onmouseout="this.className='gt0';"><a href="/library/toolbar/3.0/sitemap/en-us.mspx">Site Map</a></td></tr></table></td></tr><tr valign="top"><td width="100%"><table cellpadding="0" cellspacing="0" width="100%" height="42" border="0"><tr valign="top"><td id="brandBanner" bgcolor="0A6CCE"><a href=""><img src="/library/toolbar/3.0/images/banners/ms_masthead_ltr.gif" width="136" height="42" alt="Microsoft Home" title="" border="0" /></a></td><td width="100%" bgcolor="#FFFFFF"><img src="/homepage/images/gradient2.jpg" width="250" height="42" alt="*" title="" /></td></tr></table></td><td id="globalSearch" bgcolor="#FFFFFF">Search Microsoft.com for:<br /><form id="searchForm" action="/library/toolbar/3.0/search.aspx"><input type="hidden" name="View" value="en-us" /><input type="hidden" name="charset" value="iso-8859-1" /><nobr><div style="height: 18px"><input name="qu" id="searchBox" maxlength="255" /><input id="goButton" type="submit" value="Go" /></div></nobr></form></td></tr></table><div id="localToolbar"><table cellpadding="0" cellspacing="0" width="100%" height="19" border="0"><tr><td nowrap="true" class="lt0" onmouseover="this.className='lt1';" onmouseout="this.className='lt0';"><a href="/isapi/gomscom.asp?target=/">Microsoft.com Home</a></td><td><span class="ltsep">|</span></td><td class="lt0" nowrap="true" onmouseover="this.className='lt1';" onmouseout="this.className='lt0';"><a href="http://go.microsoft.com/?LinkID=508110">MSN Home</a></td><td><span class="ltsep">|</span></td><td class="lt0" nowrap="true" onmouseover="this.className='lt1';" onmouseout="this.className='lt0';"><a href="http://go.microsoft.com/?linkid=317769">Subscribe</a></td><td><span class="ltsep">|</span></td><td class="lt0" nowrap="true" onmouseover="this.className='lt1';" onmouseout="this.className='lt0';"><a href="http://go.microsoft.com/?linkid=317027">Manage Your Profile</a></td><td width="100%"></td></tr></table></div></div>
+<TABLE CELLPADDING="0" CELLSPACING="0" WIDTH="100%" BORDER="0">
+<TR VALIGN="TOP">
+<TD WIDTH="180px" VALIGN="TOP" BGCOLOR="#F1F1F1">
+<table width="180" cellpadding="2" cellspacing="0" border="0" style="border-top-width:0px; border-right-width: 0px;border-bottom-width: 0px;">
+<tr><td>
+<table width="176" cellpadding="2" cellspacing="0" border="0">
+<tr><td>Product Families</td></tr>
+<tr><td onclick="Flyout_S1_Node1.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node1" LinkID="Flyout_S1_Node1" HREF="/windows/">
+Windows</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node2.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node2" LinkID="Flyout_S1_Node2" HREF="http://office.microsoft.com/office/default.aspx">
+Office</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node3.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node3" LinkID="Flyout_S1_Node3" HREF="/windowsmobile/default.mspx">
+Mobile Devices</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node4.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node4" LinkID="Flyout_S1_Node4" HREF="/businesssolutions/">
+Business Solutions</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node5.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node5" LinkID="Flyout_S1_Node5" HREF="/windowsserversystem/">
+Servers</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node6.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node6" LinkID="Flyout_S1_Node6" HREF="http://msdn.microsoft.com/">
+Developer Tools</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node7.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node7" LinkID="Flyout_S1_Node7" HREF="/games/">
+Games and Xbox</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node8.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node8" LinkID="Flyout_S1_Node8" HREF="/msn/default.mspx">
+MSN Services</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S1_Node9.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S1_Node9" LinkID="Flyout_S1_Node9" HREF="/products/info/">
+All Products</A>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table width="180" cellpadding="2" cellspacing="0" border="0" style="border-top-width:1px; border-right-width: 0px;border-bottom-width: 0px;">
+<tr><td>
+<table width="176" cellpadding="2" cellspacing="0" border="0">
+<tr><td>Resources</td></tr>
+<tr><td onclick="Flyout_S2_Node1.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node1" LinkID="Flyout_S2_Node1" HREF="/homepage/nav.asp?pid=1">
+Support</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S2_Node2.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node2" LinkID="Flyout_S2_Node2" HREF="/downloads/">
+Downloads</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S2_Node3.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node3" LinkID="Flyout_S2_Node3" HREF="http://windowsupdate.microsoft.com/">
+Windows Update</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S2_Node4.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node4" LinkID="Flyout_S2_Node4" HREF="http://office.microsoft.com/productupdates">
+Office Update</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S2_Node5.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node5" LinkID="Flyout_S2_Node5" HREF="/homepage/nav.asp?pid=3">
+Learning Tools</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S2_Node6.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node6" LinkID="Flyout_S2_Node6" HREF="/communities/">
+Communities</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S2_Node7.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S2_Node7" LinkID="Flyout_S2_Node7" HREF="/security/">
+Security</A>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table width="180" cellpadding="2" cellspacing="0" border="0" style="border-top-width:1px; border-right-width: 0px;border-bottom-width: 0px;">
+<tr><td>
+<table width="176" cellpadding="2" cellspacing="0" border="0">
+<tr><td>Information For</td></tr>
+<tr><td onclick="Flyout_S3_Node1.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node1" LinkID="Flyout_S3_Node1" HREF="/athome/default.mspx">
+Home Users</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node2.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node2" LinkID="Flyout_S3_Node2" HREF="/atwork/default.mspx">
+Work Users</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node3.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node3" LinkID="Flyout_S3_Node3" HREF="/technet/">
+IT Professionals (TechNet)</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node4.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node4" LinkID="Flyout_S3_Node4" HREF="http://msdn.microsoft.com/">
+Developers (MSDN)</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node5.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node5" LinkID="Flyout_S3_Node5" HREF="/partner/">
+Microsoft Partners</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node6.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node6" LinkID="Flyout_S3_Node6" HREF="/business/default.aspx">
+Business Professionals</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node7.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node7" LinkID="Flyout_S3_Node7" HREF="/education/">
+Educators</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S3_Node8.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S3_Node8" LinkID="Flyout_S3_Node8" HREF="/presspass/">
+Journalists</A>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table width="180" cellpadding="2" cellspacing="0" border="0" style="border-top-width:1px; border-right-width: 0px;border-bottom-width: 0px;">
+<tr><td>
+<table width="176" cellpadding="2" cellspacing="0" border="0">
+<tr><td>About Microsoft</td></tr>
+<tr><td onclick="Flyout_S4_Node1.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S4_Node1" LinkID="Flyout_S4_Node1" HREF="/mscorp/">
+Corporate Information</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S4_Node2.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S4_Node2" LinkID="Flyout_S4_Node2" HREF="/msft/">
+Investor Relations</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S4_Node3.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S4_Node3" LinkID="Flyout_S4_Node3" HREF="/careers/">
+Careers</A>
+</td>
+</tr>
+<tr><td onclick="Flyout_S4_Node4.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S4_Node4" LinkID="Flyout_S4_Node4" HREF="/backstage/">
+About this Site</A>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table width="180" cellpadding="2" cellspacing="0" border="0" style="border-top-width:1px; border-right-width: 0px;border-bottom-width: 0px;">
+<tr><td>
+<table width="176" cellpadding="2" cellspacing="0" border="0">
+<tr><td>Worldwide</td></tr>
+<tr><td onclick="Flyout_S5_Node1.click();">
+<A onclick="trackInfo(this);" LinkArea="Left Nav" ID="Flyout_S5_Node1" LinkID="Flyout_S5_Node1" HREF="/worldwide/">
+Microsoft Worldwide</A>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<img src="/homepage/gif/1ptrans.gif" border="0" height="22" width="1" />
+<table cellspacing="0" border="0" ID="tblPromotionalAd" width="100%">
+<tr>
+<td align="left" valign="top" colspan="3"><center>
+<A onclick="trackInfo(this);" LinkArea="LeftNavPromo" LinkID="WP_S1_Promo1" NewsID="1242481" HREF="http://go.microsoft.com/fwlink/?LinkId=31278&clcid=0x409">
+<IMG BORDER="0" SRC="/homepage/images/2004/promo_atwork.jpg" ALT="Discover new ways to work smarter" /></A></center></td>
+</tr>
+</table>
+</TD>
+<TD BGCOLOR="#999999"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="1" /></TD>
+<TD WIDTH="585px">
+<TABLE cellSpacing="0" cellPadding="0" width="590px" border="0">
+<TR VALIGN="TOP">
+<TD valign="top" width="444px">
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR><TD><A onclick="trackInfo(this);" LinkArea="Top Story" LinkID="TS_Top1" NewsID="1242493" HREF="/security/bulletins/200407_windows.mspx"><IMG BORDER="0" SRC="/homepage/images/2004/ts_july13_WinUpdate.jpg" ALT="Get critical Windows updates" /></A></TD></TR>
+</TABLE>
+<TABLE cellSpacing="0" cellPadding="0" width="444px" border="0">
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="20" /></TD></TR>
+<TR><TD><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="370">
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></TD>
+<TD><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">home &amp; entertainment</FONT></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Home" LinkID="KM_S1_Topic1" NewsID="1242459" HREF="/athome/security/spam/fightspam.mspx">Fight back against unsolicited e-mail</A></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Home" LinkID="KM_S1_Topic2" NewsID="1240912" HREF="/security/protect/default.asp">Have you done the top 3 things to help protect your PC?</A></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Home" LinkID="KM_S1_Topic3" NewsID="1242471" HREF="/windows/ie/enthusiast/topten.mspx">10 timesaving tips for Web browsing with Internet Explorer</A></TD>
+</TR>
+</TABLE>
+</TD></TR>
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="20" /></TD></TR>
+<TR><TD><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></TD>
+<TD><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">technical resources</FONT></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Tech" LinkID="KM_S2_Topic1" NewsID="1240073" HREF="/downloads/details.aspx?FamilyID=43cb658e-8553-4de7-811a-562563eb5ebf&amp;DisplayLang=en">Download the File Replication Service Diagnostics Tool</A></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Tech" LinkID="KM_S2_Topic2" NewsID="1242205" HREF="/technet/prodtechnol/winxppro/deploy/upwpload.mspx">Why wipe-and-load is the best way to deploy Windows XP</A></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Tech" LinkID="KM_S2_Topic3" NewsID="1242460" HREF="http://go.microsoft.com/?LinkID=662513">Learn scripting basics at Scripting Webcast Week, July 19–23</A></TD>
+</TR>
+</TABLE>
+</TD></TR>
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="20" /></TD></TR>
+<TR><TD><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%">
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></TD>
+<TD><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">business agility</FONT></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Biz" LinkID="KM_S3_Topic1" NewsID="1241114" HREF="/smallbusiness/issues/technology/communications/bosses_10_tips_for_better_emails.mspx">Bosses: 10 tips for writing better e-mail messages</A></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Biz" LinkID="KM_S3_Topic2" NewsID="1242461" HREF="/smallbusiness/issues/marketing/privacy_spam/5_tips_for_spurning_spyware_and_browser_hijackers.mspx">5 tips for spurning spyware and browser hijackers</A></TD>
+</TR>
+<TR><TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD><A onclick="trackInfo(this);" LinkArea="Audience Biz" LinkID="KM_S3_Topic3" NewsID="1239198" HREF="/BusinessSolutions/document.aspx?content=/businesssolutions/content/CRM_Use.xml">Get a CRM system that employees will use</A></TD>
+</TR>
+</TABLE>
+</TD></TR>
+<TR><TD><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="20" /></TD></TR>
+</TABLE>
+<TABLE cellSpacing="0" cellPadding="0" width="444px" border="0">
+<TR><TD colspan="8" width="444px"><HR COLOR="#CECECE" WIDTH="444px" SIZE="1" BORDER="0" /></TD></TR>
+<TR><TD colspan="8"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="6" /></TD></TR>
+<TR>
+<TD width="148px"><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Windows</FONT></TD>
+<TD colspan="2" width="6px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="6" /></TD>
+<TD width="148px"><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Office</FONT></TD>
+<TD colspan="2" width="6px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="6" /></TD>
+<TD width="148px"><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Windows<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Server<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />System</FONT></TD>
+</TR>
+<TR><TD colspan="8"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></TD></TR>
+<TR VALIGN="TOP">
+<TD width="142px"><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="142px">
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Windows" LinkID="KM_S4_Topic1" NewsID="1242216" HREF="/windows/ie/using/howto/privacy/secprivessntl.asp">4 security and privacy essentials for Internet Explorer</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Windows" LinkID="KM_S4_Topic2" NewsID="1241756" HREF="/windowsxp/evaluation/compare.mspx">Choose from 4 editions of Microsoft Windows XP</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Windows" LinkID="KM_S4_Topic3" NewsID="1242462" HREF="/windowsxp/using/digitalphotography/default.mspx">Capture the best moments of summer with a digital camera and Windows XP</A><BR /><BR /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="142px">
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Office" LinkID="KM_S5_Topic1" NewsID="1242463" HREF="http://office.microsoft.com/assistance/quiz.aspx?AssetID=QZ011127521033">Quiz: How much do you know about security features in Office?</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Office" LinkID="KM_S5_Topic2" NewsID="1240830" HREF="/office/editions/howtobuy/compare.mspx">See what programs are in Office 2003 Editions</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Office" LinkID="KM_S5_Topic3" NewsID="1241280" HREF="/office/project/prodinfo/trial.mspx">Download a trial version of Microsoft Project 2003</A><BR /><BR /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="142px">
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand WinServ" LinkID="KM_S6_Topic1" NewsID="1242396" HREF="/isaserver/evaluation/overview/">12 screenshots of the new ISA Server</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand WinServ" LinkID="KM_S6_Topic2" NewsID="1241735" HREF="/management/systemcenter.mspx">Introduction to System Center 2005</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand WinServ" LinkID="KM_S6_Topic3" NewsID="1242490" HREF="/mom/downloads/mom2005beta.asp">Get the MOM 2005 release candidate</A><BR /><BR /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD width="5px"></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD width="142px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><a onclick="trackInfo(this);" LinkArea="Key Graphic" LinkID="KM_S4_GraphicMore1" href="/windows/"><B>More Windows ...</B></a></TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><a onclick="trackInfo(this);" LinkArea="Key Graphic" LinkID="KM_S5_GraphicMore1" href="http://office.microsoft.com/home/default.aspx"><B>More Office ...</B></a></TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><a onclick="trackInfo(this);" LinkArea="Key Graphic" LinkID="KM_S6_GraphicMore1" href="/windowsserversystem/"><B>More Windows Server<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" border="0" />System ...</B></a></TD>
+<TD width="5px"></TD>
+</TR>
+<TR><TD colspan="8"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="30" /></TD></TR>
+<TR>
+<TD width="148px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">Visual Studio<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />.NET</FONT></TD>
+<TD colspan="2" width="6px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="6" /></TD>
+<TD width="148px"><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Microsoft<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Business<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" />Solutions</FONT></TD>
+<TD colspan="2" width="6px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="6" /></TD>
+<TD width="148px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">MSN</FONT></TD>
+</TR>
+<TR><TD colspan="8"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></TD></TR>
+<TR VALIGN="TOP">
+<TD width="142px"><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="142px">
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Visual" LinkID="KM_S7_Topic1" NewsID="1241408" HREF="http://msdn.microsoft.com/code/">Top 10 MSDN code samples</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Visual" LinkID="KM_S7_Topic2" NewsID="1242465" HREF="http://msdn.microsoft.com/data/archive/default.aspx?pull=/msdnmag/issues/04/06/aspnet20data/default.aspx">Get familiar with new data source components in ASP.NET 2.0</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand Visual" LinkID="KM_S7_Topic3" NewsID="1242466" HREF="http://msdn.microsoft.com/vstudio/default.aspx?pull=/msdnmag/issues/04/07/musthavetools/default.aspx">10 tools every developer should download now</A><BR /><BR /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="142px">
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand MBS" LinkID="KM_S8_Topic1" NewsID="1239027" HREF="/BusinessSolutions/Customer+Relationship+Management/default.mspx">CRM: Demos and solutions to get you started today</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand MBS" LinkID="KM_S8_Topic2" NewsID="1242066" HREF="http://go.microsoft.com/fwlink/?LinkId=28949">How to figure the total cost of a business solution</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand MBS" LinkID="KM_S8_Topic3" NewsID="1242314" HREF="/BusinessSolutions/gp_80_feature.aspx">What's new in Microsoft Business Solutions–Great Plains 8.0</A><BR /><BR /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="142px">
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand .NET" LinkID="KM_S9_Topic1" NewsID="1242223" HREF="http://ilovemessenger.msn.com/?mkt=en-us">Download custom emoticons for MSN Messenger</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand .NET" LinkID="KM_S9_Topic2" NewsID="1242467" HREF="http://search.msn.com/static/message.htm">Don't just search. Find. Try the new MSN Search</A><BR /><BR /></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD><IMG SRC="/homepage/gif/bulletK.gif" /></TD>
+<TD WIDTH="128px"><A onclick="trackInfo(this);" LinkArea="Brand .NET" LinkID="KM_S9_Topic3" NewsID="1241774" HREF="http://messenger.msn.com">Download MSN Messenger 6.2</A><BR /><BR /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD width="5px"></TD>
+</TR>
+<TR VALIGN="TOP">
+<TD width="142px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><a onclick="trackInfo(this);" LinkArea="Key Graphic" LinkID="KM_S7_GraphicMore1" href="http://msdn.microsoft.com/vstudio/"><B>More Visual Studio ...</B></a></TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><a onclick="trackInfo(this);" LinkArea="Key Graphic" LinkID="KM_S8_GraphicMore1" href="/businesssolutions/"><B>More Microsoft<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" border="0" />Business<br /><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" border="0" />Solutions ...</B></a></TD>
+<TD width="5px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" /></TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="1" HEIGHT="20" /></TD>
+<TD width="142px"><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /><a onclick="trackInfo(this);" LinkArea="Key Graphic" LinkID="KM_S9_GraphicMore1" href="http://www.msn.com"><B>More MSN ...</B></a></TD>
+<TD width="5px"></TD>
+</TR>
+</TABLE><p />
+<TABLE CELLPADDING="15" CELLSPACING="0" WIDTH="100%" BORDER="0">
+<TR><TD>Last Updated: Tuesday, July 13, 2004 - 10:39 a.m. Pacific Time</TD></TR>
+</TABLE>
+</TD>
+<TD width="1px" BGCOLOR="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" /></TD>
+<TD width="145px">
+<table width="145px" border="0" cellpadding="0" cellspacing="0">
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></td></tr>
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="15" /></td>
+<td><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">today's news</FONT></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></td></tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="News" LinkID="WP_S1_Topic1" NewsID="1242482" HREF="/presspass/press/2004/jul04/07-12UPGrants04PR.asp">Microsoft announces support for training centers in 56 countries</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="News" LinkID="WP_S1_Topic2" NewsID="1242477" HREF="/presspass/features/2004/jul04/07-08StarckMouse.asp">Microsoft introduces sleek new mouse by European designer Philippe Starck</A><br /><br /></td>
+</tr>
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="News" LinkID="WP_S1_TopicMore" HREF="/presspass/default.asp"><B>More Microsoft News ...</B></A></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="24" /></td></tr>
+<tr><td colspan="2" bgcolor="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" /></td></tr>
+</table>
+<BR />
+<table width="145px" border="0" cellpadding="0" cellspacing="0">
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="15" /></td>
+<td><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">popular downloads</FONT></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></td></tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Downloads" LinkID="WP_S2_Topic1" NewsID="1242491" HREF="http://windowsupdate.microsoft.com">Critical Windows updates</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Downloads" LinkID="WP_S2_Topic2" NewsID="1242470" HREF="/downloads/details.aspx?FamilyID=925628bd-1b5f-4b21-8db6-ede1c73f97b5&amp;displaylang=en">Security update for Outlook Express 6 Service Pack 1</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Downloads" LinkID="WP_S2_Topic3" NewsID="1239222" HREF="/downloads/details.aspx?FamilyID=141d5f9e-07c1-462a-baef-5eab5c851cf5&amp;displaylang=en">DirectX 9.0b</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Downloads" LinkID="WP_S2_Topic4" NewsID="1241420" HREF="/downloads/details.aspx?FamilyID=afa135c8-8b63-4c03-8986-d7f45a6aa1fa&amp;displaylang=en">Windows XP PowerToys</A><br /><br /></td>
+</tr>
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Downloads" LinkID="WP_S2_TopicMore" HREF="/downloads/search.asp"><B>More Downloads ...</B></A></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="24" /></td></tr>
+<tr><td colspan="2" bgcolor="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" /></td></tr>
+</table>
+<BR />
+<table width="145px" border="0" cellpadding="0" cellspacing="0">
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="15" /></td>
+<td><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">popular searches</FONT></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></td></tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Searches" LinkID="WP_S4_Topic1" NewsID="1241272" HREF="http://search.microsoft.com/search/results.aspx?st=b&amp;na=90&amp;View=en-us&amp;qu=internet+explorer">Internet Explorer</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Searches" LinkID="WP_S4_Topic2" NewsID="1242468" HREF="http://search.microsoft.com/search/results.aspx?st=b&amp;na=90&amp;View=en-us&amp;qu=Pocket+PC">Pocket PC</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Searches" LinkID="WP_S4_Topic3" NewsID="1240099" HREF="http://search.microsoft.com/search/results.aspx?st=b&amp;View=en-us&amp;na=90&amp;qu=clip+art">Clip art</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Searches" LinkID="WP_S4_Topic4" NewsID="1241271" HREF="http://search.microsoft.com/search/results.aspx?st=b&amp;na=90&amp;View=en-us&amp;qu=Windows+Media+Player">Windows Media Player</A><br /><br /></td>
+</tr>
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Searches" LinkID="WP_S4_TopicMore" HREF="http://search.microsoft.com"><B>More Searches ...</B></A></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="24" /></td></tr>
+<tr><td colspan="2" bgcolor="#CECECE"><IMG SRC="/homepage/gif/1ptrans.gif" /></td></tr>
+</table>
+<BR />
+<table width="145px" border="0" cellpadding="0" cellspacing="0">
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="15" /></td>
+<td><FONT STYLE="Verdana; font-size: 14px; font-weight: bold; color: #787878">support</FONT></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="12" /></td></tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Support" LinkID="WP_S3_Topic1" NewsID="1242158" HREF="http://support.microsoft.com/default.aspx?scid=fh;EN-US;KBHOWTO">Search the Knowledge Base</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Support" LinkID="WP_S3_Topic2" NewsID="1241107" HREF="http://support.microsoft.com/default.aspx?scid=fh;EN-US;sp">Service packs for Microsoft products</A><br /><br /></td>
+</tr>
+<tr valign="top">
+<td><IMG SRC="/homepage/gif/bulletK.gif" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Support" LinkID="WP_S3_Topic3" NewsID="1242157" HREF="http://support.microsoft.com/default.aspx?scid=fh;RID;faqs">Troubleshooters and FAQs</A><br /><br /></td>
+</tr>
+<tr><td><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="16" /></td>
+<td><A onclick="trackInfo(this);" LinkArea="Support" LinkID="WP_S3_TopicMore" HREF="http://search.microsoft.com"><B>More Searches ...</B></A></td>
+</tr>
+<tr><td colspan="2"><IMG SRC="/homepage/gif/1ptrans.gif" HEIGHT="24" /></td></tr>
+</table>
+</TD>
+<TD><IMG SRC="/homepage/gif/1ptrans.gif" WIDTH="5" /></TD>
+</TR>
+</TABLE>
+</TD>
+<TD WIDTH="100%"><IMG SRC="/homepage/gif/1ptrans.gif" /></TD>
+</TR>
+</TABLE>
+<table id="footer" width="100%" cellpadding="0" cellspacing="0">
+<tr valign="bottom">
+<td id="footer2" style="filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3F8CDA', gradientType='1')">
+<div id="localFooter"><nobr><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link7" href="http://go.microsoft.com/?linkid=317027">Manage Your Profile</a> |</nobr><wbr /><nobr><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link1" href="/isapi/goregwiz.asp?target=/contactus/contactus.asp">Contact Us</a> |</nobr><wbr /><nobr><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link2" href="/isapi/gomscom.asp?target=/misc/mstw/">Microsoft This Week! Newsletter</a> |</nobr><wbr /><nobr><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link3" href="/isapi/gomscom.asp?target=/legal/">Legal</a></nobr><wbr /></div>
+<div id="globalFooter">
+<span dir="ltr">&copy;2004 Microsoft Corporation. All rights reserved.&nbsp;</span>
+<nobr dir="ltr"><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link4" href="/info/cpyright.htm">Terms of Use</a> |</nobr><wbr />
+<nobr dir="ltr"><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link6" href="/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a> |</nobr><wbr />
+<nobr dir="ltr"><a onclick="trackInfo(this);" LinkArea="Footer" LinkID="Footer_Link5" href="/info/privacy.htm">Privacy Statement</a></nobr><wbr /></div>
+</td>
+</tr>
+</table>
+</BASEFONT>
+<script language="javascript">footerjs(document);</script>
+</BODY>
+</HTML>
